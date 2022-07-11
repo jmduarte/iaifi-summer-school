@@ -1,0 +1,24 @@
+name: ml-latest
+channels:
+    - pyg
+    - pytorch
+    - conda-forge
+dependencies:
+    - python=3.9
+    - numpy
+    - uproot
+    - tensorflow
+    - xrootd
+    - scikit-learn
+    - matplotlib
+    - pytorch
+    - torchvision
+    - torchaudio
+    - cpuonly
+    - pyg
+    - mplhep
+    - tqdm
+    - black
+    - pip
+    - pip:
+      - jupyter-book
