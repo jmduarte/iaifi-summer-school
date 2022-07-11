@@ -22,3 +22,5 @@ dependencies:
     - pip
     - pip:
       - jupyter-book
+      - git+https://github.com/fastmachinelearning/hls4ml.git@master#egg=hls4ml[profiling]
+      - qkeras==0.9.0
