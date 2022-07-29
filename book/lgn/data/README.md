@@ -1,0 +1,1 @@
+The dataloading is performed in `utils.py`, which uses `torch.utils.data.ConcatDataset` to created concatenated datasets from sets of HDF5 files. Thus one can have a dataset where the training, testing and validation subsets are themselves split up into multiple files, and this script will bunch them together.
