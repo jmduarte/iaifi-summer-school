@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://jduarte.physics.ucsd.edu/iaifi-summer-school/1.5_gnn_lorentz.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting Started with hls4ml" href="2.1_getting_started.html" />
@@ -507,20 +508,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4758</span><span class="o">/</span><span class="mf">3307137688.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">torch</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">torch_geometric</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;torch_geometric&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -571,7 +558,91 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;track_pt&#39;, &#39;track_mass&#39;, &#39;track_ptrel&#39;, &#39;track_erel&#39;, &#39;track_etarel&#39;, &#39;track_phirel&#39;]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plugin No such file or directory loading sec.protocol libXrdSeckrb5-5.so
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "5c75df918d074d6d97f3a56749846562"}
+</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py:121: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
+  x = torch.tensor(fourvec, dtype=torch.float).T
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5076</span><span class="o">/</span><span class="mf">588787648.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">graph_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span><span class="s1">&#39;ldata_train&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+<span class="ne">---&gt; </span><span class="mi">10</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> 
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span><span class="s1">&#39;ldata_test&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+
+<span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py</span> in <span class="ni">__init__</span><span class="nt">(self, root, features, labels, spectators, transform, pre_transform, n_events, n_events_merge, file_names, remove_unlabeled)</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="bp">self</span><span class="o">.</span><span class="n">file_names</span> <span class="o">=</span> <span class="n">file_names</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>         <span class="bp">self</span><span class="o">.</span><span class="n">remove_unlabeled</span> <span class="o">=</span> <span class="n">remove_unlabeled</span>
+<span class="ne">---&gt; </span><span class="mi">35</span>         <span class="nb">super</span><span class="p">(</span><span class="n">LorentzGraphDataset</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">pre_transform</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span> 
+<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="nd">@property</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch_geometric/data/dataset.py</span> in <span class="ni">__init__</span><span class="nt">(self, root, transform, pre_transform, pre_filter)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span> 
+<span class="g g-Whitespace">     </span><span class="mi">86</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">process</span><span class="o">.</span><span class="vm">__qualname__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Dataset&#39;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">87</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_process</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span> 
+<span class="g g-Whitespace">     </span><span class="mi">89</span>     <span class="k">def</span> <span class="nf">indices</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch_geometric/data/dataset.py</span> in <span class="ni">_process</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span> 
+<span class="g g-Whitespace">    </span><span class="mi">169</span>         <span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">170</span>         <span class="bp">self</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span> 
+<span class="g g-Whitespace">    </span><span class="mi">172</span>         <span class="n">path</span> <span class="o">=</span> <span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="s1">&#39;pre_transform.pt&#39;</span><span class="p">)</span>
+
+<span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py</span> in <span class="ni">process</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>                     <span class="k">continue</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>                 <span class="n">pt</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_pt&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">109</span>                 <span class="n">mass</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_mass&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>                 <span class="n">eta</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_etarel&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">+</span><span class="n">spec_array</span><span class="p">[</span><span class="s1">&#39;fj_eta&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>                 <span class="n">phi</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_phirel&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">+</span><span class="n">spec_array</span><span class="p">[</span><span class="s1">&#39;fj_phi&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, where)</span>
+<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">990</span><span class="s2">         if not hasattr(self, &quot;_tracers&quot;):</span>
+<span class="ne">--&gt; </span><span class="mi">991</span><span class="s2">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">993</span><span class="s2">             tmp = ak._connect._jax.jax_utils._jaxtracers_getitem(self, where)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">wrap</span><span class="nt">(content, behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s2"> def wrap(content, behavior):</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span><span class="s2">     if isinstance(content, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
+<span class="ne">--&gt; </span><span class="mi">501</span><span class="s2">         return ak.highlevel.Array(content, behavior=behavior, kernels=None)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="s2">     elif isinstance(content, ak.layout.Record):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, behavior, with_name, check_valid, cache, kernels)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="s2">         self.layout = layout</span>
+<span class="ne">--&gt; </span><span class="mi">269</span><span class="s2">         self.behavior = behavior</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="s2">         docstr = self.layout.purelist_parameter(&quot;__doc__&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span><span class="s2">         if isinstance(docstr, str):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">behavior</span><span class="nt">(self, behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span><span class="s2">     def behavior(self, behavior):</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span><span class="s2">         if behavior is None or isinstance(behavior, dict):</span>
+<span class="ne">--&gt; </span><span class="mi">355</span><span class="s2">             self.__class__ = ak._util.arrayclass(self._layout, behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span><span class="s2">             self._behavior = behavior</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span><span class="s2">         else:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">arrayclass</span><span class="nt">(layout, behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span><span class="s2">         if isinstance(cls, type) and issubclass(cls, ak.highlevel.Array):</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="s2">             return cls</span>
+<span class="ne">--&gt; </span><span class="mi">229</span><span class="s2">     deeprec = layout.purelist_parameter(&quot;__record__&quot;)</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span><span class="s2">     if isinstance(deeprec, str):</span>
+<span class="g g-Whitespace">    </span><span class="mi">231</span><span class="s2">         cls = behavior[&quot;*&quot;, deeprec]</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
