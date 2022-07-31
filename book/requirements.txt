@@ -8,3 +8,4 @@ tensorflow
 pydot
 qkeras==0.9.0
 git+https://github.com/fastmachinelearning/hls4ml.git@main#egg=hls4ml[profiling]
+xrootd
