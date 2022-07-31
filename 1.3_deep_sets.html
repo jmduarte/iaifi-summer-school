@@ -552,9 +552,15 @@ title="Print to PDF"
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plugin No such file or directory loading sec.protocol libXrdSeckrb5-5.so
 </pre></div>
 </div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "5831b12a636b4c0186dd5d969c84193e"}
+</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py:92: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
+  x = torch.tensor([feature_array[feat][i].to_numpy() for feat in self.features], dtype=torch.float)
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4902</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4872</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">train_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">train_files</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">train_generator</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
@@ -562,39 +568,60 @@ title="Print to PDF"
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">test_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
 
 <span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py</span> in <span class="ni">process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>                 <span class="n">spec_array</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">arrays</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">spectators</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span>                                          <span class="n">entry_stop</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_events</span><span class="p">,</span>
-<span class="ne">---&gt; </span><span class="mi">75</span>                                          <span class="n">library</span><span class="o">=</span><span class="s1">&#39;np&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span> 
-<span class="g g-Whitespace">     </span><span class="mi">77</span>             <span class="n">n_samples</span> <span class="o">=</span> <span class="n">label_array_all</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>                         <span class="k">continue</span>
+<span class="ne">---&gt; </span><span class="mi">92</span>                 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">feature_array</span><span class="p">[</span><span class="n">feat</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>                 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/behaviors/TBranch.py</span> in <span class="ni">arrays</span><span class="nt">(self, expressions, cut, filter_name, filter_typename, filter_branch, aliases, language, entry_start, entry_stop, decompression_executor, interpretation_executor, array_cache, library, how)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1265</span>             <span class="n">library</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1266</span>             <span class="n">arrays</span><span class="p">,</span>
-<span class="ne">-&gt; </span><span class="mi">1267</span>             <span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1268</span>         <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1269</span> 
+<span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>                         <span class="k">continue</span>
+<span class="ne">---&gt; </span><span class="mi">92</span>                 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">feature_array</span><span class="p">[</span><span class="n">feat</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>                 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/behaviors/TBranch.py</span> in <span class="ni">_ranges_or_baskets_to_arrays</span><span class="nt">(hasbranches, ranges_or_baskets, branchid_interpretation, entry_start, entry_stop, decompression_executor, interpretation_executor, library, arrays, update_ranges_or_baskets)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3480</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3481</span>     <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">arrays</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">branchid_interpretation</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">3482</span>         <span class="n">obj</span> <span class="o">=</span> <span class="n">notifications</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">3483</span> 
-<span class="g g-Whitespace">   </span><span class="mi">3484</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">uproot</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">chunk</span><span class="o">.</span><span class="n">Chunk</span><span class="p">):</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">to_numpy</span><span class="nt">(self, allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span>         <span class="n">Converts</span> <span class="n">this</span> <span class="n">Array</span> <span class="n">into</span> <span class="n">a</span> <span class="n">NumPy</span> <span class="n">array</span><span class="p">,</span> <span class="k">if</span> <span class="n">possible</span><span class="p">;</span> <span class="n">same</span> <span class="k">as</span> <span class="c1">#ak.to_numpy.</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">464</span><span class="s2">         return ak.operations.convert.to_numpy(self, allow_missing=allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="s2">     @property</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/queue.py</span> in <span class="ni">get</span><span class="nt">(self, block, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">168</span>             <span class="k">elif</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">169</span>                 <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_qsize</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">170</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">not_empty</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">171</span>             <span class="k">elif</span> <span class="n">timeout</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">172</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;timeout&#39; must be a non-negative number&quot;</span><span class="p">)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="s2">     elif isinstance(array, ak.highlevel.Array):</span>
+<span class="ne">--&gt; </span><span class="mi">196</span><span class="s2">         return to_numpy(array.layout, allow_missing=allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="s2">     elif isinstance(array, ak.highlevel.Record):</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/threading.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="k">try</span><span class="p">:</span>    <span class="c1"># restore state no matter what (e.g., KeyboardInterrupt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>             <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">296</span>                 <span class="n">waiter</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>                 <span class="n">gotit</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span>             <span class="k">else</span><span class="p">:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="s2">     elif (</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span><span class="s2">         str(ak.operations.describe.type(array)) == &quot;datetime64&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">226</span><span class="s2">         or str(ak.operations.describe.type(array)) == &quot;timedelta64&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">227</span><span class="s2">     ):</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="s2">         return array</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/describe.py</span> in <span class="ni">type</span><span class="nt">(array)</span>
+<span class="g g-Whitespace">    </span><span class="mi">185</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">186</span><span class="s2">     elif isinstance(array, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
+<span class="ne">--&gt; </span><span class="mi">187</span><span class="s2">         return array.type(ak._util.typestrs(None))</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="s2">     else:</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">typestrs</span><span class="nt">(behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">322</span><span class="s2">     behavior = Behavior(ak.behavior, behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span><span class="s2">     out = </span><span class="si">{}</span><span class="s2"></span>
+<span class="ne">--&gt; </span><span class="mi">324</span><span class="s2">     for key, typestr in behavior.items():</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span><span class="s2">         if (</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span><span class="s2">             isinstance(key, tuple)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">items</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span><span class="s2">     def items(self):</span>
+<span class="ne">--&gt; </span><span class="mi">203</span><span class="s2">         for n, x in self.overrides.items():</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span><span class="s2">             yield n, x</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span><span class="s2">         for n, x in self.defaults.items():</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
