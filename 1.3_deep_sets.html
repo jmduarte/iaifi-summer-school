@@ -139,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1.5_gnn_lorentz.html">
-   Lorentz-Equivariant GNN
+   Interaction Network
   </a>
  </li>
 </ul>
@@ -151,22 +151,17 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2.1_getting_started.html">
-   Getting Started with hls4ml
+   Getting started
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.2_advanced_config.html">
-   Advanced hls4ml Configuration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2.3_compression.html">
-   Model Compression
+   Advanced Configuration
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.4_quantization.html">
-   Model Quantization
+   Quantization
   </a>
  </li>
 </ul>
@@ -511,7 +506,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;definitions.yml&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;definitions_lorentz.yml&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="c1"># The FullLoader parameter handles the conversion from YAML</span>
     <span class="c1"># scalar values to Python the dictionary format</span>
     <span class="n">definitions</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
@@ -553,75 +548,94 @@ title="Print to PDF"
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "5831b12a636b4c0186dd5d969c84193e"}
+{"version_major": 2, "version_minor": 0, "model_id": "27a86687476c46a2ab9c27a22d4178b2"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py:92: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor([feature_array[feat][i].to_numpy() for feat in self.features], dtype=torch.float)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4872</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">train_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">train_files</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">train_generator</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4761</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">test_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">test_files</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">test_generator</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
 
 <span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py</span> in <span class="ni">process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>                         <span class="k">continue</span>
-<span class="ne">---&gt; </span><span class="mi">92</span>                 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">feature_array</span><span class="p">[</span><span class="n">feat</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>                 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="sd">         for raw_path in self.raw_file_names:</span>
+<span class="ne">---&gt; </span><span class="mi">61</span><span class="sd">             with uproot.open(raw_path, **get_file_handler(raw_path)) as root_file:</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span><span class="sd">                 tree = root_file[&#39;deepntuplizer/tree&#39;]</span>
 
-<span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span>                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>                         <span class="k">continue</span>
-<span class="ne">---&gt; </span><span class="mi">92</span>                 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">feature_array</span><span class="p">[</span><span class="n">feat</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>                 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">open</span><span class="nt">(path, object_cache, array_cache, custom_classes, decompression_executor, interpretation_executor, **options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span><span class="sd">     if object_path is None:</span>
+<span class="ne">--&gt; </span><span class="mi">152</span><span class="sd">         return file.root_directory</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="sd">     else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">154</span><span class="sd">         return file.root_directory[object_path]</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">to_numpy</span><span class="nt">(self, allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>         <span class="n">Converts</span> <span class="n">this</span> <span class="n">Array</span> <span class="n">into</span> <span class="n">a</span> <span class="n">NumPy</span> <span class="n">array</span><span class="p">,</span> <span class="k">if</span> <span class="n">possible</span><span class="p">;</span> <span class="n">same</span> <span class="k">as</span> <span class="c1">#ak.to_numpy.</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">464</span><span class="s2">         return ak.operations.convert.to_numpy(self, allow_missing=allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="s2">     @property</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">root_directory</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">787</span><span class="sd">             {},</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span><span class="sd">             self,</span>
+<span class="ne">--&gt; </span><span class="mi">789</span><span class="sd">             self,</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span><span class="sd">         )</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span><span class="sd"> </span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="s2">     elif isinstance(array, ak.highlevel.Array):</span>
-<span class="ne">--&gt; </span><span class="mi">196</span><span class="s2">         return to_numpy(array.layout, allow_missing=allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="s2">     elif isinstance(array, ak.highlevel.Record):</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">__init__</span><span class="nt">(self, path, cursor, context, file, parent)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1430</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1431</span><span class="sd">             # header_key is never used, but we do need to seek past it</span>
+<span class="ne">-&gt; </span><span class="mi">1432</span><span class="sd">             ReadOnlyKey(keys_chunk, keys_cursor, {}, file, self, read_strings=True)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1433</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1434</span><span class="sd">             num_keys = keys_cursor.field(</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="s2">     elif (</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span><span class="s2">         str(ak.operations.describe.type(array)) == &quot;datetime64&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">226</span><span class="s2">         or str(ak.operations.describe.type(array)) == &quot;timedelta64&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span><span class="s2">     ):</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span><span class="s2">         return array</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">__init__</span><span class="nt">(self, chunk, cursor, context, file, parent, read_strings)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2267</span><span class="sd">             self._fSeekKey,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2268</span><span class="sd">             self._fSeekPdir,</span>
+<span class="ne">-&gt; </span><span class="mi">2269</span><span class="sd">         ) = cursor.fields(chunk, _key_format_small, context, move=False)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2270</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">2271</span><span class="sd">         if self.is_64bit:</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/describe.py</span> in <span class="ni">type</span><span class="nt">(array)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span><span class="s2">     elif isinstance(array, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
-<span class="ne">--&gt; </span><span class="mi">187</span><span class="s2">         return array.type(ak._util.typestrs(None))</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="s2">     else:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/cursor.py</span> in <span class="ni">fields</span><span class="nt">(self, chunk, format, context, move)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="sd">         if move:</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span><span class="sd">             self._index = stop</span>
+<span class="ne">--&gt; </span><span class="mi">197</span><span class="sd">         return format.unpack(chunk.get(start, stop, self, context))</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span><span class="sd">     def field(self, chunk, format, context, move=True):</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">typestrs</span><span class="nt">(behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">322</span><span class="s2">     behavior = Behavior(ak.behavior, behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span><span class="s2">     out = </span><span class="si">{}</span><span class="s2"></span>
-<span class="ne">--&gt; </span><span class="mi">324</span><span class="s2">     for key, typestr in behavior.items():</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span><span class="s2">         if (</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span><span class="s2">             isinstance(key, tuple)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/chunk.py</span> in <span class="ni">get</span><span class="nt">(self, start, stop, cursor, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span><span class="sd">         &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="k">if</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">419</span>             <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">insist</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">420</span>             <span class="n">local_start</span> <span class="o">=</span> <span class="n">start</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>             <span class="n">local_stop</span> <span class="o">=</span> <span class="n">stop</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">items</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span><span class="s2">     def items(self):</span>
-<span class="ne">--&gt; </span><span class="mi">203</span><span class="s2">         for n, x in self.overrides.items():</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span><span class="s2">             yield n, x</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span><span class="s2">         for n, x in self.defaults.items():</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/chunk.py</span> in <span class="ni">wait</span><span class="nt">(self, insist)</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span><span class="sd">         if self._raw_data is None:</span>
+<span class="ne">--&gt; </span><span class="mi">356</span><span class="sd">             self._raw_data = numpy.frombuffer(self._future.result(), dtype=self._dtype)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span><span class="sd">             if insist is True:</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span><span class="sd">                 requirement = len(self._raw_data) == self._stop - self._start</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/futures.py</span> in <span class="ni">result</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="sd">         raises that exception on the thread on which it is called.</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="sd">         &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">112</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_finished</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_excinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/threading.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">550</span>             <span class="n">signaled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flag</span>
+<span class="g g-Whitespace">    </span><span class="mi">551</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">signaled</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">552</span>                 <span class="n">signaled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cond</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span>             <span class="k">return</span> <span class="n">signaled</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/threading.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="k">try</span><span class="p">:</span>    <span class="c1"># restore state no matter what (e.g., KeyboardInterrupt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>             <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">296</span>                 <span class="n">waiter</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>                 <span class="n">gotit</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>             <span class="k">else</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -648,7 +662,7 @@ title="Print to PDF"
 <span class="kn">from</span> <span class="nn">torch_scatter</span> <span class="kn">import</span> <span class="n">scatter_mean</span>
 
 <span class="c1">#ntracks = 60</span>
-<span class="n">inputs</span> <span class="o">=</span> <span class="mi">48</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">hidden1</span> <span class="o">=</span> <span class="mi">64</span>
 <span class="n">hidden2</span> <span class="o">=</span> <span class="mi">32</span>
 <span class="n">hidden3</span> <span class="o">=</span> <span class="mi">16</span>
@@ -693,7 +707,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeepSets(
   (phi): Sequential(
-    (0): Conv1d(48, 64, kernel_size=(1,), stride=(1,))
+    (0): Conv1d(6, 64, kernel_size=(1,), stride=(1,))
     (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
     (2): ReLU()
     (3): Conv1d(64, 32, kernel_size=(1,), stride=(1,))
@@ -712,7 +726,7 @@ title="Print to PDF"
   )
 )
 ----------
-{&#39;phi.0.weight&#39;: torch.Size([64, 48, 1]), &#39;phi.0.bias&#39;: torch.Size([64]), &#39;phi.1.weight&#39;: torch.Size([64]), &#39;phi.1.bias&#39;: torch.Size([64]), &#39;phi.1.running_mean&#39;: torch.Size([64]), &#39;phi.1.running_var&#39;: torch.Size([64]), &#39;phi.1.num_batches_tracked&#39;: torch.Size([]), &#39;phi.3.weight&#39;: torch.Size([32, 64, 1]), &#39;phi.3.bias&#39;: torch.Size([32]), &#39;phi.4.weight&#39;: torch.Size([32]), &#39;phi.4.bias&#39;: torch.Size([32]), &#39;phi.4.running_mean&#39;: torch.Size([32]), &#39;phi.4.running_var&#39;: torch.Size([32]), &#39;phi.4.num_batches_tracked&#39;: torch.Size([]), &#39;phi.6.weight&#39;: torch.Size([16, 32, 1]), &#39;phi.6.bias&#39;: torch.Size([16]), &#39;phi.7.weight&#39;: torch.Size([16]), &#39;phi.7.bias&#39;: torch.Size([16]), &#39;phi.7.running_mean&#39;: torch.Size([16]), &#39;phi.7.running_var&#39;: torch.Size([16]), &#39;phi.7.num_batches_tracked&#39;: torch.Size([]), &#39;rho.0.weight&#39;: torch.Size([50, 16]), &#39;rho.0.bias&#39;: torch.Size([50]), &#39;rho.1.weight&#39;: torch.Size([50]), &#39;rho.1.bias&#39;: torch.Size([50]), &#39;rho.1.running_mean&#39;: torch.Size([50]), &#39;rho.1.running_var&#39;: torch.Size([50]), &#39;rho.1.num_batches_tracked&#39;: torch.Size([]), &#39;rho.3.weight&#39;: torch.Size([2, 50]), &#39;rho.3.bias&#39;: torch.Size([2])}
+{&#39;phi.0.weight&#39;: torch.Size([64, 6, 1]), &#39;phi.0.bias&#39;: torch.Size([64]), &#39;phi.1.weight&#39;: torch.Size([64]), &#39;phi.1.bias&#39;: torch.Size([64]), &#39;phi.1.running_mean&#39;: torch.Size([64]), &#39;phi.1.running_var&#39;: torch.Size([64]), &#39;phi.1.num_batches_tracked&#39;: torch.Size([]), &#39;phi.3.weight&#39;: torch.Size([32, 64, 1]), &#39;phi.3.bias&#39;: torch.Size([32]), &#39;phi.4.weight&#39;: torch.Size([32]), &#39;phi.4.bias&#39;: torch.Size([32]), &#39;phi.4.running_mean&#39;: torch.Size([32]), &#39;phi.4.running_var&#39;: torch.Size([32]), &#39;phi.4.num_batches_tracked&#39;: torch.Size([]), &#39;phi.6.weight&#39;: torch.Size([16, 32, 1]), &#39;phi.6.bias&#39;: torch.Size([16]), &#39;phi.7.weight&#39;: torch.Size([16]), &#39;phi.7.bias&#39;: torch.Size([16]), &#39;phi.7.running_mean&#39;: torch.Size([16]), &#39;phi.7.running_var&#39;: torch.Size([16]), &#39;phi.7.num_batches_tracked&#39;: torch.Size([]), &#39;rho.0.weight&#39;: torch.Size([50, 16]), &#39;rho.0.bias&#39;: torch.Size([50]), &#39;rho.1.weight&#39;: torch.Size([50]), &#39;rho.1.bias&#39;: torch.Size([50]), &#39;rho.1.running_mean&#39;: torch.Size([50]), &#39;rho.1.running_var&#39;: torch.Size([50]), &#39;rho.1.num_batches_tracked&#39;: torch.Size([]), &#39;rho.3.weight&#39;: torch.Size([2, 50]), &#39;rho.3.bias&#39;: torch.Size([2])}
 </pre></div>
 </div>
 </div>
@@ -858,13 +872,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "b97d8f2a47a3463b95568e48b4357a7b", "version_major": 2, "version_minor": 0}
+{"model_id": "cf93f0eab325447db40dcf8ae2f4ff45", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 00, Training Loss:   0.4351
-           Validation Loss: 0.4387
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 00, Training Loss:   0.4550
+           Validation Loss: 0.4328
 New best model saved to: deepsets_best.pth
 </pre></div>
 </div>
@@ -872,8 +886,8 @@ New best model saved to: deepsets_best.pth
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 01, Training Loss:   0.4018
-           Validation Loss: 0.3962
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 01, Training Loss:   0.4439
+           Validation Loss: 0.4307
 New best model saved to: deepsets_best.pth
 </pre></div>
 </div>
@@ -881,8 +895,8 @@ New best model saved to: deepsets_best.pth
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 02, Training Loss:   0.3898
-           Validation Loss: 0.4076
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 02, Training Loss:   0.4438
+           Validation Loss: 0.4328
 Stale epoch
 </pre></div>
 </div>
@@ -890,26 +904,8 @@ Stale epoch
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 03, Training Loss:   0.3865
-           Validation Loss: 0.3915
-New best model saved to: deepsets_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 04, Training Loss:   0.3791
-           Validation Loss: 0.3761
-New best model saved to: deepsets_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 05, Training Loss:   0.3773
-           Validation Loss: 0.4979
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 03, Training Loss:   0.4415
+           Validation Loss: 0.4328
 Stale epoch
 </pre></div>
 </div>
@@ -917,8 +913,8 @@ Stale epoch
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 06, Training Loss:   0.3738
-           Validation Loss: 0.3855
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 04, Training Loss:   0.4424
+           Validation Loss: 0.4328
 Stale epoch
 </pre></div>
 </div>
@@ -926,17 +922,8 @@ Stale epoch
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 07, Training Loss:   0.3685
-           Validation Loss: 0.3667
-New best model saved to: deepsets_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 08, Training Loss:   0.3685
-           Validation Loss: 0.3761
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 05, Training Loss:   0.4411
+           Validation Loss: 0.4328
 Stale epoch
 </pre></div>
 </div>
@@ -944,53 +931,8 @@ Stale epoch
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 09, Training Loss:   0.3689
-           Validation Loss: 0.3608
-New best model saved to: deepsets_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 10, Training Loss:   0.3704
-           Validation Loss: 0.3770
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 11, Training Loss:   0.3672
-           Validation Loss: 0.3729
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 12, Training Loss:   0.3694
-           Validation Loss: 0.6328
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 13, Training Loss:   0.3688
-           Validation Loss: 0.3651
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 14, Training Loss:   0.3674
-           Validation Loss: 0.3870
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 06, Training Loss:   0.4422
+           Validation Loss: 0.4316
 Stale epoch
 Early stopping after 5 stale epochs
 </pre></div>
@@ -1006,12 +948,15 @@ Early stopping after 5 stale epochs
 <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">),</span><span class="n">total</span><span class="o">=</span><span class="n">test_samples</span><span class="o">/</span><span class="n">batch_size</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">y_predict</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">track_pt</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">data</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">track_pt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
     <span class="n">batch_output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>    
     <span class="n">y_predict</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">batch_output</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
     <span class="n">y_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+<span class="n">track_pt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">track_pt</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
 <span class="n">y_predict</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">y_predict</span><span class="p">)</span>
 </pre></div>
@@ -1019,8 +964,24 @@ Early stopping after 5 stale epochs
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "2309882aabba4f5aaa5eaca076f02d46", "version_major": 2, "version_minor": 0}
+{"model_id": "cedee46c419f4f5d98ec95e138f01e5f", "version_major": 2, "version_minor": 0}
 </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span><span class="n">bins</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">track_pt</span><span class="p">[</span><span class="n">y_test</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;sig&#39;</span><span class="p">,</span><span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span><span class="n">bins</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">track_pt</span><span class="p">[</span><span class="n">y_test</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;bkg&#39;</span><span class="p">,</span><span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+<img alt="_images/1.3_deep_sets_16_1.png" src="_images/1.3_deep_sets_16_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1040,7 +1001,6 @@ Early stopping after 5 stale epochs
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpr_deepset</span><span class="p">,</span> <span class="n">fpr_deepset</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;DeepSet, AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_deepset</span><span class="p">,</span><span class="n">tpr_deepset</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;True positive rate&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;False positive rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -1050,7 +1010,7 @@ Early stopping after 5 stale epochs
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1.3_deep_sets_16_0.png" src="_images/1.3_deep_sets_16_0.png" />
+<img alt="_images/1.3_deep_sets_17_0.png" src="_images/1.3_deep_sets_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1059,14 +1019,17 @@ Early stopping after 5 stale epochs
 <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">),</span><span class="n">total</span><span class="o">=</span><span class="n">test_samples</span><span class="o">/</span><span class="n">batch_size</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">y_predict</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">track_pt</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">data</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
     <span class="n">idx</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randperm</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">idx</span><span class="p">]</span>
+    <span class="n">track_pt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[:,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
     <span class="n">batch_output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>    
     <span class="n">y_predict</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">batch_output</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
     <span class="n">y_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
+<span class="n">track_pt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">track_pt</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">y_test</span><span class="p">)</span>
 <span class="n">y_predict</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">y_predict</span><span class="p">)</span>
 </pre></div>
@@ -1074,7 +1037,7 @@ Early stopping after 5 stale epochs
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "578f0b56d5144260a7bae349aa670b88", "version_major": 2, "version_minor": 0}
+{"model_id": "d55cb9b267954838a0d54b8d7b8574bb", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -1101,7 +1064,6 @@ Early stopping after 5 stale epochs
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpr_deepset_perm</span><span class="p">,</span> <span class="n">fpr_deepset_perm</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;DeepSet (Permuted), AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_deepset_perm</span><span class="p">,</span><span class="n">tpr_deepset_perm</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;True positive rate&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;False positive rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -1111,7 +1073,36 @@ Early stopping after 5 stale epochs
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1.3_deep_sets_18_0.png" src="_images/1.3_deep_sets_18_0.png" />
+<img alt="_images/1.3_deep_sets_19_0.png" src="_images/1.3_deep_sets_19_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">mplhep</span> <span class="k">as</span> <span class="nn">hep</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">hep</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">ROOT</span><span class="p">)</span>
+<span class="c1"># create ROC curves</span>
+<span class="n">pt_split</span> <span class="o">=</span> <span class="mf">5.</span>
+<span class="n">fpr_deepset_lowb</span><span class="p">,</span> <span class="n">tpr_deepset_lowb</span><span class="p">,</span> <span class="n">threshold_deepset_lowb</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="n">track_pt</span><span class="o">&lt;=</span><span class="n">pt_split</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_predict</span><span class="p">[</span><span class="n">track_pt</span><span class="o">&lt;=</span><span class="n">pt_split</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">fpr_deepset_highb</span><span class="p">,</span> <span class="n">tpr_deepset_highb</span><span class="p">,</span> <span class="n">threshold_deepset_highb</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="n">track_pt</span><span class="o">&gt;</span><span class="n">pt_split</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">y_predict</span><span class="p">[</span><span class="n">track_pt</span><span class="o">&gt;</span><span class="n">pt_split</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    
+<span class="c1"># plot ROC curves</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpr_deepset_lowb</span><span class="p">,</span> <span class="n">fpr_deepset_lowb</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;DeepSet (low pT), AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_deepset_lowb</span><span class="p">,</span><span class="n">tpr_deepset_lowb</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpr_deepset_highb</span><span class="p">,</span> <span class="n">fpr_deepset_highb</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;DeepSet (high pT), AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_deepset_highb</span><span class="p">,</span><span class="n">tpr_deepset_highb</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;True positive rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;False positive rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1.3_deep_sets_20_0.png" src="_images/1.3_deep_sets_20_0.png" />
 </div>
 </div>
 </section>

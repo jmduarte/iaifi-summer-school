@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://jduarte.physics.ucsd.edu/iaifi-summer-school/1.4_gnn_in.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lorentz-Equivariant GNN" href="1.5_gnn_lorentz.html" />
+    <link rel="next" title="Interaction Network" href="1.5_gnn_lorentz.html" />
     <link rel="prev" title="Deep Sets" href="1.3_deep_sets.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -139,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1.5_gnn_lorentz.html">
-   Lorentz-Equivariant GNN
+   Interaction Network
   </a>
  </li>
 </ul>
@@ -151,22 +151,17 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2.1_getting_started.html">
-   Getting Started with hls4ml
+   Getting started
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.2_advanced_config.html">
-   Advanced hls4ml Configuration
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2.3_compression.html">
-   Model Compression
+   Advanced Configuration
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.4_quantization.html">
-   Model Quantization
+   Quantization
   </a>
  </li>
 </ul>
@@ -564,14 +559,14 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "d62ffdb7508b4d869b2a688bfb5312cc"}
+{"version_major": 2, "version_minor": 0, "model_id": "f657e2032f3c4bfdaad4f5fb4595c3a0"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/GraphDataset.py:111: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor([feature_array[feat][i].to_numpy() for feat in self.features], dtype=torch.float).T
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4915</span><span class="o">/</span><span class="mf">4186816177.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4799</span><span class="o">/</span><span class="mf">4186816177.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> 
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">graph_dataset</span> <span class="o">=</span> <span class="n">GraphDataset</span><span class="p">(</span><span class="s1">&#39;gdata_train&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
 <span class="ne">---&gt; </span><span class="mi">10</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">)</span>
@@ -613,47 +608,33 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 <span class="g g-Whitespace">    </span><span class="mi">112</span>                 <span class="n">u</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">113</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="o">=</span><span class="n">edge_index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">))</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">to_numpy</span><span class="nt">(self, allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>         <span class="n">Converts</span> <span class="n">this</span> <span class="n">Array</span> <span class="n">into</span> <span class="n">a</span> <span class="n">NumPy</span> <span class="n">array</span><span class="p">,</span> <span class="k">if</span> <span class="n">possible</span><span class="p">;</span> <span class="n">same</span> <span class="k">as</span> <span class="c1">#ak.to_numpy.</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">464</span><span class="s2">         return ak.operations.convert.to_numpy(self, allow_missing=allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="s2">     @property</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, where)</span>
+<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">990</span><span class="s2">         if not hasattr(self, &quot;_tracers&quot;):</span>
+<span class="ne">--&gt; </span><span class="mi">991</span><span class="s2">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">993</span><span class="s2">             tmp = ak._connect._jax.jax_utils._jaxtracers_getitem(self, where)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="s2">     elif isinstance(array, ak.highlevel.Array):</span>
-<span class="ne">--&gt; </span><span class="mi">196</span><span class="s2">         return to_numpy(array.layout, allow_missing=allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="s2">     elif isinstance(array, ak.highlevel.Record):</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">wrap</span><span class="nt">(content, behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s2"> def wrap(content, behavior):</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span><span class="s2">     if isinstance(content, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
+<span class="ne">--&gt; </span><span class="mi">501</span><span class="s2">         return ak.highlevel.Array(content, behavior=behavior, kernels=None)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="s2">     elif isinstance(content, ak.layout.Record):</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="s2">     elif (</span>
-<span class="ne">--&gt; </span><span class="mi">225</span><span class="s2">         str(ak.operations.describe.type(array)) == &quot;datetime64&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span><span class="s2">         or str(ak.operations.describe.type(array)) == &quot;timedelta64&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span><span class="s2">     ):</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, behavior, with_name, check_valid, cache, kernels)</span>
+<span class="g g-Whitespace">    </span><span class="mi">274</span><span class="s2">             ak.operations.describe.validity_error(self, exception=True)</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">276</span><span class="s2">         self._caches = ak._util.find_caches(self.layout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span><span class="s2">     @property</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/describe.py</span> in <span class="ni">type</span><span class="nt">(array)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span><span class="s2">     elif isinstance(array, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
-<span class="ne">--&gt; </span><span class="mi">187</span><span class="s2">         return array.type(ak._util.typestrs(None))</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="s2">     else:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">typestrs</span><span class="nt">(behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">322</span><span class="s2">     behavior = Behavior(ak.behavior, behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span><span class="s2">     out = </span><span class="si">{}</span><span class="s2"></span>
-<span class="ne">--&gt; </span><span class="mi">324</span><span class="s2">     for key, typestr in behavior.items():</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span><span class="s2">         if (</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span><span class="s2">             isinstance(key, tuple)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">items</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span><span class="s2">             yield n, x</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span><span class="s2">         for n, x in self.defaults.items():</span>
-<span class="ne">--&gt; </span><span class="mi">206</span><span class="s2">             if n not in self.overrides:</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span><span class="s2">                 yield n, x</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span><span class="s2"> </span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">find_caches</span><span class="nt">(layout)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1518</span><span class="s2">     else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1519</span><span class="s2">         mutablemappings = []</span>
+<span class="ne">-&gt; </span><span class="mi">1520</span><span class="s2">         for cache in layout.caches:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1521</span><span class="s2">             x = cache.mutablemapping</span>
+<span class="g g-Whitespace">   </span><span class="mi">1522</span><span class="s2">             for y in mutablemappings:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -845,18 +826,6 @@ The stages of processing in a single GN block are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>920
-736
-184
-1889
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/drankin/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/torch_geometric/deprecation.py:12: UserWarning: &#39;data.DataListLoader&#39; is deprecated, use &#39;loader.DataListLoader&#39; instead
-  warnings.warn(out)
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="train">
@@ -892,100 +861,6 @@ The stages of processing in a single GN block are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "34c57dfdbd1340f8b5007544d4610319", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 00, Training Loss:   0.3385
-           Validation Loss: 1.9043
-New best model saved to: interactionnetwork_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 01, Training Loss:   0.2101
-           Validation Loss: 0.2134
-New best model saved to: interactionnetwork_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 02, Training Loss:   0.1870
-           Validation Loss: 0.1831
-New best model saved to: interactionnetwork_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 03, Training Loss:   0.1541
-           Validation Loss: 0.2450
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 04, Training Loss:   0.1819
-           Validation Loss: 0.2112
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 05, Training Loss:   0.1532
-           Validation Loss: 0.1984
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 06, Training Loss:   0.1305
-           Validation Loss: 0.1826
-New best model saved to: interactionnetwork_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 07, Training Loss:   0.1173
-           Validation Loss: 0.2347
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 08, Training Loss:   0.0961
-           Validation Loss: 0.1863
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e9aeb0be7bb34d9f99ef4950348def0f", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "5b5a3c0da15146b097105aa8b89115bb", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 09, Training Loss:   0.1469
-           Validation Loss: 0.2200
-Stale epoch
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="evaluate-on-testing-data">
@@ -1006,10 +881,6 @@ Stale epoch
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ae48a5d0e08c45c7973a576c2192eb88", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1043,9 +914,6 @@ Stale epoch
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/1.4_gnn_in_15_0.png" src="_images/1.4_gnn_in_15_0.png" />
 </div>
 </div>
 </section>
@@ -1088,7 +956,7 @@ Stale epoch
     <a class='right-next' id="next-link" href="1.5_gnn_lorentz.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lorentz-Equivariant GNN</p>
+        <p class="prev-next-title">Interaction Network</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
