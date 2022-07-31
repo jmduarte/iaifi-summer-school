@@ -17,110 +17,282 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from LGNDataset import LGNDataset
+import logging
 
-train_files = ['root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_11.root']
-test_files = ['root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/test/ntuple_merged_1.root']
+from lgn.cg_lib import CGModule, ZonalFunctionsRel, ZonalFunctions, normsq4
+from lgn.g_lib import GTau
 
-train_generator = LGNDataset(features, labels, spectators, n_events=2000, npad = ntracks,
-                             file_names=train_files)
-train_generator.process()
+from lgn.models.lgn_cg import LGNCG
 
-test_generator = LGNDataset(features, labels, spectators, n_events=1000, npad = ntracks,
-                             file_names=test_files)
-test_generator.process()
+from lgn.nn import RadialFilters
+from lgn.nn import InputLinear, MixReps
+from lgn.nn import OutputLinear, OutputPMLP, GetScalarsAtom
+from lgn.nn import NoLayer
+
+#ntracks = 60
+inputs = 48
+hidden1 = 64
+hidden2 = 32
+hidden3 = 16
+classify1 = 50
+outputs = 2
+
+
+class LGNModel(CGModule):
+    """
+    Basic LGN Network. Taken from https://github.com/fizisist/LorentzGroupNetwork
+
+    Parameters
+    ----------
+    maxdim : :obj:`int` of :class:`list` of :class:`int`
+        Maximum weight in the output of CG products. (Expanded to list of
+        length :obj:`num_cg_levels`)
+    max_zf : :class:`int` of :class:`list` of :class:`int`
+        Maximum weight in the output of the spherical harmonics  (Expanded to list of
+        length :obj:`num_cg_levels`)
+    num_cg_levels : :class:`int`
+        Number of cg levels to use.
+    num_channels : :class:`int` of :class:`list` of :class:`int`
+        Number of channels that the output of each CG are mixed to (Expanded to list of
+        length :obj:`num_cg_levels`)
+    num_species : :class:`int`
+        Number of species of atoms included in the input dataset.
+    device : :class:`torch.device`
+        Device to initialize the level to
+    dtype : :class:`torch.torch.dtype`
+        Data type to initialize the level to level to
+    cg_dict : :class:`CGDict <lgn.cg_lib.CGDict>`
+        Clebsch-gordan dictionary object.
+    """
+    def __init__(self, maxdim, max_zf, num_cg_levels, num_channels,
+                 cutoff_type, hard_cut_rad, soft_cut_rad, soft_cut_width,
+                 weight_init, level_gain, num_basis_fn,
+                 top, input, num_mpnn_layers, activation='leakyrelu', pmu_in=False, add_beams=True,
+                 scale=1, full_scalars=False, mlp=True, mlp_depth=None, mlp_width=None,
+                 device=torch.device('cpu'), dtype=None, cg_dict=None):
+        
+
+        logging.info('Initializing network!')
+        level_gain = expand_var_list(level_gain, num_cg_levels)
+
+        hard_cut_rad = expand_var_list(hard_cut_rad, num_cg_levels)
+        soft_cut_rad = expand_var_list(soft_cut_rad, num_cg_levels)
+        soft_cut_width = expand_var_list(soft_cut_width, num_cg_levels)
+
+        maxdim = expand_var_list(maxdim, num_cg_levels)
+        max_zf = expand_var_list(max_zf, num_cg_levels)
+        num_channels = expand_var_list(num_channels, num_cg_levels + 1)
+
+        logging.info('hard_cut_rad: {}'.format(hard_cut_rad))
+        logging.info('soft_cut_rad: {}'.format(soft_cut_rad))
+        logging.info('soft_cut_width: {}'.format(soft_cut_width))
+        logging.info('maxdim: {}'.format(maxdim))
+        logging.info('max_zf: {}'.format(max_zf))
+        logging.info('num_channels: {}'.format(num_channels))
+
+        super().__init__(maxdim=max(maxdim + max_zf), device=device, dtype=dtype, cg_dict=cg_dict)
+        device, dtype, cg_dict = self.device, self.dtype, self.cg_dict
+
+        logging.info('CGdict maxdim: {}'.format(cg_dict.maxdim))
+
+        self.num_cg_levels = num_cg_levels
+        self.num_channels = num_channels
+        self.scale = scale
+        self.full_scalars = full_scalars
+        self.pmu_in = pmu_in
+
+        # Set up spherical harmonics
+        if pmu_in:
+            self.zonal_fns_in = ZonalFunctions(max(max_zf), device=device, dtype=dtype, cg_dict=cg_dict)
+        self.zonal_fns = ZonalFunctionsRel(max(max_zf), device=device, dtype=dtype, cg_dict=cg_dict)
+
+        # Set up position functions, now independent of spherical harmonics
+        self.rad_funcs = RadialFilters(max_zf, num_basis_fn, num_channels, num_cg_levels, device=self.device, dtype=self.dtype)
+        tau_pos = self.rad_funcs.tau
+
+        if num_cg_levels:
+            if add_beams:
+                num_scalars_in = 2
+            else:
+                num_scalars_in = 1
+        else:
+            num_scalars_in = 202  # the second number should match the number of atoms (including beams)
+
+        num_scalars_out = num_channels[0]
+
+        if not pmu_in:
+            self.input_func_atom = InputLinear(num_scalars_in, num_scalars_out,
+                                               device=self.device, dtype=self.dtype)
+        else:
+            self.input_func_atom = MixReps(GTau({**{(0,0): num_scalars_in},**{(l,l): 1 for l in range(1, max_zf[0] + 1)}}), 
+                                           GTau({(l,l): num_scalars_out for l in range(max_zf[0] + 1)}),
+                                           device=self.device, dtype=self.dtype)
+        
+        tau_in_atom = self.input_func_atom.tau
+
+        self.lgn_cg = LGNCG(maxdim, max_zf, tau_in_atom,
+                                        tau_pos, num_cg_levels, num_channels,
+                                        level_gain, weight_init, cutoff_type,
+                                        hard_cut_rad, soft_cut_rad, soft_cut_width,
+                                        mlp=mlp, mlp_depth=mlp_depth, mlp_width=mlp_width,
+                                        activation=activation, device=self.device, dtype=self.dtype, cg_dict=self.cg_dict)
+
+        tau_cg_levels_atom = self.lgn_cg.tau_levels_atom
+
+        self.get_scalars_atom = GetScalarsAtom(tau_cg_levels_atom,
+                                               device=self.device, dtype=self.dtype)
+
+        num_scalars_atom = self.get_scalars_atom.num_scalars
+
+        if top.lower().startswith('lin'):
+            self.output_layer_atom = OutputLinear(num_scalars_atom, bias=True,
+                                                  device=self.device, dtype=self.dtype)
+        elif top.lower().startswith('pmlp'):
+            self.output_layer_atom = OutputPMLP(num_scalars_atom, num_mixed=mlp_width,
+                                                  device=self.device, dtype=self.dtype)
+
+        logging.info('Model initialized. Number of parameters: {}'.format(sum(p.nelement() for p in self.parameters())))
+
+    def forward(self, data, covariance_test=False):
+        """
+        Runs a forward pass of the network.
+
+        Parameters
+        ----------
+        data : :obj:`dict`
+            Dictionary of data to pass to the network.
+        covariance_test : :obj:`bool`, optional
+            If true, returns all of the atom-level representations twice.
+
+        Returns
+        -------
+        prediction : :obj:`torch.Tensor`
+            The output of the layer
+        """
+        # Get and prepare the data
+        atom_scalars, atom_mask, edge_mask, atom_ps = self.prepare_input(data, self.num_cg_levels)
+
+        # Calculate spherical harmonics and radial functions
+        if self.pmu_in:
+            zonal_functions_in, _, _ = self.zonal_fns_in(atom_ps)
+            zonal_functions_in[(0, 0)] = torch.stack([atom_scalars.unsqueeze(-1),torch.zeros_like(atom_scalars.unsqueeze(-1))])
+        zonal_functions, norms, sq_norms = self.zonal_fns(atom_ps, atom_ps)
+
+        # Prepare the input reps for both the atom and edge network
+        if self.num_cg_levels > 0:
+            rad_func_levels = self.rad_funcs(norms, edge_mask * (norms != 0).byte())
+            if not self.pmu_in:
+                atom_reps_in = self.input_func_atom(atom_scalars, atom_mask)
+            else:
+                atom_reps_in = self.input_func_atom(zonal_functions_in)
+        else:
+            rad_func_levels = []
+            atom_reps_in = self.input_func_atom(atom_scalars, atom_mask)
+
+        # edge_net_in = self.input_func_edge(atom_scalars, atom_mask, edge_scalars, edge_mask, norms, sq_norms)
+
+        # Clebsch-Gordan layers central to the network
+        atoms_all = self.lgn_cg(atom_reps_in, atom_mask, rad_func_levels, zonal_functions)
+        # Construct scalars for network output
+        atom_scalars = self.get_scalars_atom(atoms_all)
+        # edge_scalars = self.get_scalars_edge(edges_all)
+        # Prediction in this case will depend only on the atom_scalars. Can make
+        # it more general here.
+        prediction = self.output_layer_atom(atom_scalars, atom_mask)
+
+        # Covariance test
+        if covariance_test:
+            return prediction, atoms_all
+        else:
+            return prediction
+
+    def prepare_input(self, data, cg_levels=True):
+        """
+        Extracts input from data class
+
+        Parameters
+        ----------
+        data : ?????
+            Information on the state of the system.
+
+        Returns
+        -------
+        atom_scalars : :obj:`torch.Tensor`
+            Tensor of scalars for each atom.
+        atom_mask : :obj:`torch.Tensor`
+            Mask used for batching data.
+        atom_ps: :obj:`torch.Tensor`
+            Positions of the atoms
+        edge_mask: :obj:`torch.Tensor`
+            Mask used for batching data.
+        """
+        device, dtype = self.device, self.dtype
+
+        atom_ps = data['Pmu'].to(device, dtype) * self.scale
+
+        data['Pmu'].requires_grad_(True)
+        atom_mask = data['atom_mask'].to(device, torch.uint8)
+        edge_mask = data['edge_mask'].to(device, torch.uint8)
+
+        scalars = torch.ones_like(atom_ps[:, :, 0]).unsqueeze(-1)
+        scalars = normsq4(atom_ps).abs().sqrt().unsqueeze(-1)
+
+        if 'scalars' in data.keys():
+            scalars = torch.cat([scalars, data['scalars'].to(device, dtype)], dim=-1)
+
+        if not cg_levels:
+            scalars = torch.stack(tuple(scalars for _ in range(scalars.shape[-1])), -2)
+
+        return scalars, atom_mask, edge_mask, atom_ps
+
+
+def expand_var_list(var, num_cg_levels):
+    if type(var) is list:
+        var_list = var + (num_cg_levels - len(var)) * [var[-1]]
+    elif type(var) in [float, int]:
+        var_list = [var] * num_cg_levels
+    else:
+        raise ValueError('Incorrect type {}'.format(type(var)))
+    return var_list
+
+
+model = LGNModel(maxdim=3, 
+                 max_zf=1, 
+                 num_cg_levels=3, 
+                 num_channels=[2,4,4,2], 
+                 cutoff_type=['learn'],
+                 hard_cut_rad=np.inf,
+                 soft_cut_rad=np.inf,
+                 soft_cut_width=np.inf,
+                 weight_init='randn',
+                 level_gain=[1.],
+                 num_basis_fn=10,
+                 top='linear', 
+                 input='linear', 
+                 num_mpnn_layers=1,
+                 mlp=True,
+                 mlp_width=2,
+                 mlp_depth=3,
+                 pmu_in=False,
+                 add_beams=False,
+                 device=device)
+
+optimizer = torch.optim.Adam(model.parameters(), lr = 1e-1)
+
+print(model)
+print('----------')
+print({l:model.state_dict()[l].shape for l in model.state_dict()})
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/extras.py[0m in [0;36mXRootD_client[0;34m()[0m
-[1;32m     73[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 74[0;31m         [0;32mimport[0m [0mXRootD[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     75[0m         [0;32mimport[0m [0mXRootD[0m[0;34m.[0m[0mclient[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_4864/3007852605.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mimport[0m [0mlogging[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0;34m[0m[0m
+[0;32m----> 3[0;31m [0;32mfrom[0m [0mlgn[0m[0;34m.[0m[0mcg_lib[0m [0;32mimport[0m [0mCGModule[0m[0;34m,[0m [0mZonalFunctionsRel[0m[0;34m,[0m [0mZonalFunctions[0m[0;34m,[0m [0mnormsq4[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      4[0m [0;32mfrom[0m [0mlgn[0m[0;34m.[0m[0mg_lib[0m [0;32mimport[0m [0mGTau[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'XRootD'
-
-During handling of the above exception, another exception occurred:
-
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2223/1644403073.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      6[0m train_generator = LGNDataset(features, labels, spectators, n_events=2000, npad = ntracks,
-[1;32m      7[0m                              file_names=train_files)
-[0;32m----> 8[0;31m [0mtrain_generator[0m[0;34m.[0m[0mprocess[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      9[0m [0;34m[0m[0m
-[1;32m     10[0m test_generator = LGNDataset(features, labels, spectators, n_events=1000, npad = ntracks,
-
-[0;32m~/work/iaifi-summer-school/iaifi-summer-school/book/LGNDataset.py[0m in [0;36mprocess[0;34m(self)[0m
-[1;32m     67[0m         """
-[1;32m     68[0m         [0;32mfor[0m [0mraw_path[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mraw_file_names[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 69[0;31m             [0;32mwith[0m [0muproot[0m[0;34m.[0m[0mopen[0m[0;34m([0m[0mraw_path[0m[0;34m,[0m [0;34m**[0m[0mget_file_handler[0m[0;34m([0m[0mraw_path[0m[0;34m)[0m[0;34m)[0m [0;32mas[0m [0mroot_file[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     70[0m [0;34m[0m[0m
-[1;32m     71[0m                 [0mtree[0m [0;34m=[0m [0mroot_file[0m[0;34m[[0m[0;34m'deepntuplizer/tree'[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py[0m in [0;36mopen[0;34m(path, object_cache, array_cache, custom_classes, decompression_executor, interpretation_executor, **options)[0m
-[1;32m    146[0m         [0mdecompression_executor[0m[0;34m=[0m[0mdecompression_executor[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    147[0m         [0minterpretation_executor[0m[0;34m=[0m[0minterpretation_executor[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 148[0;31m         [0;34m**[0m[0moptions[0m[0;34m,[0m  [0;31m# NOTE: a comma after **options breaks Python 2[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    149[0m     )
-[1;32m    150[0m [0;34m[0m[0m
-
-[0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py[0m in [0;36m__init__[0;34m(self, file_path, object_cache, array_cache, custom_classes, decompression_executor, interpretation_executor, **options)[0m
-[1;32m    579[0m         )
-[1;32m    580[0m         self._source = Source(
-[0;32m--> 581[0;31m             [0mfile_path[0m[0;34m,[0m [0;34m**[0m[0mself[0m[0;34m.[0m[0m_options[0m  [0;31m# NOTE: a comma after **options breaks Python 2[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    582[0m         )
-[1;32m    583[0m [0;34m[0m[0m
-
-[0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py[0m in [0;36m__init__[0;34m(self, file_path, **options)[0m
-[1;32m    451[0m         [0mself[0m[0;34m.[0m[0m_file_path[0m [0;34m=[0m [0mfile_path[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    452[0m         [0mself[0m[0;34m.[0m[0m_num_bytes[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 453[0;31m         [0mself[0m[0;34m.[0m[0m_open[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    454[0m [0;34m[0m[0m
-[1;32m    455[0m     [0;32mdef[0m [0m_open[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py[0m in [0;36m_open[0;34m(self)[0m
-[1;32m    457[0m             [
-[1;32m    458[0m                 [0mXRootDResource[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_file_path[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0m_timeout[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 459[0;31m                 [0;32mfor[0m [0mx[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_num_workers[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    460[0m             ]
-[1;32m    461[0m         )
-
-[0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py[0m in [0;36m<listcomp>[0;34m(.0)[0m
-[1;32m    457[0m             [
-[1;32m    458[0m                 [0mXRootDResource[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_file_path[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0m_timeout[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 459[0;31m                 [0;32mfor[0m [0mx[0m [0;32min[0m [0mrange[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_num_workers[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    460[0m             ]
-[1;32m    461[0m         )
-
-[0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py[0m in [0;36m__init__[0;34m(self, file_path, timeout)[0m
-[1;32m     81[0m         [0mself[0m[0;34m.[0m[0m_file_path[0m [0;34m=[0m [0mfile_path[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     82[0m         [0mself[0m[0;34m.[0m[0m_timeout[0m [0;34m=[0m [0mtimeout[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 83[0;31m         [0mself[0m[0;34m.[0m[0m_open[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     84[0m [0;34m[0m[0m
-[1;32m     85[0m     [0;32mdef[0m [0m_open[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py[0m in [0;36m_open[0;34m(self)[0m
-[1;32m     84[0m [0;34m[0m[0m
-[1;32m     85[0m     [0;32mdef[0m [0m_open[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 86[0;31m         [0mXRootD_client[0m [0;34m=[0m [0muproot[0m[0;34m.[0m[0mextras[0m[0;34m.[0m[0mXRootD_client[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     87[0m [0;34m[0m[0m
-[1;32m     88[0m         [0mself[0m[0;34m.[0m[0m_file[0m [0;34m=[0m [0mXRootD_client[0m[0;34m.[0m[0mFile[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-
-[0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/extras.py[0m in [0;36mXRootD_client[0;34m()[0m
-[1;32m     81[0m     [0mconda[0m [0minstall[0m [0;34m-[0m[0mc[0m [0mconda[0m[0;34m-[0m[0mforge[0m [0mxrootd[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     82[0m [0;34m[0m[0m
-[0;32m---> 83[0;31m (or download from http://xrootd.org/dload.html and manually compile with """
-[0m[1;32m     84[0m             [0;34m"""cmake; setting PYTHONPATH and LD_LIBRARY_PATH appropriately)."""[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     85[0m         )
-
-[0;31mModuleNotFoundError[0m: Install XRootD python bindings with:
-
-    conda install -c conda-forge xrootd
-
-(or download from http://xrootd.org/dload.html and manually compile with cmake; setting PYTHONPATH and LD_LIBRARY_PATH appropriately).
-ModuleNotFoundError: Install XRootD python bindings with:
-
-    conda install -c conda-forge xrootd
-
-(or download from http://xrootd.org/dload.html and manually compile with cmake; setting PYTHONPATH and LD_LIBRARY_PATH appropriately).
+[0;31mModuleNotFoundError[0m: No module named 'lgn'
+ModuleNotFoundError: No module named 'lgn'
 

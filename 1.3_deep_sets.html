@@ -506,19 +506,18 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Plugin No such file or directory loading sec.protocol libXrdSeckrb5-5.so
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "cc21d5068dad4754a126e39dbd76e40a"}
+</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py:92: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
+  x = torch.tensor([feature_array[feat][i].to_numpy() for feat in self.features], dtype=torch.float)
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/extras.py</span> in <span class="ni">XRootD_client</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">74</span>         <span class="kn">import</span> <span class="nn">XRootD</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="kn">import</span> <span class="nn">XRootD.client</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;XRootD&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2179</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4799</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">train_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">train_files</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">train_generator</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
@@ -526,73 +525,48 @@ title="Print to PDF"
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">test_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
 
 <span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py</span> in <span class="ni">process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="sd">         for raw_path in self.raw_file_names:</span>
-<span class="ne">---&gt; </span><span class="mi">61</span><span class="sd">             with uproot.open(raw_path, **get_file_handler(raw_path)) as root_file:</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span><span class="sd">                 tree = root_file[&#39;deepntuplizer/tree&#39;]</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>                         <span class="k">continue</span>
+<span class="ne">---&gt; </span><span class="mi">92</span>                 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">feature_array</span><span class="p">[</span><span class="n">feat</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>                 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">open</span><span class="nt">(path, object_cache, array_cache, custom_classes, decompression_executor, interpretation_executor, **options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span><span class="sd">         decompression_executor=decompression_executor,</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span><span class="sd">         interpretation_executor=interpretation_executor,</span>
-<span class="ne">--&gt; </span><span class="mi">148</span><span class="sd">         **options,  # NOTE: a comma after **options breaks Python 2</span>
-<span class="g g-Whitespace">    </span><span class="mi">149</span><span class="sd">     )</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="sd"> </span>
+<span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>                         <span class="k">continue</span>
+<span class="ne">---&gt; </span><span class="mi">92</span>                 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">feature_array</span><span class="p">[</span><span class="n">feat</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>                 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">__init__</span><span class="nt">(self, file_path, object_cache, array_cache, custom_classes, decompression_executor, interpretation_executor, **options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span><span class="sd">         )</span>
-<span class="g g-Whitespace">    </span><span class="mi">580</span><span class="sd">         self._source = Source(</span>
-<span class="ne">--&gt; </span><span class="mi">581</span><span class="sd">             file_path, **self._options  # NOTE: a comma after **options breaks Python 2</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span><span class="sd">         )</span>
-<span class="g g-Whitespace">    </span><span class="mi">583</span><span class="sd"> </span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, where)</span>
+<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">990</span><span class="s2">         if not hasattr(self, &quot;_tracers&quot;):</span>
+<span class="ne">--&gt; </span><span class="mi">991</span><span class="s2">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="s2">         else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">993</span><span class="s2">             tmp = ak._connect._jax.jax_utils._jaxtracers_getitem(self, where)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py</span> in <span class="ni">__init__</span><span class="nt">(self, file_path, **options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span><span class="sd">         self._file_path = file_path</span>
-<span class="g g-Whitespace">    </span><span class="mi">452</span><span class="sd">         self._num_bytes = None</span>
-<span class="ne">--&gt; </span><span class="mi">453</span><span class="sd">         self._open()</span>
-<span class="g g-Whitespace">    </span><span class="mi">454</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">455</span><span class="sd">     def _open(self):</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">wrap</span><span class="nt">(content, behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s2"> def wrap(content, behavior):</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span><span class="s2">     if isinstance(content, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
+<span class="ne">--&gt; </span><span class="mi">501</span><span class="s2">         return ak.highlevel.Array(content, behavior=behavior, kernels=None)</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="s2">     elif isinstance(content, ak.layout.Record):</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py</span> in <span class="ni">_open</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span><span class="sd">             [</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span><span class="sd">                 XRootDResource(self._file_path, self._timeout)</span>
-<span class="nn">--&gt; 459                 for x</span> in <span class="ni">range</span><span class="nt">(self._num_workers)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span><span class="sd">             ]</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="sd">         )</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, behavior, with_name, check_valid, cache, kernels)</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span><span class="s2">             layout = ak.operations.convert.to_kernels(layout, kernels, highlevel=False)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">268</span><span class="s2">         self.layout = layout</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="s2">         self.behavior = behavior</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="s2">         docstr = self.layout.purelist_parameter(&quot;__doc__&quot;)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">457</span><span class="sd">             [</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span><span class="sd">                 XRootDResource(self._file_path, self._timeout)</span>
-<span class="nn">--&gt; 459                 for x</span> in <span class="ni">range</span><span class="nt">(self._num_workers)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span><span class="sd">             ]</span>
-<span class="g g-Whitespace">    </span><span class="mi">461</span><span class="sd">         )</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">layout</span><span class="nt">(self, layout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">323</span><span class="s2">     def layout(self, layout):</span>
+<span class="g g-Whitespace">    </span><span class="mi">324</span><span class="s2">         if isinstance(layout, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
+<span class="ne">--&gt; </span><span class="mi">325</span><span class="s2">             self._layout = layout</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span><span class="s2">             self._numbaview = None</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span><span class="s2">         else:</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py</span> in <span class="ni">__init__</span><span class="nt">(self, file_path, timeout)</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="sd">         self._file_path = file_path</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd">         self._timeout = timeout</span>
-<span class="ne">---&gt; </span><span class="mi">83</span><span class="sd">         self._open()</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="sd">     def _open(self):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/xrootd.py</span> in <span class="ni">_open</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="sd">     def _open(self):</span>
-<span class="ne">---&gt; </span><span class="mi">86</span><span class="sd">         XRootD_client = uproot.extras.XRootD_client()</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="sd">         self._file = XRootD_client.File()</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/extras.py</span> in <span class="ni">XRootD_client</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="sd">     conda install -c conda-forge xrootd</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="sd"> </span>
-<span class="ne">---&gt; </span><span class="mi">83</span><span class="sd"> (or download from http://xrootd.org/dload.html and manually compile with &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span>             <span class="sd">&quot;&quot;&quot;cmake; setting PYTHONPATH and LD_LIBRARY_PATH appropriately).&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span>         <span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: Install XRootD python bindings with:
-
-    <span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">xrootd</span>
-
-<span class="p">(</span><span class="ow">or</span> <span class="n">download</span> <span class="kn">from</span> <span class="nn">http</span><span class="p">:</span><span class="o">//</span><span class="n">xrootd</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">dload</span><span class="o">.</span><span class="n">html</span> <span class="ow">and</span> <span class="n">manually</span> <span class="nb">compile</span> <span class="k">with</span> <span class="n">cmake</span><span class="p">;</span> <span class="n">setting</span> <span class="n">PYTHONPATH</span> <span class="ow">and</span> <span class="n">LD_LIBRARY_PATH</span> <span class="n">appropriately</span><span class="p">)</span><span class="o">.</span>
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
