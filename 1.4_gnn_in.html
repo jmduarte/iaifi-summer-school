@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Interaction Network &#8212; My sample book</title>
+    <title>Interaction Network &#8212; IAIFI Summer School Tutorials</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -99,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">IAIFI Summer School Tutorials</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -115,10 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Representations, Networks, and Symmetries
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1.1_tabular_data_efps.html">
-   Lab 1: Jets as Tabular Data using Energy Flow Polynomials
+   Tabular Data using Energy Flow Polynomials
   </a>
  </li>
  <li class="toctree-l1">
@@ -136,24 +141,43 @@ const thebe_selector_output = ".output, .cell_output"
    Lorentz Network
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model Compression and Fast Machine Learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2.1_getting_started.html">
-   Part 1: Getting started
+   Getting Started with hls4ml
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.2_advanced_config.html">
-   Part 2: Advanced Configuration
+   Advanced hls4ml Configuration
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.3_compression.html">
-   Part 3: Compression
+   Model Compression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.4_quantization.html">
-   Part 4: Quantization
+   Model Quantization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   References
   </a>
  </li>
 </ul>
@@ -215,7 +239,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/1.4_gnn_in.ipynb"
+        <a href="https://mybinder.org/v2/gh/jmduarte/iaifi-summer-school/main?urlpath=tree/book/1.4_gnn_in.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -228,6 +252,24 @@ title="Launch on Binder"
     <img src="_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jmduarte/iaifi-summer-school/blob/main/book/1.4_gnn_in.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -258,7 +300,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/jmduarte/iaifi-summer-school"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -275,7 +317,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F1.4_gnn_in.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jmduarte/iaifi-summer-school/issues/new?title=Issue%20on%20page%20%2F1.4_gnn_in.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -453,7 +495,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="interaction-network">
 <h1>Interaction Network<a class="headerlink" href="#interaction-network" title="Permalink to this headline">#</a></h1>
-<p>Now we will look at graph neural networks using the PyTorch Geometric library: <a class="reference external" href="https://pytorch-geometric.readthedocs.io/">https://pytorch-geometric.readthedocs.io/</a>. See <span id="id1">[]</span> for more details.</p>
+<p>Now we will look at graph neural networks using the PyTorch Geometric library: <a class="reference external" href="https://pytorch-geometric.readthedocs.io/">https://pytorch-geometric.readthedocs.io/</a>. See <span id="id1">[<a class="reference internal" href="zreferences.html#id22" title="Matthias Fey and Jan E. Lenssen. Fast graph representation learning with PyTorch Geometric. In ICLR Workshop on Representation Learning on Graphs and Manifolds. 2019. URL: https://pytorch-geometric.readthedocs.io/, arXiv:1903.02428.">1</a>]</span> for more details.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
@@ -468,7 +510,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4844</span><span class="o">/</span><span class="mf">3307137688.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4699</span><span class="o">/</span><span class="mf">3307137688.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">torch</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">torch_geometric</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
@@ -531,7 +573,7 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </section>
 <section id="graph-neural-network">
 <h2>Graph neural network<a class="headerlink" href="#graph-neural-network" title="Permalink to this headline">#</a></h2>
-<p>Here, we recapitulate the “graph network” (GN) formalism <span id="id2">[]</span>, which generalizes various GNNs and other similar methods.
+<p>Here, we recapitulate the “graph network” (GN) formalism <span id="id2">[<a class="reference internal" href="zreferences.html#id25" title="Peter W. Battaglia, Jessica B. Hamrick, Victor Bapst, Alvaro Sanchez-Gonzalez, Vinicius Zambaldi, Mateusz Malinowski, Andrea Tacchetti, David Raposo, Adam Santoro, Ryan Faulkner, Caglar Gulcehre, Francis Song, Andrew Ballard, Justin Gilmer, George Dahl, Ashish Vaswani, Kelsey Allen, Charles Nash, Victoria Langston, Chris Dyer, Nicolas Heess, Daan Wierstra, Pushmeet Kohli, Matt Botvinick, Oriol Vinyals, Yujia Li, and Razvan Pascanu. Relational inductive biases, deep learning, and graph networks. Preprint, 2018. arXiv:1806.01261.">2</a>]</span>, which generalizes various GNNs and other similar methods.
 GNs are graph-to-graph mappings, whose output graphs have the same node and edge structure as the input.
 Formally, a GN block contains three “update” functions, <span class="math notranslate nohighlight">\(\phi\)</span>, and three “aggregation” functions, <span class="math notranslate nohighlight">\(\rho\)</span>.
 The stages of processing in a single GN block are:</p>
@@ -547,7 +589,7 @@ The stages of processing in a single GN block are:</p>
 \)</span></p>
 <p>where <span class="math notranslate nohighlight">\(E'_i = \left\{\left(\mathbf{e}'_k, r_k, s_k \right)\right\}_{r_k=i,\; k=1:N^e}\)</span> contains the updated edge features for edges whose receiver node is the <span class="math notranslate nohighlight">\(i\)</span>th node, <span class="math notranslate nohighlight">\(E' = \bigcup_i E_i' = \left\{\left(\mathbf{e}'_k, r_k, s_k \right)\right\}_{k=1:N^e}\)</span> is the set of updated edges, and <span class="math notranslate nohighlight">\(V'=\left\{\mathbf{v}'_i\right\}_{i=1:N^v}\)</span> is the set of updated nodes.</p>
 <img src="https://github.com/jmduarte/capstone-particle-physics-domain/raw/master/weeks/GN-full-block.png" alt="GN full block" width="500">
-<p>We will define an interaction network model similar to Ref. <span id="id3">[]</span>, but just modeling the particle-particle interactions. It will take as input all of the tracks (with 48 features) without truncating or zero-padding. Another modification is the use of batch normalization <span id="id4">[]</span> layers to improve the stability of the training.</p>
+<p>We will define an interaction network model similar to Ref. <span id="id3">[<a class="reference internal" href="zreferences.html#id2" title="Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $H \rightarrow b\overline b$ decays. Phys. Rev. D, 102:012010, 2020. arXiv:1909.12285, doi:10.1103/PhysRevD.102.012010.">3</a>]</span>, but just modeling the particle-particle interactions. It will take as input all of the tracks (with 48 features) without truncating or zero-padding. Another modification is the use of batch normalization <span id="id4">[<a class="reference internal" href="zreferences.html#id26" title="Sergey Ioffe and Christian Szegedy. Batch normalization: accelerating deep network training by reducing internal covariate shift. In Francis Bach and David Blei, editors, 32nd International Conference on Machine Learning, volume 37, 448. Lille, France, 07 2015. PMLR. URL: http://proceedings.mlr.press/v37/ioffe15.html, arXiv:1502.03167.">4</a>]</span> layers to improve the stability of the training.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
@@ -967,7 +1009,7 @@ Stale epoch
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Javier Duarte, Dylan Rankin, and Patrick McCormack<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

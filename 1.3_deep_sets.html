@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Deep Sets &#8212; My sample book</title>
+    <title>Deep Sets &#8212; IAIFI Summer School Tutorials</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Interaction Network" href="1.4_gnn_in.html" />
-    <link rel="prev" title="Lab 1: Jets as Tabular Data using Energy Flow Polynomials" href="1.1_tabular_data_efps.html" />
+    <link rel="prev" title="Tabular Data using Energy Flow Polynomials" href="1.1_tabular_data_efps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -99,7 +99,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">IAIFI Summer School Tutorials</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -115,10 +115,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Representations, Networks, and Symmetries
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1.1_tabular_data_efps.html">
-   Lab 1: Jets as Tabular Data using Energy Flow Polynomials
+   Tabular Data using Energy Flow Polynomials
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -136,24 +141,43 @@ const thebe_selector_output = ".output, .cell_output"
    Lorentz Network
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model Compression and Fast Machine Learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2.1_getting_started.html">
-   Part 1: Getting started
+   Getting Started with hls4ml
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.2_advanced_config.html">
-   Part 2: Advanced Configuration
+   Advanced hls4ml Configuration
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.3_compression.html">
-   Part 3: Compression
+   Model Compression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.4_quantization.html">
-   Part 4: Quantization
+   Model Quantization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   References
   </a>
  </li>
 </ul>
@@ -215,7 +239,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/1.3_deep_sets.ipynb"
+        <a href="https://mybinder.org/v2/gh/jmduarte/iaifi-summer-school/main?urlpath=tree/book/1.3_deep_sets.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -228,6 +252,24 @@ title="Launch on Binder"
     <img src="_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/jmduarte/iaifi-summer-school/blob/main/book/1.3_deep_sets.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -258,7 +300,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/jmduarte/iaifi-summer-school"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -275,7 +317,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F1.3_deep_sets.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jmduarte/iaifi-summer-school/issues/new?title=Issue%20on%20page%20%2F1.3_deep_sets.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -510,14 +552,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "cc21d5068dad4754a126e39dbd76e40a"}
+{"version_major": 2, "version_minor": 0, "model_id": "34a41170d3254b329884b5718190c7ab"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py:92: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor([feature_array[feat][i].to_numpy() for feat in self.features], dtype=torch.float)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4799</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4654</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">train_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">train_files</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">train_generator</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
@@ -539,32 +581,18 @@ title="Print to PDF"
 <span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, where)</span>
-<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">990</span><span class="s2">         if not hasattr(self, &quot;_tracers&quot;):</span>
-<span class="ne">--&gt; </span><span class="mi">991</span><span class="s2">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">993</span><span class="s2">             tmp = ak._connect._jax.jax_utils._jaxtracers_getitem(self, where)</span>
+<span class="g g-Whitespace">    </span><span class="mi">993</span>             <span class="n">tmp</span> <span class="o">=</span> <span class="n">ak</span><span class="o">.</span><span class="n">_connect</span><span class="o">.</span><span class="n">_jax</span><span class="o">.</span><span class="n">jax_utils</span><span class="o">.</span><span class="n">_jaxtracers_getitem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">994</span> 
+<span class="ne">--&gt; </span><span class="mi">995</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">ak</span><span class="o">.</span><span class="n">behaviors</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">ByteBehavior</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">996</span>             <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">997</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">ak</span><span class="o">.</span><span class="n">behaviors</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">CharBehavior</span><span class="p">):</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">wrap</span><span class="nt">(content, behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s2"> def wrap(content, behavior):</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span><span class="s2">     if isinstance(content, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
-<span class="ne">--&gt; </span><span class="mi">501</span><span class="s2">         return ak.highlevel.Array(content, behavior=behavior, kernels=None)</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="s2">     elif isinstance(content, ak.layout.Record):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, behavior, with_name, check_valid, cache, kernels)</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span><span class="s2">             layout = ak.operations.convert.to_kernels(layout, kernels, highlevel=False)</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">268</span><span class="s2">         self.layout = layout</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="s2">         self.behavior = behavior</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="s2">         docstr = self.layout.purelist_parameter(&quot;__doc__&quot;)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">layout</span><span class="nt">(self, layout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span><span class="s2">     def layout(self, layout):</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span><span class="s2">         if isinstance(layout, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
-<span class="ne">--&gt; </span><span class="mi">325</span><span class="s2">             self._layout = layout</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span><span class="s2">             self._numbaview = None</span>
-<span class="g g-Whitespace">    </span><span class="mi">327</span><span class="s2">         else:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/abc.py</span> in <span class="ni">__instancecheck__</span><span class="nt">(cls, instance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>         <span class="k">def</span> <span class="fm">__instancecheck__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>             <span class="sd">&quot;&quot;&quot;Override for isinstance(instance, cls).&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">139</span>             <span class="k">return</span> <span class="n">_abc_instancecheck</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span> 
+<span class="g g-Whitespace">    </span><span class="mi">141</span>         <span class="k">def</span> <span class="fm">__subclasscheck__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">subclass</span><span class="p">):</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1091,7 +1119,7 @@ Early stopping after 5 stale epochs
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab 1: Jets as Tabular Data using Energy Flow Polynomials</p>
+            <p class="prev-next-title">Tabular Data using Energy Flow Polynomials</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="1.4_gnn_in.html" title="next page">
@@ -1108,7 +1136,7 @@ Early stopping after 5 stale epochs
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Javier Duarte, Dylan Rankin, and Patrick McCormack<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

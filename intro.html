@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome to your Jupyter Book &#8212; My sample book</title>
+    <title>Welcome to your Jupyter Book &#8212; IAIFI Summer School Tutorials</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lab 1: Jets as Tabular Data using Energy Flow Polynomials" href="1.1_tabular_data_efps.html" />
+    <link rel="next" title="Tabular Data using Energy Flow Polynomials" href="1.1_tabular_data_efps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">My sample book</h1>
+      <h1 class="site-logo" id="site-title">IAIFI Summer School Tutorials</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -112,10 +112,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Representations, Networks, and Symmetries
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1.1_tabular_data_efps.html">
-   Lab 1: Jets as Tabular Data using Energy Flow Polynomials
+   Tabular Data using Energy Flow Polynomials
   </a>
  </li>
  <li class="toctree-l1">
@@ -133,24 +138,43 @@ const thebe_selector_output = ".output, .cell_output"
    Lorentz Network
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Model Compression and Fast Machine Learning
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2.1_getting_started.html">
-   Part 1: Getting started
+   Getting Started with hls4ml
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.2_advanced_config.html">
-   Part 2: Advanced Configuration
+   Advanced hls4ml Configuration
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.3_compression.html">
-   Part 3: Compression
+   Model Compression
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2.4_quantization.html">
-   Part 4: Quantization
+   Model Quantization
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   References
   </a>
  </li>
 </ul>
@@ -226,7 +250,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/jmduarte/iaifi-summer-school"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -243,7 +267,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/jmduarte/iaifi-summer-school/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -340,8 +364,9 @@ It shows off a few of the major file types, as well as some sample content.
 It does not go in-depth into any particular topic - check out <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> for more information.</p>
 <p>Check out the content pages bundled with this sample book to see more.</p>
 <div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Representations, Networks, and Symmetries</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html">Lab 1: Jets as Tabular Data using Energy Flow Polynomials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html">Tabular Data using Energy Flow Polynomials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html#download-dataset-using-jetnet-library">Download dataset using JetNet library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html#calculate-energy-flow-polynomials">Calculate Energy Flow Polynomials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html#split-data">Split data</a></li>
@@ -351,13 +376,24 @@ It does not go in-depth into any particular topic - check out <a class="referenc
 <li class="toctree-l1"><a class="reference internal" href="1.3_deep_sets.html">Deep Sets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.4_gnn_in.html">Interaction Network</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1.5_lorentz_network.html">Lorentz Network</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.1_getting_started.html">Part 1: Getting started</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Model Compression and Fast Machine Learning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="2.1_getting_started.html">Getting Started with hls4ml</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.1_getting_started.html#convert-the-model-to-fpga-firmware-with-hls4ml">Convert the model to FPGA firmware with hls4ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.2_advanced_config.html">Part 2: Advanced Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.3_compression.html">Part 3: Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.2_advanced_config.html">Advanced hls4ml Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.3_compression.html">Model Compression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.3_compression.html#convert-the-model-to-fpga-firmware-with-hls4ml">Convert the model to FPGA firmware with hls4ml</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.4_quantization.html">Part 4: Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.4_quantization.html">Model Quantization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.4_quantization.html#synthesize">Synthesize</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
 </ul>
 </div>
 </section>
@@ -392,7 +428,7 @@ It does not go in-depth into any particular topic - check out <a class="referenc
     <a class='right-next' id="next-link" href="1.1_tabular_data_efps.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 1: Jets as Tabular Data using Energy Flow Polynomials</p>
+        <p class="prev-next-title">Tabular Data using Energy Flow Polynomials</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -403,7 +439,7 @@ It does not go in-depth into any particular topic - check out <a class="referenc
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By The Jupyter Book Community<br/>
+    By Javier Duarte, Dylan Rankin, and Patrick McCormack<br/>
   
       &copy; Copyright 2022.<br/>
 </p>
