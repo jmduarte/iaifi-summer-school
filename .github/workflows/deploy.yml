@@ -23,7 +23,7 @@ jobs:
         python -m pip install --upgrade pip setuptools wheel
         python -m pip install --no-cache-dir -r book/requirements.txt
         python -m pip list
-	
+
     - name: Build the book
       shell: bash -l {0}
       run: |
