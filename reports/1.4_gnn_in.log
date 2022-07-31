@@ -27,7 +27,7 @@ local = False
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_4762/3307137688.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_4736/3307137688.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;32mimport[0m [0mtorch[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0;32mimport[0m [0mtorch_geometric[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mdevice[0m [0;34m=[0m [0mtorch[0m[0;34m.[0m[0mdevice[0m[0;34m([0m[0;34m"cuda:0"[0m [0;32mif[0m [0mtorch[0m[0;34m.[0m[0mcuda[0m[0;34m.[0m[0mis_available[0m[0;34m([0m[0;34m)[0m [0;32melse[0m [0;34m"cpu"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
