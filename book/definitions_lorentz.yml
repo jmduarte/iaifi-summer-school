@@ -1,0 +1,32 @@
+# 48 track-level features
+features: 
+ - track_pt
+ - track_mass
+ - track_ptrel
+ - track_erel
+ - track_etarel
+ - track_phirel
+
+# spectators to define mass/pT window
+spectators: 
+ - fj_sdmass
+ - fj_pt
+ - fj_eta
+ - fj_phi
+
+# 2 labels: QCD or Hbb (we'll reduce the following labels)
+labels:  
+ - label_QCD_b
+ - label_QCD_bb
+ - label_QCD_c
+ - label_QCD_cc
+ - label_QCD_others
+ - sample_isQCD
+ - label_H_bb
+
+nfeatures: 6
+nspectators: 4
+nlabels: 2
+
+# we're going to zero-pad up to 60 tracks
+ntracks: 60
