@@ -9,7 +9,7 @@ parts:
     - file: 1.1_tabular_data_efps.ipynb
     - file: 1.3_deep_sets.ipynb
     - file: 1.4_gnn_in.ipynb
-    - file: 1.5_lorentz_network.ipynb
+    - file: 1.5_gnn_lorentz.ipynb
   - caption: Model Compression and Fast Machine Learning
     chapters:
     - file: 2.1_getting_started.ipynb
