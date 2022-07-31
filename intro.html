@@ -21,7 +21,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -37,7 +37,7 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Lab 1: Jets as Tabular Data using Energy Flow Polynomials" href="1.1_tabular_data_efps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,18 +114,43 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+  <a class="reference internal" href="1.1_tabular_data_efps.html">
+   Lab 1: Jets as Tabular Data using Energy Flow Polynomials
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="1.3_deep_sets.html">
+   Deep Sets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="markdown-notebooks.html">
-   Notebooks with MyST Markdown
+  <a class="reference internal" href="1.4_gnn_in.html">
+   Interaction Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1.5_lorentz_network.html">
+   Lorentz Network
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.1_getting_started.html">
+   Part 1: Getting started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.2_advanced_config.html">
+   Part 2: Advanced Configuration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.3_compression.html">
+   Part 3: Compression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2.4_quantization.html">
+   Part 4: Quantization
   </a>
  </li>
 </ul>
@@ -316,9 +341,23 @@ It does not go in-depth into any particular topic - check out <a class="referenc
 <p>Check out the content pages bundled with this sample book to see more.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html">Lab 1: Jets as Tabular Data using Energy Flow Polynomials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html#download-dataset-using-jetnet-library">Download dataset using JetNet library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html#calculate-energy-flow-polynomials">Calculate Energy Flow Polynomials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html#split-data">Split data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html#plot-efps">Plot EFPs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html#train-boosted-decision-tree">Train Boosted Decision Tree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.1_tabular_data_efps.html#evaluate-bdt-performance">Evaluate BDT Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.3_deep_sets.html">Deep Sets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.4_gnn_in.html">Interaction Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.5_lorentz_network.html">Lorentz Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.1_getting_started.html">Part 1: Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.1_getting_started.html#convert-the-model-to-fpga-firmware-with-hls4ml">Convert the model to FPGA firmware with hls4ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.2_advanced_config.html">Part 2: Advanced Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.3_compression.html">Part 3: Compression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.3_compression.html#convert-the-model-to-fpga-firmware-with-hls4ml">Convert the model to FPGA firmware with hls4ml</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.4_quantization.html">Part 4: Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.4_quantization.html#synthesize">Synthesize</a></li>
 </ul>
 </div>
 </section>
@@ -350,10 +389,10 @@ It does not go in-depth into any particular topic - check out <a class="referenc
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="markdown.html" title="next page">
+    <a class='right-next' id="next-link" href="1.1_tabular_data_efps.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">Lab 1: Jets as Tabular Data using Energy Flow Polynomials</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
