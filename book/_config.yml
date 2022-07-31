@@ -30,6 +30,8 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  baseurl: "https://jduarte.physics.ucsd.edu/iaifi-summer-school/"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
 
 launch_buttons:
+  binderhub_ur: ""
   colab_url: "https://colab.research.google.com"
