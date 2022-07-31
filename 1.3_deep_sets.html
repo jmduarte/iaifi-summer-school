@@ -548,14 +548,14 @@ title="Print to PDF"
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "51ac8bb4280d4e47929727b734ca824e"}
+{"version_major": 2, "version_minor": 0, "model_id": "4f69cd8ff37a476db6cb4c367ff1a30b"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py:92: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor([feature_array[feat][i].to_numpy() for feat in self.features], dtype=torch.float)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4973</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5035</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">train_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">train_files</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">train_generator</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
@@ -577,18 +577,11 @@ title="Print to PDF"
 <span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, where)</span>
-<span class="g g-Whitespace">    </span><span class="mi">988</span>         <span class="n">have</span> <span class="n">the</span> <span class="n">same</span> <span class="n">dimension</span> <span class="k">as</span> <span class="n">the</span> <span class="n">array</span> <span class="n">being</span> <span class="n">indexed</span><span class="o">.</span>
-<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">990</span><span class="s2">         if not hasattr(self, &quot;_tracers&quot;):</span>
-<span class="g g-Whitespace">    </span><span class="mi">991</span><span class="s2">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="s2">         else:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, where)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1122</span><span class="s2">             else:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1123</span><span class="s2">                 raise AttributeError(</span>
-<span class="ne">-&gt; </span><span class="mi">1124</span><span class="s2">                     f&quot;no field named </span><span class="si">{where!r}</span><span class="s2">&quot; + ak._util.exception_suffix(__file__)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1125</span><span class="s2">                 )</span>
-<span class="g g-Whitespace">   </span><span class="mi">1126</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">995</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">ak</span><span class="o">.</span><span class="n">behaviors</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">ByteBehavior</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">996</span>             <span class="k">return</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">997</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">ak</span><span class="o">.</span><span class="n">behaviors</span><span class="o">.</span><span class="n">string</span><span class="o">.</span><span class="n">CharBehavior</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">998</span>             <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">999</span>         <span class="k">else</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
