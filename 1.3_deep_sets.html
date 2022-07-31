@@ -548,94 +548,47 @@ title="Print to PDF"
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "27a86687476c46a2ab9c27a22d4178b2"}
+{"version_major": 2, "version_minor": 0, "model_id": "51ac8bb4280d4e47929727b734ca824e"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py:92: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor([feature_array[feat][i].to_numpy() for feat in self.features], dtype=torch.float)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4761</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4973</span><span class="o">/</span><span class="mf">3483552077.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">train_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">train_files</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">train_generator</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">test_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">npad</span> <span class="o">=</span> <span class="n">ntracks</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">test_files</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">test_generator</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
 
 <span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py</span> in <span class="ni">process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="sd">         for raw_path in self.raw_file_names:</span>
-<span class="ne">---&gt; </span><span class="mi">61</span><span class="sd">             with uproot.open(raw_path, **get_file_handler(raw_path)) as root_file:</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span><span class="sd">                 tree = root_file[&#39;deepntuplizer/tree&#39;]</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>                         <span class="k">continue</span>
+<span class="ne">---&gt; </span><span class="mi">92</span>                 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">feature_array</span><span class="p">[</span><span class="n">feat</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>                 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">open</span><span class="nt">(path, object_cache, array_cache, custom_classes, decompression_executor, interpretation_executor, **options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span><span class="sd">     if object_path is None:</span>
-<span class="ne">--&gt; </span><span class="mi">152</span><span class="sd">         return file.root_directory</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="sd">     else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span><span class="sd">         return file.root_directory[object_path]</span>
+<span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/DeepSetsDataset.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>                     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>                         <span class="k">continue</span>
+<span class="ne">---&gt; </span><span class="mi">92</span>                 <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">feature_array</span><span class="p">[</span><span class="n">feat</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>                 <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>                     <span class="n">x</span> <span class="o">=</span> <span class="n">ConstantPad2d</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">npad</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mf">0.</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">root_directory</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">787</span><span class="sd">             {},</span>
-<span class="g g-Whitespace">    </span><span class="mi">788</span><span class="sd">             self,</span>
-<span class="ne">--&gt; </span><span class="mi">789</span><span class="sd">             self,</span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span><span class="sd">         )</span>
-<span class="g g-Whitespace">    </span><span class="mi">791</span><span class="sd"> </span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, where)</span>
+<span class="g g-Whitespace">    </span><span class="mi">988</span>         <span class="n">have</span> <span class="n">the</span> <span class="n">same</span> <span class="n">dimension</span> <span class="k">as</span> <span class="n">the</span> <span class="n">array</span> <span class="n">being</span> <span class="n">indexed</span><span class="o">.</span>
+<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">990</span><span class="s2">         if not hasattr(self, &quot;_tracers&quot;):</span>
+<span class="g g-Whitespace">    </span><span class="mi">991</span><span class="s2">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="s2">         else:</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">__init__</span><span class="nt">(self, path, cursor, context, file, parent)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1430</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1431</span><span class="sd">             # header_key is never used, but we do need to seek past it</span>
-<span class="ne">-&gt; </span><span class="mi">1432</span><span class="sd">             ReadOnlyKey(keys_chunk, keys_cursor, {}, file, self, read_strings=True)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1433</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1434</span><span class="sd">             num_keys = keys_cursor.field(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/reading.py</span> in <span class="ni">__init__</span><span class="nt">(self, chunk, cursor, context, file, parent, read_strings)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2267</span><span class="sd">             self._fSeekKey,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2268</span><span class="sd">             self._fSeekPdir,</span>
-<span class="ne">-&gt; </span><span class="mi">2269</span><span class="sd">         ) = cursor.fields(chunk, _key_format_small, context, move=False)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2270</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">2271</span><span class="sd">         if self.is_64bit:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/cursor.py</span> in <span class="ni">fields</span><span class="nt">(self, chunk, format, context, move)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="sd">         if move:</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span><span class="sd">             self._index = stop</span>
-<span class="ne">--&gt; </span><span class="mi">197</span><span class="sd">         return format.unpack(chunk.get(start, stop, self, context))</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span><span class="sd">     def field(self, chunk, format, context, move=True):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/chunk.py</span> in <span class="ni">get</span><span class="nt">(self, start, stop, cursor, context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">417</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="k">if</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">419</span>             <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">insist</span><span class="o">=</span><span class="n">stop</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">420</span>             <span class="n">local_start</span> <span class="o">=</span> <span class="n">start</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span>             <span class="n">local_stop</span> <span class="o">=</span> <span class="n">stop</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_start</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/chunk.py</span> in <span class="ni">wait</span><span class="nt">(self, insist)</span>
-<span class="g g-Whitespace">    </span><span class="mi">354</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span><span class="sd">         if self._raw_data is None:</span>
-<span class="ne">--&gt; </span><span class="mi">356</span><span class="sd">             self._raw_data = numpy.frombuffer(self._future.result(), dtype=self._dtype)</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span><span class="sd">             if insist is True:</span>
-<span class="g g-Whitespace">    </span><span class="mi">358</span><span class="sd">                 requirement = len(self._raw_data) == self._stop - self._start</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/uproot/source/futures.py</span> in <span class="ni">result</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="sd">         raises that exception on the thread on which it is called.</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">112</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_finished</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_excinfo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/threading.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">550</span>             <span class="n">signaled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_flag</span>
-<span class="g g-Whitespace">    </span><span class="mi">551</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">signaled</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">552</span>                 <span class="n">signaled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cond</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">553</span>             <span class="k">return</span> <span class="n">signaled</span>
-<span class="g g-Whitespace">    </span><span class="mi">554</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/threading.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="k">try</span><span class="p">:</span>    <span class="c1"># restore state no matter what (e.g., KeyboardInterrupt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>             <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">296</span>                 <span class="n">waiter</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>                 <span class="n">gotit</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span>             <span class="k">else</span><span class="p">:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1122</span><span class="s2">             else:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1123</span><span class="s2">                 raise AttributeError(</span>
+<span class="ne">-&gt; </span><span class="mi">1124</span><span class="s2">                     f&quot;no field named </span><span class="si">{where!r}</span><span class="s2">&quot; + ak._util.exception_suffix(__file__)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1125</span><span class="s2">                 )</span>
+<span class="g g-Whitespace">   </span><span class="mi">1126</span><span class="s2"> </span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
