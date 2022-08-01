@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['from DeepSetsDataset import DeepSetsDataset', '', "train_files = ['root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_11.root']", "test_files = ['root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/test/ntuple_merged_1.root']", '']
+['#If in colab', 'urlDSD="https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/DeepSetsDataset.py"', 'DSD = wget.download(urlDSD)', 'urlUtils="https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/utils.py"', 'utils = wget.download(urlUtils)']
 ...
-['train_generator.process()', '', 'test_generator = DeepSetsDataset(features, labels, spectators, n_events=4000, npad = ntracks,', '                             file_names=test_files)', 'test_generator.process()']
+['train_generator.process()', '', 'test_generator = DeepSetsDataset(features, labels, spectators, start_event=10001, stop_event=14001, npad = ntracks,', '                             file_names=train_files)', 'test_generator.process()']
 -------------------
 

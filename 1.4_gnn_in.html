@@ -559,14 +559,14 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "8104a771c74d4ef291914bd91ac98954"}
+{"version_major": 2, "version_minor": 0, "model_id": "60ffc6470383400d9efc7631bfb9f625"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/GraphDataset.py:111: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor([feature_array[feat][i].to_numpy() for feat in self.features], dtype=torch.float).T
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5103</span><span class="o">/</span><span class="mf">4186816177.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5169</span><span class="o">/</span><span class="mf">4186816177.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> 
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">graph_dataset</span> <span class="o">=</span> <span class="n">GraphDataset</span><span class="p">(</span><span class="s1">&#39;gdata_train&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
 <span class="ne">---&gt; </span><span class="mi">10</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">)</span>
@@ -609,25 +609,18 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 <span class="g g-Whitespace">    </span><span class="mi">113</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="o">=</span><span class="n">edge_index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">))</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, where)</span>
-<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">990</span><span class="s2">         if not hasattr(self, &quot;_tracers&quot;):</span>
-<span class="ne">--&gt; </span><span class="mi">991</span><span class="s2">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">993</span><span class="s2">             tmp = ak._connect._jax.jax_utils._jaxtracers_getitem(self, where)</span>
+<span class="g g-Whitespace">    </span><span class="mi">988</span>         <span class="n">have</span> <span class="n">the</span> <span class="n">same</span> <span class="n">dimension</span> <span class="k">as</span> <span class="n">the</span> <span class="n">array</span> <span class="n">being</span> <span class="n">indexed</span><span class="o">.</span>
+<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">990</span><span class="sd">         if not hasattr(self, &quot;_tracers&quot;):</span>
+<span class="g g-Whitespace">    </span><span class="mi">991</span><span class="sd">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
+<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="sd">         else:</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/_util.py</span> in <span class="ni">wrap</span><span class="nt">(content, behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="s2"> def wrap(content, behavior):</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span><span class="s2">     if isinstance(content, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
-<span class="ne">--&gt; </span><span class="mi">501</span><span class="s2">         return ak.highlevel.Array(content, behavior=behavior, kernels=None)</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="s2">     elif isinstance(content, ak.layout.Record):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, behavior, with_name, check_valid, cache, kernels)</span>
-<span class="g g-Whitespace">    </span><span class="mi">252</span><span class="s2">             )</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">254</span><span class="s2">         if not isinstance(layout, (ak.layout.Content, ak.partition.PartitionedArray)):</span>
-<span class="g g-Whitespace">    </span><span class="mi">255</span><span class="s2">             raise TypeError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">256</span><span class="s2">                 &quot;could not convert data into an ak.Array&quot;</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, where)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1108</span><span class="sd">         to add a field.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1109</span><span class="sd">         &quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1110</span>         <span class="k">if</span> <span class="n">where</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1111</span>             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="n">where</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1112</span>         <span class="k">else</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
