@@ -22,7 +22,8 @@ class GraphDataset(Dataset):
         spectators,
         transform=None,
         pre_transform=None,
-        n_events=-1,
+        start_event=0,
+        stop_event=10000,
         n_events_merge=1000,
         file_names=None,
         remove_unlabeled=True,
@@ -39,7 +40,9 @@ class GraphDataset(Dataset):
         self.features = features
         self.labels = labels
         self.spectators = spectators
-        self.n_events = n_events
+        self.n_events = stop_event-start_event
+        self.start_event = start_event
+        self.stop_event = stop_event
         self.n_events_merge = n_events_merge
         self.file_names = file_names
         self.remove_unlabeled = remove_unlabeled
@@ -87,15 +90,15 @@ class GraphDataset(Dataset):
                 tree = root_file["deepntuplizer/tree"]
 
                 feature_array = tree.arrays(
-                    self.features, entry_stop=self.n_events, library="ak"
+                    self.features, entry_start=self.start_event, entry_stop=self.stop_event, library="ak"
                 )
 
                 label_array_all = tree.arrays(
-                    self.labels, entry_stop=self.n_events, library="np"
+                    self.labels, entry_start=self.start_event, entry_stop=self.stop_event, library="np"
                 )
 
                 spec_array = tree.arrays(
-                    self.spectators, entry_stop=self.n_events, library="np"
+                    self.spectators, entry_start=self.start_event, entry_stop=self.stop_event, library="np"
                 )
 
             n_samples = label_array_all[self.labels[0]].shape[0]
@@ -187,6 +190,7 @@ if __name__ == "__main__":
         features,
         labels,
         spectators,
-        n_events=args.n_events,
+        start_event=args.start_event,
+        stop_event=args.stop_event,
         n_events_merge=args.n_events_merge,
     )
