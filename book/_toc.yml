@@ -7,6 +7,7 @@ parts:
   - caption: Representations, Networks, and Symmetries
     chapters:
     - file: 1.1_tabular_data_efps.ipynb
+    - file: 1.2_jet_images.ipynb
     - file: 1.3_deep_sets.ipynb
     - file: 1.4_gnn_in.ipynb
     - file: 1.5_gnn_lorentz.ipynb
