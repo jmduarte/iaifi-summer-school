@@ -501,9 +501,11 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch_geometric</span>
+
 <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
 <span class="n">local</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
 </div>
@@ -513,19 +515,19 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;definitions_lorentz.yml&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;definitions_lorentz.yml&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="c1"># The FullLoader parameter handles the conversion from YAML</span>
     <span class="c1"># scalar values to Python the dictionary format</span>
     <span class="n">definitions</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
-    
-<span class="n">features</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]</span>
-<span class="n">spectators</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s1">&#39;spectators&#39;</span><span class="p">]</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">]</span>
 
-<span class="n">nfeatures</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s1">&#39;nfeatures&#39;</span><span class="p">]</span>
-<span class="n">nspectators</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s1">&#39;nspectators&#39;</span><span class="p">]</span>
-<span class="n">nlabels</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s1">&#39;nlabels&#39;</span><span class="p">]</span>
-<span class="n">ntracks</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s1">&#39;ntracks&#39;</span><span class="p">]</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span>
+<span class="n">spectators</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s2">&quot;spectators&quot;</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s2">&quot;labels&quot;</span><span class="p">]</span>
+
+<span class="n">nfeatures</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s2">&quot;nfeatures&quot;</span><span class="p">]</span>
+<span class="n">nspectators</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s2">&quot;nspectators&quot;</span><span class="p">]</span>
+<span class="n">nlabels</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s2">&quot;nlabels&quot;</span><span class="p">]</span>
+<span class="n">ntracks</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s2">&quot;ntracks&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -541,18 +543,41 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 <img src="https://github.com/jmduarte/capstone-particle-physics-domain/raw/master/weeks/attributes.png" alt="attributes" width="500"><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">LorentzGraphDataset</span> <span class="kn">import</span> <span class="n">LorentzGraphDataset</span>
+
 <span class="k">if</span> <span class="n">local</span><span class="p">:</span>
-    <span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_10.root&#39;</span><span class="p">]</span>
-    <span class="n">file_names_test</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_0.root&#39;</span><span class="p">]</span>
+    <span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_10.root&quot;</span>
+    <span class="p">]</span>
+    <span class="n">file_names_test</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_0.root&quot;</span>
+    <span class="p">]</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_10.root&#39;</span><span class="p">]</span>
-    <span class="n">file_names_test</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/test/ntuple_merged_0.root&#39;</span><span class="p">]</span>
+    <span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_10.root&quot;</span>
+    <span class="p">]</span>
+    <span class="n">file_names_test</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/test/ntuple_merged_0.root&quot;</span>
+    <span class="p">]</span>
 
-<span class="n">graph_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span><span class="s1">&#39;ldata_train&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                             <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">)</span>
+<span class="n">graph_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span>
+    <span class="s2">&quot;ldata_train&quot;</span><span class="p">,</span>
+    <span class="n">features</span><span class="p">,</span>
+    <span class="n">labels</span><span class="p">,</span>
+    <span class="n">spectators</span><span class="p">,</span>
+    <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span>
+    <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">,</span>
+<span class="p">)</span>
 
-<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span><span class="s1">&#39;ldata_test&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-                             <span class="n">file_names</span><span class="o">=</span><span class="n">file_names_test</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span>
+    <span class="s2">&quot;ldata_test&quot;</span><span class="p">,</span>
+    <span class="n">features</span><span class="p">,</span>
+    <span class="n">labels</span><span class="p">,</span>
+    <span class="n">spectators</span><span class="p">,</span>
+    <span class="n">n_events</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span>
+    <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">file_names</span><span class="o">=</span><span class="n">file_names_test</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">test_dataset</span><span class="o">.</span><span class="n">features</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -565,26 +590,26 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "6b236e78d440427da4258fd477747928"}
-</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py:121: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
+{"version_major": 2, "version_minor": 0, "model_id": "261e4215c99a4c319035b42354839882"}
+</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py:150: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor(fourvec, dtype=torch.float).T
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5211</span><span class="o">/</span><span class="mf">588787648.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> 
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">graph_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span><span class="s1">&#39;ldata_train&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
-<span class="ne">---&gt; </span><span class="mi">10</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span><span class="s1">&#39;ldata_test&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4883</span><span class="o">/</span><span class="mf">2411793830.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">25</span>     <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> 
 
 <span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py</span> in <span class="ni">__init__</span><span class="nt">(self, root, features, labels, spectators, transform, pre_transform, n_events, n_events_merge, file_names, remove_unlabeled)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="bp">self</span><span class="o">.</span><span class="n">file_names</span> <span class="o">=</span> <span class="n">file_names</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>         <span class="bp">self</span><span class="o">.</span><span class="n">remove_unlabeled</span> <span class="o">=</span> <span class="n">remove_unlabeled</span>
-<span class="ne">---&gt; </span><span class="mi">35</span>         <span class="nb">super</span><span class="p">(</span><span class="n">LorentzGraphDataset</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">pre_transform</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span> 
-<span class="g g-Whitespace">     </span><span class="mi">37</span>     <span class="nd">@property</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="bp">self</span><span class="o">.</span><span class="n">file_names</span> <span class="o">=</span> <span class="n">file_names</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>         <span class="bp">self</span><span class="o">.</span><span class="n">remove_unlabeled</span> <span class="o">=</span> <span class="n">remove_unlabeled</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="nb">super</span><span class="p">(</span><span class="n">LorentzGraphDataset</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">transform</span><span class="p">,</span> <span class="n">pre_transform</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> 
+<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="nd">@property</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch_geometric/data/dataset.py</span> in <span class="ni">__init__</span><span class="nt">(self, root, transform, pre_transform, pre_filter)</span>
 <span class="g g-Whitespace">     </span><span class="mi">85</span> 
@@ -601,25 +626,27 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 <span class="g g-Whitespace">    </span><span class="mi">172</span>         <span class="n">path</span> <span class="o">=</span> <span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="s1">&#39;pre_transform.pt&#39;</span><span class="p">)</span>
 
 <span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py</span> in <span class="ni">process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>                 <span class="n">mass</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_mass&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>                 <span class="n">eta</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_etarel&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">+</span><span class="n">spec_array</span><span class="p">[</span><span class="s1">&#39;fj_eta&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">111</span>                 <span class="n">phi</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_phirel&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">+</span><span class="n">spec_array</span><span class="p">[</span><span class="s1">&#39;fj_phi&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>                 <span class="n">energy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pt</span><span class="o">*</span><span class="n">pt</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">eta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">eta</span><span class="p">)</span> <span class="o">+</span> <span class="n">mass</span><span class="o">*</span><span class="n">mass</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>                 <span class="n">px</span> <span class="o">=</span> <span class="n">pt</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>                         <span class="p">[</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>                         <span class="k">for</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">141</span>                             <span class="nb">range</span><span class="p">(</span><span class="n">n_particles</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_particles</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span>                         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span>                         <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span> <span class="n">n</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, where)</span>
-<span class="g g-Whitespace">    </span><span class="mi">988</span>         <span class="n">have</span> <span class="n">the</span> <span class="n">same</span> <span class="n">dimension</span> <span class="k">as</span> <span class="n">the</span> <span class="n">array</span> <span class="n">being</span> <span class="n">indexed</span><span class="o">.</span>
-<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">990</span><span class="s2">         if not hasattr(self, &quot;_tracers&quot;):</span>
-<span class="g g-Whitespace">    </span><span class="mi">991</span><span class="s2">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="s2">         else:</span>
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">stack</span><span class="nt">(*args, **kwargs)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, where)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1111</span><span class="s2">             return super().__getattribute__(where)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1112</span><span class="s2">         else:</span>
-<span class="ne">-&gt; </span><span class="mi">1113</span><span class="s2">             if where in self.layout.keys():</span>
-<span class="g g-Whitespace">   </span><span class="mi">1114</span><span class="s2">                 try:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1115</span><span class="s2">                     return self[where]</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/numpy/core/shape_base.py</span> in <span class="ni">stack</span><span class="nt">(arrays, axis, out)</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="n">_arrays_for_stack_dispatcher</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span> 
+<span class="ne">--&gt; </span><span class="mi">420</span>     <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">arrays</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;need at least one array to stack&#39;</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/numpy/core/shape_base.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="n">_arrays_for_stack_dispatcher</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span> 
+<span class="ne">--&gt; </span><span class="mi">420</span>     <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">arrays</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;need at least one array to stack&#39;</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -659,61 +686,79 @@ The stages of processing in a single GN block are:</p>
 <span class="n">hidden</span> <span class="o">=</span> <span class="mi">16</span>
 <span class="n">outputs</span> <span class="o">=</span> <span class="mi">2</span>
 
+
 <span class="k">class</span> <span class="nc">LorentzEdgeBlock</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">LorentzEdgeBlock</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">edge_mlp</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="n">Lin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> 
-                            <span class="n">ReLU</span><span class="p">(),</span>
-                            <span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">minkowski</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span>
-                                                    <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span>
-                                                    <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span>
-                                                    <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
-    <span class="k">def</span> <span class="nf">psi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edge_mlp</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="n">Lin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> <span class="n">ReLU</span><span class="p">(),</span> <span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minkowski</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+                <span class="p">],</span>
+                <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">innerprod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">minkowski</span><span class="p">),</span><span class="n">x2</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">psi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">innerprod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">minkowski</span><span class="p">),</span> <span class="n">x2</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">edge_attr</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
-        <span class="n">out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">src</span><span class="p">),</span> 
-                         <span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">dest</span><span class="p">),</span> 
-                         <span class="bp">self</span><span class="o">.</span><span class="n">psi</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span><span class="n">dest</span><span class="p">)),</span> 
-                         <span class="bp">self</span><span class="o">.</span><span class="n">psi</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">src</span><span class="o">-</span><span class="n">dest</span><span class="p">,</span><span class="n">src</span><span class="o">-</span><span class="n">dest</span><span class="p">))],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">src</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">dest</span><span class="p">),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">psi</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span> <span class="n">dest</span><span class="p">)),</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">psi</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">src</span> <span class="o">-</span> <span class="n">dest</span><span class="p">,</span> <span class="n">src</span> <span class="o">-</span> <span class="n">dest</span><span class="p">)),</span>
+            <span class="p">],</span>
+            <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">edge_mlp</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
 
 <span class="k">class</span> <span class="nc">LorentzNodeBlock</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">LorentzNodeBlock</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">node_mlp_1</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="n">Lin</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> 
-                              <span class="n">ReLU</span><span class="p">(),</span> 
-                              <span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">node_mlp_2</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="n">Lin</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> 
-                              <span class="n">ReLU</span><span class="p">(),</span> 
-                              <span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">minkowski</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span>
-                                                    <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span>
-                                                    <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],</span>
-                                                    <span class="p">[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node_mlp_1</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="n">Lin</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> <span class="n">ReLU</span><span class="p">(),</span> <span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">node_mlp_2</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="n">Lin</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> <span class="n">ReLU</span><span class="p">(),</span> <span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">minkowski</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="p">[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+                    <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span>
+                <span class="p">],</span>
+                <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">innerprod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">minkowski</span><span class="p">),</span><span class="n">x2</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">innerprod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">minkowski</span><span class="p">),</span> <span class="n">x2</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="p">,</span> <span class="n">edge_attr</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
         <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">edge_index</span>
-        <span class="n">out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">row</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="n">row</span><span class="p">]),</span> <span class="n">edge_attr</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">row</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="n">row</span><span class="p">]),</span> <span class="n">edge_attr</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_mlp_1</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
         <span class="n">out</span> <span class="o">=</span> <span class="n">scatter_mean</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dim_size</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-        <span class="n">out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">),</span> <span class="n">out</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">innerprod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">out</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">node_mlp_2</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
 
-    
+
 <span class="k">class</span> <span class="nc">GlobalBlock</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">GlobalBlock</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">global_mlp</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span>                               
-                              <span class="n">ReLU</span><span class="p">(),</span> 
-                              <span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">outputs</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">global_mlp</span> <span class="o">=</span> <span class="n">Seq</span><span class="p">(</span><span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> <span class="n">ReLU</span><span class="p">(),</span> <span class="n">Lin</span><span class="p">(</span><span class="n">hidden</span><span class="p">,</span> <span class="n">outputs</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="p">,</span> <span class="n">edge_attr</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
         <span class="n">out</span> <span class="o">=</span> <span class="n">scatter_mean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -723,15 +768,20 @@ The stages of processing in a single GN block are:</p>
 <span class="k">class</span> <span class="nc">LorentzInteractionNetwork</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">LorentzInteractionNetwork</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lorentzinteractionnetwork</span> <span class="o">=</span> <span class="n">MetaLayer</span><span class="p">(</span><span class="n">LorentzEdgeBlock</span><span class="p">(),</span> <span class="n">LorentzNodeBlock</span><span class="p">(),</span> <span class="n">GlobalBlock</span><span class="p">())</span>
-        
+        <span class="bp">self</span><span class="o">.</span><span class="n">lorentzinteractionnetwork</span> <span class="o">=</span> <span class="n">MetaLayer</span><span class="p">(</span>
+            <span class="n">LorentzEdgeBlock</span><span class="p">(),</span> <span class="n">LorentzNodeBlock</span><span class="p">(),</span> <span class="n">GlobalBlock</span><span class="p">()</span>
+        <span class="p">)</span>
+
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="p">,</span> <span class="n">batch</span><span class="p">):</span>
-        
-        <span class="n">x</span><span class="p">,</span> <span class="n">edge_attr</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lorentzinteractionnetwork</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">batch</span><span class="p">)</span>
+
+        <span class="n">x</span><span class="p">,</span> <span class="n">edge_attr</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lorentzinteractionnetwork</span><span class="p">(</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">batch</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">u</span>
-    
+
+
 <span class="n">model</span> <span class="o">=</span> <span class="n">LorentzInteractionNetwork</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">1e-6</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -744,11 +794,11 @@ The stages of processing in a single GN block are:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-    
-    <span class="n">xentropy</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 
-    <span class="n">sum_loss</span> <span class="o">=</span> <span class="mf">0.</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">loader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">total</span><span class="o">/</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="n">leave</span><span class="p">)</span>
+    <span class="n">xentropy</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+
+    <span class="n">sum_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">loader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">total</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="n">leave</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -756,17 +806,18 @@ The stages of processing in a single GN block are:</p>
         <span class="n">batch_loss_item</span> <span class="o">=</span> <span class="n">xentropy</span><span class="p">(</span><span class="n">batch_output</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
         <span class="n">sum_loss</span> <span class="o">+=</span> <span class="n">batch_loss_item</span>
         <span class="n">t</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="s2">&quot;loss = </span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">batch_loss_item</span><span class="p">))</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span> <span class="c1"># to show immediately the update</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>  <span class="c1"># to show immediately the update</span>
 
-    <span class="k">return</span> <span class="n">sum_loss</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sum_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">total</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
-    
-    <span class="n">xentropy</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 
-    <span class="n">sum_loss</span> <span class="o">=</span> <span class="mf">0.</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">loader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">total</span><span class="o">/</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="n">leave</span><span class="p">)</span>
+    <span class="n">xentropy</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+
+    <span class="n">sum_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">loader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">total</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="n">leave</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
         <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -776,11 +827,11 @@ The stages of processing in a single GN block are:</p>
         <span class="n">batch_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
         <span class="n">batch_loss_item</span> <span class="o">=</span> <span class="n">batch_loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
         <span class="n">t</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="s2">&quot;loss = </span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">batch_loss_item</span><span class="p">)</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span> <span class="c1"># to show immediately the update</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>  <span class="c1"># to show immediately the update</span>
         <span class="n">sum_loss</span> <span class="o">+=</span> <span class="n">batch_loss_item</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-    
-    <span class="k">return</span> <span class="n">sum_loss</span><span class="o">/</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sum_loss</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -793,23 +844,33 @@ The stages of processing in a single GN block are:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch_geometric.data</span> <span class="kn">import</span> <span class="n">Data</span><span class="p">,</span> <span class="n">DataListLoader</span><span class="p">,</span> <span class="n">Batch</span>
 <span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">random_split</span>
 
+
 <span class="k">def</span> <span class="nf">collate</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
     <span class="n">l</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="p">[])</span>
     <span class="k">return</span> <span class="n">Batch</span><span class="o">.</span><span class="n">from_data_list</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 
+
 <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">valid_frac</span> <span class="o">=</span> <span class="mf">0.20</span>
 <span class="n">full_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">graph_dataset</span><span class="p">)</span>
-<span class="n">valid_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">valid_frac</span><span class="o">*</span><span class="n">full_length</span><span class="p">)</span>
+<span class="n">valid_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">valid_frac</span> <span class="o">*</span> <span class="n">full_length</span><span class="p">)</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
 
-<span class="n">train_dataset</span><span class="p">,</span> <span class="n">valid_dataset</span> <span class="o">=</span> <span class="n">random_split</span><span class="p">(</span><span class="n">graph_dataset</span><span class="p">,</span> <span class="p">[</span><span class="n">full_length</span><span class="o">-</span><span class="n">valid_num</span><span class="p">,</span><span class="n">valid_num</span><span class="p">])</span>
+<span class="n">train_dataset</span><span class="p">,</span> <span class="n">valid_dataset</span> <span class="o">=</span> <span class="n">random_split</span><span class="p">(</span>
+    <span class="n">graph_dataset</span><span class="p">,</span> <span class="p">[</span><span class="n">full_length</span> <span class="o">-</span> <span class="n">valid_num</span><span class="p">,</span> <span class="n">valid_num</span><span class="p">]</span>
+<span class="p">)</span>
 
-<span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataListLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataListLoader</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
 <span class="n">train_loader</span><span class="o">.</span><span class="n">collate_fn</span> <span class="o">=</span> <span class="n">collate</span>
-<span class="n">valid_loader</span> <span class="o">=</span> <span class="n">DataListLoader</span><span class="p">(</span><span class="n">valid_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">valid_loader</span> <span class="o">=</span> <span class="n">DataListLoader</span><span class="p">(</span>
+    <span class="n">valid_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
 <span class="n">valid_loader</span><span class="o">.</span><span class="n">collate_fn</span> <span class="o">=</span> <span class="n">collate</span>
-<span class="n">test_loader</span> <span class="o">=</span> <span class="n">DataListLoader</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">test_loader</span> <span class="o">=</span> <span class="n">DataListLoader</span><span class="p">(</span>
+    <span class="n">test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
 <span class="n">test_loader</span><span class="o">.</span><span class="n">collate_fn</span> <span class="o">=</span> <span class="n">collate</span>
 
 
@@ -850,22 +911,35 @@ The stages of processing in a single GN block are:</p>
 <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_epochs</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
-    <span class="n">loss</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">train_samples</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">epoch</span><span class="o">==</span><span class="n">n_epochs</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">valid_loss</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">valid_loader</span><span class="p">,</span> <span class="n">valid_samples</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">epoch</span><span class="o">==</span><span class="n">n_epochs</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Epoch: </span><span class="si">{:02d}</span><span class="s1">, Training Loss:   </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">loss</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;           Validation Loss: </span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">valid_loss</span><span class="p">))</span>
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span>
+        <span class="n">model</span><span class="p">,</span>
+        <span class="n">optimizer</span><span class="p">,</span>
+        <span class="n">train_loader</span><span class="p">,</span>
+        <span class="n">train_samples</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">leave</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">epoch</span> <span class="o">==</span> <span class="n">n_epochs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">valid_loss</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span>
+        <span class="n">model</span><span class="p">,</span>
+        <span class="n">valid_loader</span><span class="p">,</span>
+        <span class="n">valid_samples</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">leave</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">epoch</span> <span class="o">==</span> <span class="n">n_epochs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Epoch: </span><span class="si">{:02d}</span><span class="s2">, Training Loss:   </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">loss</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;           Validation Loss: </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">valid_loss</span><span class="p">))</span>
 
     <span class="k">if</span> <span class="n">valid_loss</span> <span class="o">&lt;</span> <span class="n">best_valid_loss</span><span class="p">:</span>
         <span class="n">best_valid_loss</span> <span class="o">=</span> <span class="n">valid_loss</span>
-        <span class="n">modpath</span> <span class="o">=</span> <span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;lorentznetwork_best.pth&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;New best model saved to:&#39;</span><span class="p">,</span><span class="n">modpath</span><span class="p">)</span>
-        <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span><span class="n">modpath</span><span class="p">)</span>
+        <span class="n">modpath</span> <span class="o">=</span> <span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;lorentznetwork_best.pth&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New best model saved to:&quot;</span><span class="p">,</span> <span class="n">modpath</span><span class="p">)</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="n">modpath</span><span class="p">)</span>
         <span class="n">stale_epochs</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Stale epoch&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stale epoch&quot;</span><span class="p">)</span>
         <span class="n">stale_epochs</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">stale_epochs</span> <span class="o">&gt;=</span> <span class="n">patience</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Early stopping after </span><span class="si">%i</span><span class="s1"> stale epochs&#39;</span><span class="o">%</span><span class="k">patience</span>)
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Early stopping after </span><span class="si">%i</span><span class="s2"> stale epochs&quot;</span> <span class="o">%</span> <span class="n">patience</span><span class="p">)</span>
         <span class="k">break</span>
 </pre></div>
 </div>
@@ -899,15 +973,15 @@ New best model saved to: lorentznetwork_best.pth
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">),</span><span class="n">total</span><span class="o">=</span><span class="n">test_samples</span><span class="o">/</span><span class="n">batch_size</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">test_samples</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">y_predict</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">track_pt</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">data</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-    <span class="n">batchmask</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="o">*</span><span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">data</span><span class="o">.</span><span class="n">batch</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">track_pt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">batchmask</span><span class="o">!=</span><span class="n">data</span><span class="o">.</span><span class="n">batch</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">batch_output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">edge_index</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">batch</span><span class="p">)</span>    
+    <span class="n">batchmask</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="o">-</span><span class="mf">1.0</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">data</span><span class="o">.</span><span class="n">batch</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">track_pt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">batchmask</span> <span class="o">!=</span> <span class="n">data</span><span class="o">.</span><span class="n">batch</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">batch_output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">edge_index</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">batch</span><span class="p">)</span>
     <span class="n">y_predict</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">batch_output</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
     <span class="n">y_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
 <span class="n">track_pt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">track_pt</span><span class="p">)</span>
@@ -926,29 +1000,40 @@ New best model saved to: lorentznetwork_best.pth
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">mplhep</span> <span class="k">as</span> <span class="nn">hep</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">hep</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">ROOT</span><span class="p">)</span>
 <span class="c1"># create ROC curves</span>
-<span class="n">fpr_lorentz</span><span class="p">,</span> <span class="n">tpr_lorentz</span><span class="p">,</span> <span class="n">threshold_lorentz</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">y_predict</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;lorentz_roc.npy&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">fpr_lorentz</span><span class="p">,</span> <span class="n">tpr_lorentz</span><span class="p">,</span> <span class="n">threshold_lorentz</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">y_predict</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;lorentz_roc.npy&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">fpr_lorentz</span><span class="p">)</span>
     <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">tpr_lorentz</span><span class="p">)</span>
     <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">threshold_lorentz</span><span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;deepset_roc.npy&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;deepset_roc.npy&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">fpr_deepset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">tpr_deepset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
     <span class="n">threshold_deepset</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    
+
 <span class="c1"># plot ROC curves</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpr_deepset</span><span class="p">,</span> <span class="n">fpr_deepset</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;DeepSet, AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_deepset</span><span class="p">,</span><span class="n">tpr_deepset</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpr_lorentz</span><span class="p">,</span> <span class="n">fpr_lorentz</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Lorentz GNN, AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_lorentz</span><span class="p">,</span><span class="n">tpr_lorentz</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;True positive rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;False positive rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">tpr_deepset</span><span class="p">,</span>
+    <span class="n">fpr_deepset</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;DeepSet, AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_deepset</span><span class="p">,</span> <span class="n">tpr_deepset</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">tpr_lorentz</span><span class="p">,</span>
+    <span class="n">fpr_lorentz</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Lorentz GNN, AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_lorentz</span><span class="p">,</span> <span class="n">tpr_lorentz</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;True positive rate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;False positive rate&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -962,22 +1047,41 @@ New best model saved to: lorentznetwork_best.pth
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">mplhep</span> <span class="k">as</span> <span class="nn">hep</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">hep</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">ROOT</span><span class="p">)</span>
 <span class="c1"># create ROC curves</span>
-<span class="n">pt_split</span><span class="o">=</span><span class="mf">5.</span>
-<span class="n">fpr_lorentz_lowb</span><span class="p">,</span> <span class="n">tpr_lorentz_lowb</span><span class="p">,</span> <span class="n">threshold_lorentz_lowb</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="n">track_pt</span><span class="o">&lt;=</span><span class="n">pt_split</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">y_predict</span><span class="p">[</span><span class="n">track_pt</span><span class="o">&lt;=</span><span class="n">pt_split</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">fpr_lorentz_highb</span><span class="p">,</span> <span class="n">tpr_lorentz_highb</span><span class="p">,</span> <span class="n">threshold_lorentz_highb</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="n">track_pt</span><span class="o">&gt;</span><span class="n">pt_split</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">y_predict</span><span class="p">[</span><span class="n">track_pt</span><span class="o">&gt;</span><span class="n">pt_split</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-    
+<span class="n">pt_split</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">fpr_lorentz_lowb</span><span class="p">,</span> <span class="n">tpr_lorentz_lowb</span><span class="p">,</span> <span class="n">threshold_lorentz_lowb</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span>
+    <span class="n">y_test</span><span class="p">[</span><span class="n">track_pt</span> <span class="o">&lt;=</span> <span class="n">pt_split</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">y_predict</span><span class="p">[</span><span class="n">track_pt</span> <span class="o">&lt;=</span> <span class="n">pt_split</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">fpr_lorentz_highb</span><span class="p">,</span> <span class="n">tpr_lorentz_highb</span><span class="p">,</span> <span class="n">threshold_lorentz_highb</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span>
+    <span class="n">y_test</span><span class="p">[</span><span class="n">track_pt</span> <span class="o">&gt;</span> <span class="n">pt_split</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="n">y_predict</span><span class="p">[</span><span class="n">track_pt</span> <span class="o">&gt;</span> <span class="n">pt_split</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+
 <span class="c1"># plot ROC curves</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpr_lorentz_lowb</span><span class="p">,</span> <span class="n">fpr_lorentz_lowb</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Lorentz GNN (low pT), AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_lorentz_lowb</span><span class="p">,</span><span class="n">tpr_lorentz_lowb</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpr_lorentz_highb</span><span class="p">,</span> <span class="n">fpr_lorentz_highb</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Lorentz GNN (high pT), AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">auc</span><span class="p">(</span><span class="n">fpr_lorentz_highb</span><span class="p">,</span><span class="n">tpr_lorentz_highb</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;True positive rate&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;False positive rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">tpr_lorentz_lowb</span><span class="p">,</span>
+    <span class="n">fpr_lorentz_lowb</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Lorentz GNN (low pT), AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">auc</span><span class="p">(</span><span class="n">fpr_lorentz_lowb</span><span class="p">,</span> <span class="n">tpr_lorentz_lowb</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">tpr_lorentz_highb</span><span class="p">,</span>
+    <span class="n">fpr_lorentz_highb</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Lorentz GNN (high pT), AUC = </span><span class="si">{:.1f}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">auc</span><span class="p">(</span><span class="n">fpr_lorentz_highb</span><span class="p">,</span> <span class="n">tpr_lorentz_highb</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="p">),</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;True positive rate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;False positive rate&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>

@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# define callbacks', 'from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau', '', "early_stopping = EarlyStopping(monitor='val_loss', patience=5)", 'reduce_lr = ReduceLROnPlateau(patience=5,factor=0.5)']
+['# define callbacks', 'from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau', '', 'early_stopping = EarlyStopping(monitor="val_loss", patience=5)', 'reduce_lr = ReduceLROnPlateau(patience=5, factor=0.5)']
 ...
-['                                        shuffle=True,', '                                        callbacks = callbacks, ', '                                        verbose=0)', '# reload best weights', "keras_model_conv2d.load_weights('keras_model_conv2d_best.h5')"]
+['history_conv2d = keras_model_conv2d.fit(', '    X, y, validation_split=0.2, epochs=20, shuffle=True, callbacks=callbacks, verbose=0', ')', '# reload best weights', 'keras_model_conv2d.load_weights("keras_model_conv2d_best.h5")']
 -------------------
 

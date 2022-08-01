@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['from LorentzGraphDataset import LorentzGraphDataset', 'if local:', "    file_names = ['/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_10.root']", "    file_names_test = ['/teams/DSC180A_FA20_A00/b06particlephysics/test/ntuple_merged_0.root']", 'else:']
+['from LorentzGraphDataset import LorentzGraphDataset', '', 'if local:', '    file_names = [', '        "/teams/DSC180A_FA20_A00/b06particlephysics/train/ntuple_merged_10.root"']
 ...
-['                             file_names=file_names)', '', "test_dataset = LorentzGraphDataset('ldata_test', features, labels, spectators, n_events=2000, n_events_merge=1, ", '                             file_names=file_names_test)', 'print(test_dataset.features)']
+['    n_events=2000,', '    n_events_merge=1,', '    file_names=file_names_test,', ')', 'print(test_dataset.features)']
 -------------------
 

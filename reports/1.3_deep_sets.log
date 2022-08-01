@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['#If in colab', 'urlDSD="https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/DeepSetsDataset.py"', 'DSD = wget.download(urlDSD)', 'urlUtils="https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/utils.py"', 'utils = wget.download(urlUtils)']
+['# If in colab', 'urlDSD = "https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/DeepSetsDataset.py"', 'DSD = wget.download(urlDSD)', 'urlUtils = (', '    "https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/utils.py"']
 ...
-['train_generator.process()', '', 'test_generator = DeepSetsDataset(features, labels, spectators, start_event=10001, stop_event=14001, npad = ntracks,', '                             file_names=train_files)', 'test_generator.process()']
+['    stop_event=14001,', '    npad=ntracks,', '    file_names=train_files,', ')', 'test_generator.process()']
 -------------------
 

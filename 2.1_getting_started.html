@@ -596,14 +596,14 @@ E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are y
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (3.5.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (4.34.4)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (1.4.4)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (2.8.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (1.21.6)
 Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (21.3)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (3.0.9)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (0.11.0)
-Requirement already satisfied: numpy&gt;=1.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (1.21.6)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (4.34.4)
 Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (9.2.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (1.4.4)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (3.0.9)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (2.8.2)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (0.11.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from kiwisolver&gt;=1.0.1-&gt;matplotlib) (4.3.0)
@@ -613,8 +613,8 @@ Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting hls4ml[profiling]
-  Cloning https://github.com/fastmachinelearning/hls4ml.git (to revision main) to /tmp/pip-install-aqrqc1_n/hls4ml_311df35a2bde4bf3a3cc86bc2cd7f446
-  Running command git clone --filter=blob:none --quiet https://github.com/fastmachinelearning/hls4ml.git /tmp/pip-install-aqrqc1_n/hls4ml_311df35a2bde4bf3a3cc86bc2cd7f446
+  Cloning https://github.com/fastmachinelearning/hls4ml.git (to revision main) to /tmp/pip-install-nfsuyrkt/hls4ml_f87eb4ec5f824f20b2a2c39857de7021
+  Running command git clone --filter=blob:none --quiet https://github.com/fastmachinelearning/hls4ml.git /tmp/pip-install-nfsuyrkt/hls4ml_f87eb4ec5f824f20b2a2c39857de7021
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Resolved https://github.com/fastmachinelearning/hls4ml.git to commit 62046d799a4dbec150addc7f78fea5b579efeda1
@@ -628,7 +628,9 @@ Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3
 ?25hRequirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.21.6)
 Requirement already satisfied: six in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.16.0)
 Requirement already satisfied: pyyaml in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (6.0)
-Requirement already satisfied: h5py in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (3.7.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: h5py in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (3.7.0)
 Requirement already satisfied: onnx&gt;=1.4.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.12.0)
 Requirement already satisfied: calmjs.parse in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.3.0)
 Requirement already satisfied: tabulate in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (0.8.10)
@@ -638,77 +640,77 @@ Requirement already satisfied: pandas in /opt/hostedtoolcache/Python/3.7.13/x64/
 Requirement already satisfied: seaborn in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (0.11.2)
 Requirement already satisfied: matplotlib in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (3.5.2)
 Requirement already satisfied: typing-extensions&gt;=3.6.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from onnx&gt;=1.4.0-&gt;hls4ml[profiling]) (4.3.0)
+Requirement already satisfied: protobuf&lt;=3.20.1,&gt;=3.12.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from onnx&gt;=1.4.0-&gt;hls4ml[profiling]) (3.19.4)
+Requirement already satisfied: ply&gt;=3.6 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from calmjs.parse-&gt;hls4ml[profiling]) (3.11)
+Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from calmjs.parse-&gt;hls4ml[profiling]) (63.3.0)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (2.8.2)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (3.0.9)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (0.11.0)
+Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (9.2.0)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (4.34.4)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (21.3)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (1.4.4)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: protobuf&lt;=3.20.1,&gt;=3.12.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from onnx&gt;=1.4.0-&gt;hls4ml[profiling]) (3.19.4)
-Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from calmjs.parse-&gt;hls4ml[profiling]) (63.3.0)
-Requirement already satisfied: ply&gt;=3.6 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from calmjs.parse-&gt;hls4ml[profiling]) (3.11)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (4.34.4)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (1.4.4)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (0.11.0)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (3.0.9)
-Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (9.2.0)
-Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (21.3)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (2.8.2)
-Requirement already satisfied: pytz&gt;=2017.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pandas-&gt;hls4ml[profiling]) (2022.1)
-Requirement already satisfied: networkx&gt;=2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (2.6.3)
-Requirement already satisfied: tensorflow-model-optimization&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (0.7.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2017.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pandas-&gt;hls4ml[profiling]) (2022.1)
+Requirement already satisfied: scipy&gt;=1.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.7.3)
 Requirement already satisfied: tqdm&gt;=4.48.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (4.64.0)
 Requirement already satisfied: pyparser in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scikit-learn&gt;=0.23.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.0.2)
-Requirement already satisfied: scipy&gt;=1.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.7.3)
+Requirement already satisfied: networkx&gt;=2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (2.6.3)
 Requirement already satisfied: keras-tuner&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.1.3)
+Requirement already satisfied: scikit-learn&gt;=0.23.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.0.2)
+Requirement already satisfied: tensorflow-model-optimization&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (0.7.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.28.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipython in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (7.34.0)
+Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.28.1)
 Requirement already satisfied: tensorboard in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.9.1)
 Requirement already satisfied: kt-legacy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.0.4)
-Requirement already satisfied: ipython in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (7.34.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.1.0)
-Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.1.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.1.0)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.1.0)
 Requirement already satisfied: dm-tree~=0.1.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorflow-model-optimization&gt;=0.2.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.1.7)
-Requirement already satisfied: parse==1.6.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyparser-&gt;qkeras-&gt;hls4ml[profiling]) (1.6.5)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pygments in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.12.0)
-Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.1.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parse==1.6.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyparser-&gt;qkeras-&gt;hls4ml[profiling]) (1.6.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.1.1)
 Requirement already satisfied: traitlets&gt;=4.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.3.0)
 Requirement already satisfied: pickleshare in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.7.5)
-Requirement already satisfied: jedi&gt;=0.16 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.18.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.8.0)
+Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.8.0)
 Requirement already satisfied: backcall in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.2.0)
 Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.0.30)
 Requirement already satisfied: matplotlib-inline in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.1.3)
+Requirement already satisfied: jedi&gt;=0.16 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.18.1)
+Requirement already satisfied: pygments in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.12.0)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.26.11)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.3)
 Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.1.0)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2022.6.15)
-Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.9.1)
-Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.4.6)
-Requirement already satisfied: absl-py&gt;=0.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.2.0)
-Requirement already satisfied: werkzeug&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.2.1)
-Requirement already satisfied: grpcio&gt;=1.24.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.48.0)
-Requirement already satisfied: wheel&gt;=0.26 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.37.1)
-Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.8.1)
-Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.6.1)
-Requirement already satisfied: markdown&gt;=2.6.8 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.4.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.2.0)
-Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.2.8)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wheel&gt;=0.26 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.37.1)
+Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.6.1)
+Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.4.6)
+Requirement already satisfied: markdown&gt;=2.6.8 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.4.1)
+Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.8.1)
+Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.9.1)
+Requirement already satisfied: absl-py&gt;=0.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.2.0)
+Requirement already satisfied: grpcio&gt;=1.24.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.48.0)
+Requirement already satisfied: werkzeug&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.2.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.2.8)
+Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.2.0)
 Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.9)
 Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.3.1)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.8.3)
+Requirement already satisfied: importlib-metadata&gt;=4.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.12.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.8.3)
-Requirement already satisfied: importlib-metadata&gt;=4.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.12.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.7.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.7.0)
 Requirement already satisfied: wcwidth in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.2.5)
 </pre></div>
 </div>
@@ -716,67 +718,65 @@ Requirement already satisfied: wcwidth in /opt/hostedtoolcache/Python/3.7.13/x64
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from importlib-metadata&gt;=4.4-&gt;markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.8.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.4.8)
+Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.4.8)
 Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.2.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qkeras==0.9.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (0.9.0)
+Requirement already satisfied: pyparser in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.0)
+Requirement already satisfied: scikit-learn&gt;=0.23.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.0.2)
+Requirement already satisfied: tensorflow-model-optimization&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (0.7.3)
+Requirement already satisfied: networkx&gt;=2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (2.6.3)
 Requirement already satisfied: tqdm&gt;=4.48.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (4.64.0)
 Requirement already satisfied: scipy&gt;=1.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.7.3)
 Requirement already satisfied: keras-tuner&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.1.3)
-Requirement already satisfied: scikit-learn&gt;=0.23.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.0.2)
-Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.21.6)
 Requirement already satisfied: setuptools&gt;=41.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (63.3.0)
-Requirement already satisfied: networkx&gt;=2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (2.6.3)
-Requirement already satisfied: pyparser in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.0)
-Requirement already satisfied: tensorflow-model-optimization&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (0.7.3)
+Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.21.6)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.28.1)
-Requirement already satisfied: kt-legacy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.0.4)
 Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (21.3)
 Requirement already satisfied: tensorboard in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.9.1)
+Requirement already satisfied: kt-legacy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.0.4)
 Requirement already satisfied: ipython in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (7.34.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras==0.9.0) (1.1.0)
 Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras==0.9.0) (3.1.0)
-Requirement already satisfied: dm-tree~=0.1.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorflow-model-optimization&gt;=0.2.1-&gt;qkeras==0.9.0) (0.1.7)
 Requirement already satisfied: six~=1.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorflow-model-optimization&gt;=0.2.1-&gt;qkeras==0.9.0) (1.16.0)
+Requirement already satisfied: dm-tree~=0.1.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorflow-model-optimization&gt;=0.2.1-&gt;qkeras==0.9.0) (0.1.7)
 Requirement already satisfied: parse==1.6.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyparser-&gt;qkeras==0.9.0) (1.6.5)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pygments in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.12.0)
-Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.1.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: traitlets&gt;=4.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.3.0)
 Requirement already satisfied: pickleshare in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.7.5)
 Requirement already satisfied: matplotlib-inline in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.1.3)
-Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.8.0)
-Requirement already satisfied: traitlets&gt;=4.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.3.0)
-Requirement already satisfied: jedi&gt;=0.16 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.18.1)
-Requirement already satisfied: backcall in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.2.0)
 Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.0.30)
+Requirement already satisfied: pygments in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.12.0)
+Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.8.0)
+Requirement already satisfied: backcall in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.2.0)
+Requirement already satisfied: jedi&gt;=0.16 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.18.1)
+Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.1.1)
 Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from packaging-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.0.9)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.3)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2022.6.15)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.3)
 Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.1.0)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.26.11)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: grpcio&gt;=1.24.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.48.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.26.11)
+Requirement already satisfied: grpcio&gt;=1.24.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.48.0)
 Requirement already satisfied: wheel&gt;=0.26 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.37.1)
-Requirement already satisfied: werkzeug&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.2.1)
-Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.9.1)
-Requirement already satisfied: absl-py&gt;=0.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.2.0)
 Requirement already satisfied: markdown&gt;=2.6.8 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.4.1)
-Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.6.1)
-Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.4.6)
 Requirement already satisfied: protobuf&lt;3.20,&gt;=3.9.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.19.4)
+Requirement already satisfied: werkzeug&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.2.1)
+Requirement already satisfied: absl-py&gt;=0.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.2.0)
+Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.4.6)
+Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.6.1)
+Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.9.1)
 Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.8.1)
 Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.2.8)
-Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.2.0)
 Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.9)
+Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.2.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.3.1)
@@ -791,10 +791,10 @@ Requirement already satisfied: wcwidth in /opt/hostedtoolcache/Python/3.7.13/x64
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: typing-extensions&gt;=3.6.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from importlib-metadata&gt;=4.4-&gt;markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.3.0)
 Requirement already satisfied: zipp&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from importlib-metadata&gt;=4.4-&gt;markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.8.1)
-Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.4.8)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.2.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.4.8)
+Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.2.0)
 </pre></div>
 </div>
 </div>
@@ -806,21 +806,23 @@ Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcach
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span><span class="p">,</span> <span class="n">StandardScaler</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+
 <span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
-<span class="c1">#import os</span>
-<span class="c1">#os.environ[&#39;PATH&#39;] = &#39;/opt/Xilinx/Vivado/2019.2/bin:&#39; + os.environ[&#39;PATH&#39;]</span>
+<span class="c1"># import os</span>
+<span class="c1"># os.environ[&#39;PATH&#39;] = &#39;/opt/Xilinx/Vivado/2019.2/bin:&#39; + os.environ[&#39;PATH&#39;]</span>
 <span class="c1"># for this tutorial we wont be actually running Vivado, so I have commented these lines out</span>
 <span class="c1">#     but if you want to look into actually running on an FPGA then simply uncomment these lines</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:52:42.270419: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.13/x64/lib
-2022-08-01 01:52:42.270446: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:54:59.410941: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.13/x64/lib
+2022-08-01 01:54:59.410968: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
 </div>
@@ -829,17 +831,17 @@ Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcach
 <h2>Fetch the jet tagging dataset from Open ML<a class="headerlink" href="#fetch-the-jet-tagging-dataset-from-open-ml" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="s1">&#39;hls4ml_lhc_jets_hlf&#39;</span><span class="p">)</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="s2">&quot;hls4ml_lhc_jets_hlf&quot;</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5249</span><span class="o">/</span><span class="mf">288988315.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="s1">&#39;hls4ml_lhc_jets_hlf&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4926</span><span class="o">/</span><span class="mf">1830636180.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="s2">&quot;hls4ml_lhc_jets_hlf&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/sklearn/datasets/_openml.py</span> in <span class="ni">fetch_openml</span><span class="nt">(name, version, data_id, data_home, target_column, cache, return_X_y, as_frame)</span>
 <span class="g g-Whitespace">    </span><span class="mi">965</span>         <span class="n">target_columns</span><span class="o">=</span><span class="n">target_columns</span><span class="p">,</span>
@@ -863,81 +865,74 @@ Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcach
 <span class="g g-Whitespace">     </span><span class="mi">63</span>                 <span class="k">raise</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/sklearn/datasets/_openml.py</span> in <span class="ni">_load_arff_response</span><span class="nt">(url, data_home, return_type, encode_nominal, parse_arff, md5_checksum)</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>     <span class="sd">&quot;&quot;&quot;Load arff data with url and parses arff response with parse_arff&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">511</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">_open_openml_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data_home</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">512</span> 
-<span class="g g-Whitespace">    </span><span class="mi">513</span>     <span class="k">with</span> <span class="n">closing</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span> 
+<span class="ne">--&gt; </span><span class="mi">529</span>         <span class="n">parsed_arff</span> <span class="o">=</span> <span class="n">parse_arff</span><span class="p">(</span><span class="n">arff</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span> 
+<span class="g g-Whitespace">    </span><span class="mi">531</span>         <span class="c1"># consume remaining stream, if early exited</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/sklearn/datasets/_openml.py</span> in <span class="ni">_open_openml_url</span><span class="nt">(openml_path, data_home)</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>                         <span class="n">opener</span> <span class="o">=</span> <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>                     <span class="k">with</span> <span class="n">opener</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">,</span> <span class="n">file_name</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fdst</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">125</span>                         <span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">fsrc</span><span class="p">,</span> <span class="n">fdst</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>                 <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">fdst</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">local_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/sklearn/datasets/_openml.py</span> in <span class="ni">_convert_arff_data_dataframe</span><span class="nt">(arff, columns, features_dict)</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span>     <span class="n">first_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">first_row</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">arff_columns</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span> 
+<span class="ne">--&gt; </span><span class="mi">354</span>     <span class="n">row_bytes</span> <span class="o">=</span> <span class="n">first_df</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>     <span class="n">chunksize</span> <span class="o">=</span> <span class="n">get_chunk_n_rows</span><span class="p">(</span><span class="n">row_bytes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span> 
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/shutil.py</span> in <span class="ni">copyfileobj</span><span class="nt">(fsrc, fdst, length)</span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span>     <span class="sd">&quot;&quot;&quot;copy data from file-like object fsrc to file-like object fdst&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>     <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">79</span>         <span class="n">buf</span> <span class="o">=</span> <span class="n">fsrc</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">buf</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span>             <span class="k">break</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/core/frame.py</span> in <span class="ni">memory_usage</span><span class="nt">(self, index, deep)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3217</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3218</span><span class="sd">         result = self._constructor_sliced(</span>
+<span class="ne">-&gt; </span><span class="mi">3219</span><span class="sd">             [c.memory_usage(index=False, deep=deep) for col, c in self.items()],</span>
+<span class="g g-Whitespace">   </span><span class="mi">3220</span><span class="sd">             index=self.columns,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3221</span><span class="sd">         )</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/http/client.py</span> in <span class="ni">read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>             <span class="c1"># Amount is given, implement using readinto</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>             <span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">465</span>             <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span>             <span class="k">return</span> <span class="nb">memoryview</span><span class="p">(</span><span class="n">b</span><span class="p">)[:</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">tobytes</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span>         <span class="k">else</span><span class="p">:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/core/frame.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3217</span><span class="sd">         &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">3218</span>         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor_sliced</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">3219</span>             <span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">deep</span><span class="o">=</span><span class="n">deep</span><span class="p">)</span> <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">()],</span>
+<span class="g g-Whitespace">   </span><span class="mi">3220</span>             <span class="n">index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">3221</span>         <span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/http/client.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span> 
-<span class="g g-Whitespace">    </span><span class="mi">498</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunked</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">499</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_readinto_chunked</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">500</span> 
-<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/core/frame.py</span> in <span class="ni">items</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1207</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">is_unique</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_item_cache&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1208</span>             <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1209</span>                 <span class="k">yield</span> <span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_item_cache</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1210</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1211</span>             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/http/client.py</span> in <span class="ni">_readinto_chunked</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">592</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">593</span>             <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">594</span>                 <span class="n">chunk_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_chunk_left</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">595</span>                 <span class="k">if</span> <span class="n">chunk_left</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">596</span>                     <span class="k">return</span> <span class="n">total_bytes</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/core/frame.py</span> in <span class="ni">_get_item_cache</span><span class="nt">(self, item)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3884</span>             <span class="n">loc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3885</span>             <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">iget</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">3886</span>             <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_box_col_values</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span><span class="o">.</span><span class="n">__finalize__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3887</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3888</span>             <span class="n">cache</span><span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/http/client.py</span> in <span class="ni">_get_chunk_left</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">558</span>             <span class="k">if</span> <span class="n">chunk_left</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">559</span>                 <span class="c1"># We are at the end of chunk, discard chunk end</span>
-<span class="ne">--&gt; </span><span class="mi">560</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_safe_read</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># toss the CRLF at the end of the chunk</span>
-<span class="g g-Whitespace">    </span><span class="mi">561</span>             <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">562</span>                 <span class="n">chunk_left</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_next_chunk_size</span><span class="p">()</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/core/frame.py</span> in <span class="ni">_box_col_values</span><span class="nt">(self, values, loc)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3866</span>         <span class="n">name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">loc</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">3867</span>         <span class="n">klass</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_constructor_sliced</span>
+<span class="ne">-&gt; </span><span class="mi">3868</span>         <span class="k">return</span> <span class="n">klass</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">fastpath</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">3869</span> 
+<span class="g g-Whitespace">   </span><span class="mi">3870</span>     <span class="c1"># ----------------------------------------------------------------------</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/http/client.py</span> in <span class="ni">_safe_read</span><span class="nt">(self, amt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">626</span>         <span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">627</span>         <span class="k">while</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">628</span>             <span class="n">chunk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">amt</span><span class="p">,</span> <span class="n">MAXAMOUNT</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">629</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">chunk</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">630</span>                 <span class="k">raise</span> <span class="n">IncompleteRead</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">amt</span><span class="p">)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/core/series.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, index, dtype, name, copy, fastpath)</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>                     <span class="n">data</span> <span class="o">=</span> <span class="n">SingleArrayManager</span><span class="o">.</span><span class="n">from_array</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span> 
+<span class="ne">--&gt; </span><span class="mi">447</span>         <span class="n">generic</span><span class="o">.</span><span class="n">NDFrame</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span>         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_set_axis</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">fastpath</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/socket.py</span> in <span class="ni">readinto</span><span class="nt">(self, b)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span>         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">588</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">589</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span>             <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/core/generic.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, copy, attrs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>             <span class="n">attrs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">attrs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span>         <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_attrs&quot;</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">249</span>         <span class="nb">object</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_flags&quot;</span><span class="p">,</span> <span class="n">Flags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">allows_duplicate_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span> 
+<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="nd">@classmethod</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/ssl.py</span> in <span class="ni">recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1069</span>                   <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1070</span>                   <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1071</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1072</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1073</span>             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/ssl.py</span> in <span class="ni">read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">928</span>             <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">929</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">930</span>             <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">931</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/pandas/core/flags.py</span> in <span class="ni">__init__</span><span class="nt">(self, obj, allows_duplicate_labels)</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">_keys</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;allows_duplicate_labels&quot;</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> 
+<span class="ne">---&gt; </span><span class="mi">47</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">allows_duplicate_labels</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_allows_duplicate_labels</span> <span class="o">=</span> <span class="n">allows_duplicate_labels</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_obj</span> <span class="o">=</span> <span class="n">weakref</span><span class="o">.</span><span class="n">ref</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -949,7 +944,7 @@ Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcach
 <p>Print the feature names and the dataset shape</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;feature_names&quot;</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
@@ -1000,24 +995,30 @@ Categories (5, object): [&#39;g&#39;, &#39;q&#39;, &#39;w&#39;, &#39;z&#39;, &#3
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span><span class="p">)),</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+    <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;feature_names&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="mi">3</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;feature_names&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="mi">3</span><span class="p">),</span>
+<span class="p">)</span>
 
-<span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">]:</span>
-    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">]:</span>
-        <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">c</span><span class="p">][</span><span class="n">feat</span><span class="p">]</span>
-        
+<span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;feature_names&quot;</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;q&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">]:</span>
+        <span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">c</span><span class="p">][</span><span class="n">feat</span><span class="p">]</span>
+
 <span class="n">ix</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">ax1</span> <span class="ow">in</span> <span class="n">axs</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">ax1</span><span class="p">:</span>
-        <span class="n">feat</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">][</span><span class="n">ix</span><span class="p">]</span>
-        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">X</span><span class="p">[:][</span><span class="n">feat</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">X</span><span class="p">[:][</span><span class="n">feat</span><span class="p">]),</span><span class="mi">20</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">]:</span>
-            <span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">c</span><span class="p">][</span><span class="n">feat</span><span class="p">]</span>
-            <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">y</span><span class="o">==</span><span class="n">c</span><span class="p">][</span><span class="n">feat</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span><span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="c1">#,density=True)</span>
+        <span class="n">feat</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;feature_names&quot;</span><span class="p">][</span><span class="n">ix</span><span class="p">]</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">X</span><span class="p">[:][</span><span class="n">feat</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">X</span><span class="p">[:][</span><span class="n">feat</span><span class="p">]),</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;q&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">]:</span>
+            <span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">c</span><span class="p">][</span><span class="n">feat</span><span class="p">]</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+                <span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">==</span> <span class="n">c</span><span class="p">][</span><span class="n">feat</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span>
+            <span class="p">)</span>  <span class="c1"># ,density=True)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
         <span class="n">ix</span> <span class="o">=</span> <span class="n">ix</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="k">if</span> <span class="n">ix</span><span class="o">&gt;=</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;feature_names&#39;</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">ix</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;feature_names&quot;</span><span class="p">]):</span>
             <span class="k">break</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1035,7 +1036,9 @@ Then, split the dataset into training and validation sets</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">to_categorical</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">X_train_val</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train_val</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">X_train_val</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train_val</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1062,11 +1065,11 @@ Then, split the dataset into training and validation sets</p>
 <p>We now save the datasets as raw numpy arrays so that we can restart later without redownloading the dataset and converting.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;X_train_val.npy&#39;</span><span class="p">,</span> <span class="n">X_train_val</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;X_test.npy&#39;</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;y_train_val.npy&#39;</span><span class="p">,</span> <span class="n">y_train_val</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;y_test.npy&#39;</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;classes.npy&#39;</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;X_train_val.npy&quot;</span><span class="p">,</span> <span class="n">X_train_val</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;X_test.npy&quot;</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;y_train_val.npy&quot;</span><span class="p">,</span> <span class="n">y_train_val</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;y_test.npy&quot;</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;classes.npy&quot;</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
 <span class="n">classes</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span>
 </pre></div>
 </div>
@@ -1092,14 +1095,14 @@ Add an output layer with 5 neurons (one for each class), then finish with Softma
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;fc1&#39;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="s1">&#39;lecun_uniform&#39;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;relu1&#39;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;fc2&#39;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="s1">&#39;lecun_uniform&#39;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;relu2&#39;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;fc3&#39;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="s1">&#39;lecun_uniform&#39;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;relu3&#39;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="s1">&#39;lecun_uniform&#39;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;fc1&quot;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="s2">&quot;lecun_uniform&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;relu1&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;fc2&quot;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="s2">&quot;lecun_uniform&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;relu2&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;fc3&quot;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="s2">&quot;lecun_uniform&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;relu3&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="s2">&quot;lecun_uniform&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="n">activation</span><span class="o">=</span><span class="s2">&quot;softmax&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;softmax&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1116,20 +1119,31 @@ If you’ve restarted the notebook kernel after training once, set <code class="
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="k">if</span> <span class="n">train</span><span class="p">:</span>
     <span class="n">adam</span> <span class="o">=</span> <span class="n">Adam</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">)</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">adam</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;categorical_crossentropy&#39;</span><span class="p">],</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
-    <span class="n">callbacks</span> <span class="o">=</span> <span class="n">all_callbacks</span><span class="p">(</span><span class="n">stop_patience</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
-                              <span class="n">lr_factor</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
-                              <span class="n">lr_patience</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
-                              <span class="n">lr_epsilon</span> <span class="o">=</span> <span class="mf">0.000001</span><span class="p">,</span>
-                              <span class="n">lr_cooldown</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-                              <span class="n">lr_minimum</span> <span class="o">=</span> <span class="mf">0.0000001</span><span class="p">,</span>
-                              <span class="n">outputDir</span> <span class="o">=</span> <span class="s1">&#39;model_1&#39;</span><span class="p">)</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_val</span><span class="p">,</span> <span class="n">y_train_val</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span>
-              <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-              <span class="n">callbacks</span> <span class="o">=</span> <span class="n">callbacks</span><span class="o">.</span><span class="n">callbacks</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
+        <span class="n">optimizer</span><span class="o">=</span><span class="n">adam</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;categorical_crossentropy&quot;</span><span class="p">],</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">callbacks</span> <span class="o">=</span> <span class="n">all_callbacks</span><span class="p">(</span>
+        <span class="n">stop_patience</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">lr_factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">lr_patience</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">lr_epsilon</span><span class="o">=</span><span class="mf">0.000001</span><span class="p">,</span>
+        <span class="n">lr_cooldown</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">lr_minimum</span><span class="o">=</span><span class="mf">0.0000001</span><span class="p">,</span>
+        <span class="n">outputDir</span><span class="o">=</span><span class="s2">&quot;model_1&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+        <span class="n">X_train_val</span><span class="p">,</span>
+        <span class="n">y_train_val</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+        <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+        <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="o">.</span><span class="n">callbacks</span><span class="p">,</span>
+    <span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">load_model</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;model_1/KERAS_check_best_model.h5&#39;</span><span class="p">)</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s2">&quot;model_1/KERAS_check_best_model.h5&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1641,9 +1655,14 @@ Epoch 30: saving model to model_1/KERAS_check_model_epoch30.h5
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotting</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
 <span class="n">y_keras</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_keras</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;Accuracy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">accuracy_score</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_keras</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">makeRoc</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_keras</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1671,15 +1690,18 @@ The <code class="docutils literal notranslate"><span class="pre">part</span></co
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hls4ml</span>
-<span class="n">config</span> <span class="o">=</span> <span class="n">hls4ml</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">config_from_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">granularity</span><span class="o">=</span><span class="s1">&#39;model&#39;</span><span class="p">)</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">hls4ml</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">config_from_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Configuration&quot;</span><span class="p">)</span>
 <span class="n">plotting</span><span class="o">.</span><span class="n">print_dict</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-----------------------------------&quot;</span><span class="p">)</span>
-<span class="n">hls_model</span> <span class="o">=</span> <span class="n">hls4ml</span><span class="o">.</span><span class="n">converters</span><span class="o">.</span><span class="n">convert_from_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span>
-                                                       <span class="n">hls_config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
-                                                       <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;model_1/hls4ml_prj&#39;</span><span class="p">,</span>
-                                                       <span class="n">part</span><span class="o">=</span><span class="s1">&#39;xcu250-figd2104-2L-e&#39;</span><span class="p">)</span>
+<span class="n">hls_model</span> <span class="o">=</span> <span class="n">hls4ml</span><span class="o">.</span><span class="n">converters</span><span class="o">.</span><span class="n">convert_from_keras_model</span><span class="p">(</span>
+    <span class="n">model</span><span class="p">,</span>
+    <span class="n">hls_config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+    <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;model_1/hls4ml_prj&quot;</span><span class="p">,</span>
+    <span class="n">part</span><span class="o">=</span><span class="s2">&quot;xcu250-figd2104-2L-e&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1767,20 +1789,28 @@ Done
 <p>That was easy! Now let’s see how the performance compares to Keras:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Keras  Accuracy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_keras</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hls4ml Accuracy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_hls</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;Keras  Accuracy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">accuracy_score</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_keras</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;hls4ml Accuracy: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">accuracy_score</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">y_hls</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="p">)</span>
+<span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">makeRoc</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_keras</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_prop_cycle</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span> <span class="c1"># reset the colors</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">makeRoc</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_hls</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_prop_cycle</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># reset the colors</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">makeRoc</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_hls</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="kn">import</span> <span class="n">Line2D</span>
-<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">),</span>
-         <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)]</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">),</span> <span class="n">Line2D</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)]</span>
 <span class="kn">from</span> <span class="nn">matplotlib.legend</span> <span class="kn">import</span> <span class="n">Legend</span>
-<span class="n">leg</span> <span class="o">=</span> <span class="n">Legend</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;keras&#39;</span><span class="p">,</span> <span class="s1">&#39;hls4ml&#39;</span><span class="p">],</span>
-            <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">leg</span> <span class="o">=</span> <span class="n">Legend</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;keras&quot;</span><span class="p">,</span> <span class="s2">&quot;hls4ml&quot;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">leg</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1800,9 +1830,9 @@ hls4ml Accuracy: 0.7513975903614458
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">aucs_keras</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">rocData</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_keras</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
 <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">aucs_hls</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">rocData</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_hls</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Keras: &#39;</span><span class="p">,</span><span class="n">aucs_keras</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;HLS:   &#39;</span><span class="p">,</span><span class="n">aucs_hls</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ratio: &#39;</span><span class="p">,{</span><span class="n">p</span><span class="p">:</span><span class="n">aucs_hls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">/</span><span class="n">aucs_keras</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">aucs_hls</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Keras: &quot;</span><span class="p">,</span> <span class="n">aucs_keras</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HLS:   &quot;</span><span class="p">,</span> <span class="n">aucs_hls</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ratio: &quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">p</span><span class="p">:</span> <span class="n">aucs_hls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">/</span> <span class="n">aucs_keras</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">aucs_hls</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -1822,21 +1852,25 @@ Ratio:  {&#39;g&#39;: 0.9999098552015245, &#39;q&#39;: 0.9998785086821262, &#39;
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">auc_ratios</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">ib_opts</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
-<span class="n">fb_opts</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ib_opts</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">fb_opts</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">int_bits</span> <span class="ow">in</span> <span class="n">ib_opts</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">frac_bits</span> <span class="ow">in</span> <span class="n">fb_opts</span><span class="p">:</span>
-        <span class="n">prec</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%i</span><span class="s1">,</span><span class="si">%i</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">int_bits</span><span class="o">+</span><span class="n">frac_bits</span><span class="p">,</span><span class="n">int_bits</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Precision: &#39;</span><span class="p">,</span><span class="n">prec</span><span class="p">)</span>
-        <span class="n">config</span> <span class="o">=</span> <span class="n">hls4ml</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">config_from_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">granularity</span><span class="o">=</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="n">default_precision</span><span class="o">=</span><span class="s1">&#39;ap_fixed&lt;</span><span class="si">%s</span><span class="s1">&gt;&#39;</span><span class="o">%</span><span class="k">prec</span>)
-        <span class="n">hls_model</span> <span class="o">=</span> <span class="n">hls4ml</span><span class="o">.</span><span class="n">converters</span><span class="o">.</span><span class="n">convert_from_keras_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span>
-                                                       <span class="n">hls_config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
-                                                       <span class="n">output_dir</span><span class="o">=</span><span class="s1">&#39;model_1/hls4ml_prj&#39;</span><span class="p">,</span>
-                                                       <span class="n">part</span><span class="o">=</span><span class="s1">&#39;xcu250-figd2104-2L-e&#39;</span><span class="p">)</span>
+        <span class="n">prec</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%i</span><span class="s2">,</span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">int_bits</span> <span class="o">+</span> <span class="n">frac_bits</span><span class="p">,</span> <span class="n">int_bits</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precision: &quot;</span><span class="p">,</span> <span class="n">prec</span><span class="p">)</span>
+        <span class="n">config</span> <span class="o">=</span> <span class="n">hls4ml</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">config_from_keras_model</span><span class="p">(</span>
+            <span class="n">model</span><span class="p">,</span> <span class="n">granularity</span><span class="o">=</span><span class="s2">&quot;model&quot;</span><span class="p">,</span> <span class="n">default_precision</span><span class="o">=</span><span class="s2">&quot;ap_fixed&lt;</span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="n">prec</span>
+        <span class="p">)</span>
+        <span class="n">hls_model</span> <span class="o">=</span> <span class="n">hls4ml</span><span class="o">.</span><span class="n">converters</span><span class="o">.</span><span class="n">convert_from_keras_model</span><span class="p">(</span>
+            <span class="n">model</span><span class="p">,</span>
+            <span class="n">hls_config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+            <span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;model_1/hls4ml_prj&quot;</span><span class="p">,</span>
+            <span class="n">part</span><span class="o">=</span><span class="s2">&quot;xcu250-figd2104-2L-e&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="n">hls_model</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
         <span class="n">y_hls</span> <span class="o">=</span> <span class="n">hls_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">aucs_hls</span> <span class="o">=</span> <span class="n">plotting</span><span class="o">.</span><span class="n">rocData</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_hls</span><span class="p">,</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
-        <span class="n">auc_ratios</span><span class="p">[</span><span class="n">prec</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="p">:</span><span class="n">aucs_hls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">/</span><span class="n">aucs_keras</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">aucs_hls</span><span class="p">}</span>
+        <span class="n">auc_ratios</span><span class="p">[</span><span class="n">prec</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">p</span><span class="p">:</span> <span class="n">aucs_hls</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">/</span> <span class="n">aucs_keras</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">aucs_hls</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">auc_ratios</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2185,13 +2219,15 @@ Done
     <span class="k">for</span> <span class="n">int_bits</span> <span class="ow">in</span> <span class="n">ib_opts</span><span class="p">:</span>
         <span class="n">int_array</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">frac_bits</span> <span class="ow">in</span> <span class="n">fb_opts</span><span class="p">:</span>
-            <span class="n">int_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">auc_ratios</span><span class="p">[</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1">,</span><span class="si">%i</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">int_bits</span><span class="o">+</span><span class="n">frac_bits</span><span class="p">,</span><span class="n">int_bits</span><span class="p">)][</span><span class="n">c</span><span class="p">])</span>
+            <span class="n">int_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">auc_ratios</span><span class="p">[</span><span class="s2">&quot;</span><span class="si">%i</span><span class="s2">,</span><span class="si">%i</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">int_bits</span> <span class="o">+</span> <span class="n">frac_bits</span><span class="p">,</span> <span class="n">int_bits</span><span class="p">)][</span><span class="n">c</span><span class="p">])</span>
         <span class="n">auc_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">int_array</span><span class="p">)</span>
     <span class="n">auc_ratios_grid</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">auc_array</span><span class="p">)</span>
-<span class="n">avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">auc_ratios_grid</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">]),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
-<span class="n">auc_ratios_grid</span><span class="p">[</span><span class="s1">&#39;Average&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">avg</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">auc_ratios_grid</span><span class="p">[</span><span class="s1">&#39;w&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">auc_ratios_grid</span><span class="p">[</span><span class="s1">&#39;Average&#39;</span><span class="p">])</span>
+<span class="n">avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">auc_ratios_grid</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span>
+    <span class="n">le</span><span class="o">.</span><span class="n">classes_</span>
+<span class="p">)</span>
+<span class="n">auc_ratios_grid</span><span class="p">[</span><span class="s2">&quot;Average&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">avg</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">auc_ratios_grid</span><span class="p">[</span><span class="s2">&quot;w&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">auc_ratios_grid</span><span class="p">[</span><span class="s2">&quot;Average&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -2206,11 +2242,11 @@ Done
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">auc_ratios_grid</span><span class="p">:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fb_opts</span><span class="p">,</span><span class="n">auc_ratios_grid</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="n">c</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;AUC (HLS) / AUC (Keras)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Fractional Bits&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fb_opts</span><span class="p">,</span> <span class="n">auc_ratios_grid</span><span class="p">[</span><span class="n">c</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">c</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;AUC (HLS) / AUC (Keras)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Fractional Bits&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
