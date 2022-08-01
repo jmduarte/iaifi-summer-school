@@ -3,7 +3,20 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Representations, Networks, and Symmetries
+    chapters:
+    - file: 1.1_tabular_data_efps.ipynb
+    - file: 1.2_jet_images.ipynb
+    - file: 1.3_deep_sets.ipynb
+    - file: 1.4_gnn_in.ipynb
+    - file: 1.5_gnn_lorentz.ipynb
+  - caption: Model Compression and Fast Machine Learning
+    chapters:
+    - file: 2.1_getting_started.ipynb
+    - file: 2.2_advanced_config.ipynb
+    - file: 2.3_compression.ipynb
+    - file: 2.4_quantization.ipynb
+  - caption: References
+    chapters:
+    - file: zreferences.md

@@ -1,3 +1,13 @@
 jupyter-book
 matplotlib
-numpy
+mplhep
+pydot
+tensorflow
+qkeras==0.9.0
+git+https://github.com/fastmachinelearning/hls4ml.git@main#egg=hls4ml[profiling]
+xrootd
+torch==1.12.0
+# torch-scatter -f https://data.pyg.org/whl/torch-1.12.0+cpu.html
+# torch-sparse -f https://data.pyg.org/whl/torch-1.12.0+cpu.html
+# git+https://github.com/pyg-team/pytorch_geometric.git
+jetnet
