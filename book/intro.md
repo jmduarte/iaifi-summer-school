@@ -1,7 +1,7 @@
 # IAIFI Summer School Tutorials
 
 <center>
-<img src="B2G-22-003_ggF_white.png" width=500 />
+<img src="https://cms-results.web.cern.ch/cms-results/public-results/publications/B2G-22-003/CMS-B2G-22-003_Figure-aux_012-b.png" width=500 />
 <img src="https://jduarte.physics.ucsd.edu/iaifi-summer-school/_static/logo.png" width=300 \>
 </center>
 
