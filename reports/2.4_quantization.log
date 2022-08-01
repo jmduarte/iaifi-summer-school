@@ -44,7 +44,7 @@ classes = np.load("classes.npy", allow_pickle=True)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_5560/300696682.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_5728/300696682.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     17[0m [0;31m#     but if you want to look into actually running on an FPGA then simply uncomment these lines[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     18[0m [0;34m[0m[0m
 [0;32m---> 19[0;31m [0mX_train_val[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mload[0m[0;34m([0m[0;34m"X_train_val.npy"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

@@ -524,22 +524,22 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: torch_geometric in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (2.0.5)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (1.7.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (1.21.6)
+Requirement already satisfied: scikit-learn in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (1.0.2)
 Requirement already satisfied: pyparsing in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (3.0.9)
 Requirement already satisfied: tqdm in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (4.64.0)
-Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (3.1.2)
+Requirement already satisfied: scipy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (1.7.3)
 Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (2.28.1)
-Requirement already satisfied: scikit-learn in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (1.0.2)
-Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (1.21.6)
+Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from torch_geometric) (3.1.2)
 Requirement already satisfied: MarkupSafe&gt;=2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from jinja2-&gt;torch_geometric) (2.1.1)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;torch_geometric) (1.26.11)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;torch_geometric) (3.3)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;torch_geometric) (2022.6.15)
 Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;torch_geometric) (2.1.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;torch_geometric) (2022.6.15)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;torch_geometric) (3.3)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;torch_geometric) (1.26.11)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn-&gt;torch_geometric) (3.1.0)
-Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn-&gt;torch_geometric) (1.1.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn-&gt;torch_geometric) (1.1.0)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn-&gt;torch_geometric) (3.1.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: torch_sparse in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (0.6.14)
@@ -574,32 +574,28 @@ Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /opt/hostedtoolcac
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: uproot in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (4.3.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uproot) (1.21.6)
 Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uproot) (63.3.0)
+Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uproot) (1.21.6)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: awkward in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (1.8.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (63.3.0)
+Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (63.3.0)
 Requirement already satisfied: numpy&gt;=1.13.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (1.21.6)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mplhep in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (0.3.26)
+Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (1.21.6)
+Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (21.3)
+Requirement already satisfied: uhi&gt;=0.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.3.1)
+Requirement already satisfied: mplhep-data in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.0.3)
+Requirement already satisfied: matplotlib&gt;=3.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (3.5.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib&gt;=3.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (3.5.2)
-Requirement already satisfied: mplhep-data in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.0.3)
-Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (1.21.6)
-Requirement already satisfied: uhi&gt;=0.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.3.1)
-Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (21.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (0.11.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (3.0.9)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (1.4.4)
 Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (9.2.0)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (4.34.4)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (0.11.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (1.4.4)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (3.0.9)
 Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (2.8.2)
 Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uhi&gt;=0.2.0-&gt;mplhep) (4.3.0)
 </pre></div>
@@ -623,6 +619,16 @@ Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache
     <span class="c1"># The FullLoader parameter handles the conversion from YAML</span>
     <span class="c1"># scalar values to Python the dictionary format</span>
     <span class="n">definitions</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
+
+
+<span class="c1"># You can test with using only 4-vectors by using:</span>
+<span class="c1"># if not os.path.exists(&quot;definitions_lorentz.yml&quot;):</span>
+<span class="c1">#    url = &quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/definitions_lorentz.yml&quot;</span>
+<span class="c1">#    definitionsFile = wget.download(url)</span>
+<span class="c1"># with open(&#39;definitions_lorentz.yml&#39;) as file:</span>
+<span class="c1">#    # The FullLoader parameter handles the conversion from YAML</span>
+<span class="c1">#    # scalar values to Python the dictionary format</span>
+<span class="c1">#    definitions = yaml.load(file, Loader=yaml.FullLoader)</span>
 
 <span class="n">features</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span>
 <span class="n">spectators</span> <span class="o">=</span> <span class="n">definitions</span><span class="p">[</span><span class="s2">&quot;spectators&quot;</span><span class="p">]</span>
@@ -707,7 +713,7 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4944</span><span class="o">/</span><span class="mf">1112568642.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4977</span><span class="o">/</span><span class="mf">1112568642.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;ntuple_merged_90.root&quot;</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">urlFILE</span> <span class="o">=</span> <span class="s2">&quot;http://opendata.cern.ch/eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_90.root&quot;</span>
 <span class="ne">---&gt; </span><span class="mi">16</span>     <span class="n">dataFILE</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlFILE</span><span class="p">)</span>
@@ -1017,13 +1023,13 @@ The stages of processing in a single GN block are:</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e55a7603c7f64032b06a6be48ffcfff8", "version_major": 2, "version_minor": 0}
+{"model_id": "413e118e0e9041beb711de477240779e", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 00, Training Loss:   0.2303
-           Validation Loss: 0.1405
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 00, Training Loss:   0.2342
+           Validation Loss: 0.1417
 New best model saved to: interactionnetwork_best.pth
 </pre></div>
 </div>
@@ -1031,8 +1037,26 @@ New best model saved to: interactionnetwork_best.pth
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 01, Training Loss:   0.1676
-           Validation Loss: 0.1346
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 01, Training Loss:   0.1757
+           Validation Loss: 0.1430
+Stale epoch
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 02, Training Loss:   0.1666
+           Validation Loss: 0.1561
+Stale epoch
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 03, Training Loss:   0.1511
+           Validation Loss: 0.1233
 New best model saved to: interactionnetwork_best.pth
 </pre></div>
 </div>
@@ -1040,8 +1064,8 @@ New best model saved to: interactionnetwork_best.pth
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 02, Training Loss:   0.1616
-           Validation Loss: 0.1255
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 04, Training Loss:   0.1496
+           Validation Loss: 0.1160
 New best model saved to: interactionnetwork_best.pth
 </pre></div>
 </div>
@@ -1049,8 +1073,8 @@ New best model saved to: interactionnetwork_best.pth
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 03, Training Loss:   0.1488
-           Validation Loss: 0.1323
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 05, Training Loss:   0.1427
+           Validation Loss: 0.1227
 Stale epoch
 </pre></div>
 </div>
@@ -1058,162 +1082,36 @@ Stale epoch
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 04, Training Loss:   0.1469
-           Validation Loss: 0.1110
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 06, Training Loss:   0.1476
+           Validation Loss: 0.1659
+Stale epoch
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 07, Training Loss:   0.1377
+           Validation Loss: 0.1193
+Stale epoch
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 08, Training Loss:   0.1410
+           Validation Loss: 0.1422
+Stale epoch
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "733d0be83d4e44868317a63e48abf3bc", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "ad07b289ae6440cf905aa2a483113210", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 09, Training Loss:   0.1299
+           Validation Loss: 0.1091
 New best model saved to: interactionnetwork_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 05, Training Loss:   0.1424
-           Validation Loss: 0.1277
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 06, Training Loss:   0.1454
-           Validation Loss: 0.1261
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 07, Training Loss:   0.1362
-           Validation Loss: 0.1142
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 08, Training Loss:   0.1376
-           Validation Loss: 0.1211
-Stale epoch
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "1bc2bf14e4654c4fa122748146d339fc", "version_major": 2, "version_minor": 0}
-</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 9&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_epochs</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">10</span>     <span class="n">loss</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">model</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="n">optimizer</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="n">train_loader</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>         <span class="n">train_samples</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="n">batch_size</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>         <span class="n">leave</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">epoch</span> <span class="o">==</span> <span class="n">n_epochs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">valid_loss</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="n">model</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span>         <span class="n">valid_loader</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="n">leave</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">epoch</span> <span class="o">==</span> <span class="n">n_epochs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Epoch: </span><span class="si">{:02d}</span><span class="s2">, Training Loss:   </span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">loss</span><span class="p">))</span>
-
-<span class="nn">Input In [8],</span> in <span class="ni">train</span><span class="nt">(model, optimizer, loader, total, batch_size, leave)</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">sum_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">loader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">total</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="n">leave</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">28</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/tqdm/notebook.py:258,</span> in <span class="ni">tqdm_notebook.__iter__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">256</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">257</span>     <span class="n">it</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">tqdm_notebook</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">258</span>     <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span>         <span class="c1"># return super(tqdm...) will not catch exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span>         <span class="k">yield</span> <span class="n">obj</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span> <span class="c1"># NB: except ... [ as ...] breaks IPython async KeyboardInterrupt</span>
-
-<span class="nn">File ~/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/tqdm/std.py:1195,</span> in <span class="ni">tqdm.__iter__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="n">time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_time</span>
-<span class="g g-Whitespace">   </span><span class="mi">1194</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1195</span>     <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1196</span>         <span class="k">yield</span> <span class="n">obj</span>
-<span class="g g-Whitespace">   </span><span class="mi">1197</span>         <span class="c1"># Update and possibly print the progressbar.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1198</span>         <span class="c1"># Note: does not call self.update(1) for speed optimisation.</span>
-
-<span class="nn">File ~/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/torch/utils/data/dataloader.py:530,</span> in <span class="ni">_BaseDataLoaderIter.__next__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sampler_iter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_reset</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">530</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_data</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_yielded</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_kind</span> <span class="o">==</span> <span class="n">_DatasetKind</span><span class="o">.</span><span class="n">Iterable</span> <span class="ow">and</span> \
-<span class="g g-Whitespace">    </span><span class="mi">533</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_IterableDataset_len_called</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> \
-<span class="g g-Whitespace">    </span><span class="mi">534</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_num_yielded</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_IterableDataset_len_called</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/torch/utils/data/dataloader.py:570,</span> in <span class="ni">_SingleProcessDataLoaderIter._next_data</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span> <span class="k">def</span> <span class="nf">_next_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span>     <span class="n">index</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_next_index</span><span class="p">()</span>  <span class="c1"># may raise StopIteration</span>
-<span class="ne">--&gt; </span><span class="mi">570</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_fetcher</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>  <span class="c1"># may raise StopIteration</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pin_memory</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">572</span>         <span class="n">data</span> <span class="o">=</span> <span class="n">_utils</span><span class="o">.</span><span class="n">pin_memory</span><span class="o">.</span><span class="n">pin_memory</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py:49,</span> in <span class="ni">_MapDatasetFetcher.fetch</span><span class="nt">(self, possibly_batched_index)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">possibly_batched_index</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_collation</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">49</span>         <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">possibly_batched_index</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">possibly_batched_index</span><span class="p">]</span>
-
-<span class="nn">File ~/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py:49,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">def</span> <span class="nf">fetch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">possibly_batched_index</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auto_collation</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">49</span>         <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">possibly_batched_index</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="n">possibly_batched_index</span><span class="p">]</span>
-
-<span class="nn">File ~/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/torch/utils/data/dataset.py:471,</span> in <span class="ni">Subset.__getitem__</span><span class="nt">(self, idx)</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">idx</span><span class="p">]]</span>
-<span class="ne">--&gt; </span><span class="mi">471</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">idx</span><span class="p">]]</span>
-
-<span class="nn">File ~/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/torch_geometric/data/dataset.py:197,</span> in <span class="ni">Dataset.__getitem__</span><span class="nt">(self, idx)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span> <span class="sa">r</span><span class="sd">&quot;&quot;&quot;In case :obj:`idx` is of type integer, will return the data object</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span><span class="sd"> at index :obj:`idx` (and transforms it in case :obj:`transform` is</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="sd"> present).</span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span><span class="sd"> In case :obj:`idx` is a slicing object, *e.g.*, :obj:`[2:5]`, a list, a</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span><span class="sd"> tuple, or a :obj:`torch.Tensor` or :obj:`np.ndarray` of type long or</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span><span class="sd"> bool, will return a subset of the dataset at the specified indices.&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span>         <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">Tensor</span><span class="p">)</span> <span class="ow">and</span> <span class="n">idx</span><span class="o">.</span><span class="n">dim</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span>         <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="ow">and</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">idx</span><span class="p">))):</span>
-<span class="ne">--&gt; </span><span class="mi">197</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">()[</span><span class="n">idx</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="k">return</span> <span class="n">data</span>
-
-<span class="nn">File ~/IAIFI_Summer_School_2022/iaifi-summer-school-PATRICK/book/GraphDataset.py:161,</span> in <span class="ni">GraphDataset.get</span><span class="nt">(self, idx)</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">161</span>     <span class="n">p</span> <span class="o">=</span> <span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processed_file_names</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="k">return</span> <span class="n">data</span>
-
-<span class="nn">File ~/IAIFI_Summer_School_2022/iaifi-summer-school-PATRICK/book/GraphDataset.py:69,</span> in <span class="ni">GraphDataset.processed_file_names</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span><span class="sd"> Returns a list of all the files in the processed files directory</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="n">proc_list</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="s2">&quot;data*.pt&quot;</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">69</span> <span class="n">return_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">osp</span><span class="o">.</span><span class="n">basename</span><span class="p">,</span> <span class="n">proc_list</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="k">return</span> <span class="n">return_list</span>
-
-<span class="nn">File ~/miniconda3/envs/ml-iaifi/lib/python3.9/posixpath.py:145,</span> in <span class="ni">basename</span><span class="nt">(p)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">_get_sep</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">144</span> <span class="n">i</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="n">sep</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="ne">--&gt; </span><span class="mi">145</span> <span class="k">return</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -1228,6 +1126,10 @@ Stale epoch
 <span class="c1"># urlPTH = &quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/interactionnetwork_best_Aug1_AllTraining.pth&quot;</span>
 <span class="c1"># pthFile = wget.download(urlPTH)</span>
 <span class="c1"># model.load_state_dict(torch.load(&quot;interactionnetwork_best_Aug1_AllTraining.pth&quot;))</span>
+<span class="c1"># Trained on 4 vector input (different setup)</span>
+<span class="c1"># urlPTH = &quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/interactionnetwork_best_Aug1_4vec.pth&quot;</span>
+<span class="c1"># pthFile = wget.download(urlPTH)</span>
+<span class="c1"># model.load_state_dict(torch.load(&quot;interactionnetwork_best_Aug1_4vec.pth&quot;))</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">test_samples</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">)</span>
@@ -1245,7 +1147,7 @@ Stale epoch
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "add4662d3dd34a97a5ca0067ef613bc5", "version_major": 2, "version_minor": 0}
+{"model_id": "d5d757e6dcf445f1b35aa3b7f219fdb3", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">
