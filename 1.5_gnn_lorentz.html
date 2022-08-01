@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Interaction Network &#8212; IAIFI Summer School Tutorials</title>
+    <title>Lorentz-Equivariant GNN &#8212; IAIFI Summer School Tutorials</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -55,7 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://jduarte.physics.ucsd.edu/iaifi-summer-school/1.5_gnn_lorentz.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting started" href="2.1_getting_started.html" />
+    <link rel="next" title="Getting Started" href="2.1_getting_started.html" />
     <link rel="prev" title="Interaction Network GNN" href="1.4_gnn_in.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -129,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1.2_jet_images.html">
-   Week 5 Notebook: Deep Learning from Jet Images
+   Jet Images
   </a>
  </li>
  <li class="toctree-l1">
@@ -144,7 +144,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Interaction Network
+   Lorentz-Equivariant GNN
   </a>
  </li>
 </ul>
@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2.1_getting_started.html">
-   Getting started
+   Getting Started
   </a>
  </li>
  <li class="toctree-l1">
@@ -444,7 +444,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Interaction Network</h1>
+                <h1>Lorentz-Equivariant GNN</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -494,8 +494,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="interaction-network">
-<h1>Interaction Network<a class="headerlink" href="#interaction-network" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="lorentz-equivariant-gnn">
+<h1>Lorentz-Equivariant GNN<a class="headerlink" href="#lorentz-equivariant-gnn" title="Permalink to this headline">#</a></h1>
 <p>Now we will look at graph neural networks using the PyTorch Geometric library: <a class="reference external" href="https://pytorch-geometric.readthedocs.io/">https://pytorch-geometric.readthedocs.io/</a>. See <span id="id1">[<a class="reference internal" href="zreferences.html#id22" title="Matthias Fey and Jan E. Lenssen. Fast graph representation learning with PyTorch Geometric. In ICLR Workshop on Representation Learning on Graphs and Manifolds. 2019. URL: https://pytorch-geometric.readthedocs.io/, arXiv:1903.02428.">2</a>]</span> for more details.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -590,14 +590,29 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "261e4215c99a4c319035b42354839882"}
+{"version_major": 2, "version_minor": 0, "model_id": "c8ca5bda9f9e4fa480d04c56d1dcf0db"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py:150: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor(fourvec, dtype=torch.float).T
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4883</span><span class="o">/</span><span class="mf">2411793830.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/serialization.py</span> in <span class="ni">save</span><span class="nt">(obj, f, pickle_module, pickle_protocol, _use_new_zipfile_serialization)</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>             <span class="k">with</span> <span class="n">_open_zipfile_writer</span><span class="p">(</span><span class="n">opened_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">opened_zipfile</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">379</span>                 <span class="n">_save</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">opened_zipfile</span><span class="p">,</span> <span class="n">pickle_module</span><span class="p">,</span> <span class="n">pickle_protocol</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>                 <span class="k">return</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/serialization.py</span> in <span class="ni">_save</span><span class="nt">(obj, zip_file, pickle_module, pickle_protocol)</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span>         <span class="n">num_bytes</span> <span class="o">=</span> <span class="n">storage</span><span class="o">.</span><span class="n">nbytes</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">604</span>         <span class="n">zip_file</span><span class="o">.</span><span class="n">write_record</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">storage</span><span class="o">.</span><span class="n">data_ptr</span><span class="p">(),</span> <span class="n">num_bytes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">605</span> 
+
+<span class="ne">KeyboardInterrupt</span>: 
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5106</span><span class="o">/</span><span class="mf">2411793830.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="ne">---&gt; </span><span class="mi">25</span>     <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">,</span>
@@ -626,29 +641,27 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 <span class="g g-Whitespace">    </span><span class="mi">172</span>         <span class="n">path</span> <span class="o">=</span> <span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="s1">&#39;pre_transform.pt&#39;</span><span class="p">)</span>
 
 <span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py</span> in <span class="ni">process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span>                         <span class="p">[</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">140</span>                         <span class="k">for</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">141</span>                             <span class="nb">range</span><span class="p">(</span><span class="n">n_particles</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_particles</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span>                         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span>                         <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span> <span class="n">n</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>                     <span class="n">datas</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">datas</span><span class="p">,</span> <span class="p">[])</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span>                     <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">167</span>                         <span class="n">datas</span><span class="p">,</span> <span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="s2">&quot;data_</span><span class="si">{}</span><span class="s2">.pt&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">168</span>                     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">169</span> 
 
-<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">stack</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/serialization.py</span> in <span class="ni">save</span><span class="nt">(obj, f, pickle_module, pickle_protocol, _use_new_zipfile_serialization)</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>             <span class="k">with</span> <span class="n">_open_zipfile_writer</span><span class="p">(</span><span class="n">opened_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">opened_zipfile</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span>                 <span class="n">_save</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">opened_zipfile</span><span class="p">,</span> <span class="n">pickle_module</span><span class="p">,</span> <span class="n">pickle_protocol</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">380</span>                 <span class="k">return</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span>         <span class="n">_legacy_save</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">opened_file</span><span class="p">,</span> <span class="n">pickle_module</span><span class="p">,</span> <span class="n">pickle_protocol</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span> 
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/numpy/core/shape_base.py</span> in <span class="ni">stack</span><span class="nt">(arrays, axis, out)</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="n">_arrays_for_stack_dispatcher</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">419</span> 
-<span class="ne">--&gt; </span><span class="mi">420</span>     <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">arrays</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;need at least one array to stack&#39;</span><span class="p">)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/serialization.py</span> in <span class="ni">__exit__</span><span class="nt">(self, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span> 
+<span class="g g-Whitespace">    </span><span class="mi">258</span>     <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">259</span>         <span class="bp">self</span><span class="o">.</span><span class="n">file_like</span><span class="o">.</span><span class="n">write_end_of_file</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span>         <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span> 
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/numpy/core/shape_base.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="n">_arrays_for_stack_dispatcher</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">419</span> 
-<span class="ne">--&gt; </span><span class="mi">420</span>     <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">421</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">arrays</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;need at least one array to stack&#39;</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<span class="ne">RuntimeError</span>: [enforce fail at inline_container.cc:319] . unexpected pos 1536 vs 1456
 </pre></div>
 </div>
 </div>
@@ -884,18 +897,6 @@ The stages of processing in a single GN block are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7484
-5988
-1496
-1889
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/drankin/miniconda3/envs/ml-iaifi/lib/python3.9/site-packages/torch_geometric/deprecation.py:12: UserWarning: &#39;data.DataListLoader&#39; is deprecated, use &#39;loader.DataListLoader&#39; instead
-  warnings.warn(out)
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="train">
@@ -944,28 +945,6 @@ The stages of processing in a single GN block are:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "d9107e3d5f42490dbdab201e8aec9447", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 00, Training Loss:   0.6392
-           Validation Loss: 0.6372
-New best model saved to: lorentznetwork_best.pth
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ff81739fd381463180f0ccbe82ae2d18", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "7cd737f9b256449bbe505698a9def7e1", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 01, Training Loss:   0.6382
-           Validation Loss: 0.6363
-New best model saved to: lorentznetwork_best.pth
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="evaluate-on-testing-data">
@@ -990,10 +969,6 @@ New best model saved to: lorentznetwork_best.pth
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8f71a7d9a18e4a23ad1436caa1f62e45", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1037,9 +1012,6 @@ New best model saved to: lorentznetwork_best.pth
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/1.5_gnn_lorentz_15_0.png" src="_images/1.5_gnn_lorentz_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1086,9 +1058,6 @@ New best model saved to: lorentznetwork_best.pth
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/1.5_gnn_lorentz_16_0.png" src="_images/1.5_gnn_lorentz_16_0.png" />
-</div>
 </div>
 </section>
 </section>
@@ -1130,7 +1099,7 @@ New best model saved to: lorentznetwork_best.pth
     <a class='right-next' id="next-link" href="2.1_getting_started.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting started</p>
+        <p class="prev-next-title">Getting Started</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

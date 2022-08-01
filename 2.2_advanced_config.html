@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="&lt;no title&gt;" href="2.3_compression.html" />
-    <link rel="prev" title="Getting started" href="2.1_getting_started.html" />
+    <link rel="prev" title="Getting Started" href="2.1_getting_started.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -129,7 +129,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1.2_jet_images.html">
-   Week 5 Notebook: Deep Learning from Jet Images
+   Jet Images
   </a>
  </li>
  <li class="toctree-l1">
@@ -144,7 +144,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1.5_gnn_lorentz.html">
-   Interaction Network
+   Lorentz-Equivariant GNN
   </a>
  </li>
 </ul>
@@ -156,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="2.1_getting_started.html">
-   Getting started
+   Getting Started
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -525,14 +525,14 @@ E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), are y
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (3.5.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (1.21.6)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (3.0.9)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (0.11.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (1.4.4)
-Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (9.2.0)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (2.8.2)
-Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (21.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (2.8.2)
 Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (4.34.4)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (21.3)
+Requirement already satisfied: numpy&gt;=1.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (1.21.6)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (0.11.0)
+Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (9.2.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (3.0.9)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib) (1.4.4)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: typing-extensions in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from kiwisolver&gt;=1.0.1-&gt;matplotlib) (4.3.0)
@@ -542,10 +542,10 @@ Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Pyth
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting hls4ml[profiling]
-  Cloning https://github.com/fastmachinelearning/hls4ml.git (to revision main) to /tmp/pip-install-qb_ntvg7/hls4ml_5d80de78132348a2bfa066ce2d0f5386
+  Cloning https://github.com/fastmachinelearning/hls4ml.git (to revision main) to /tmp/pip-install-v8z_hmog/hls4ml_dd55a195ded84cd3b07c87218910c958
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Running command git clone --filter=blob:none --quiet https://github.com/fastmachinelearning/hls4ml.git /tmp/pip-install-qb_ntvg7/hls4ml_5d80de78132348a2bfa066ce2d0f5386
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Running command git clone --filter=blob:none --quiet https://github.com/fastmachinelearning/hls4ml.git /tmp/pip-install-v8z_hmog/hls4ml_dd55a195ded84cd3b07c87218910c958
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Resolved https://github.com/fastmachinelearning/hls4ml.git to commit 62046d799a4dbec150addc7f78fea5b579efeda1
@@ -556,11 +556,11 @@ Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Pyth
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+?25hRequirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.21.6)
+Requirement already satisfied: six in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.16.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hRequirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.21.6)
-Requirement already satisfied: six in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.16.0)
-Requirement already satisfied: pyyaml in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (6.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyyaml in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (6.0)
 Requirement already satisfied: h5py in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (3.7.0)
 Requirement already satisfied: onnx&gt;=1.4.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.12.0)
 Requirement already satisfied: calmjs.parse in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.3.0)
@@ -570,78 +570,80 @@ Requirement already satisfied: qkeras in /opt/hostedtoolcache/Python/3.7.13/x64/
 Requirement already satisfied: pandas in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (1.3.5)
 Requirement already satisfied: seaborn in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (0.11.2)
 Requirement already satisfied: matplotlib in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from hls4ml[profiling]) (3.5.2)
-Requirement already satisfied: protobuf&lt;=3.20.1,&gt;=3.12.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from onnx&gt;=1.4.0-&gt;hls4ml[profiling]) (3.19.4)
 Requirement already satisfied: typing-extensions&gt;=3.6.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from onnx&gt;=1.4.0-&gt;hls4ml[profiling]) (4.3.0)
-Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from calmjs.parse-&gt;hls4ml[profiling]) (63.3.0)
+Requirement already satisfied: protobuf&lt;=3.20.1,&gt;=3.12.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from onnx&gt;=1.4.0-&gt;hls4ml[profiling]) (3.19.4)
 Requirement already satisfied: ply&gt;=3.6 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from calmjs.parse-&gt;hls4ml[profiling]) (3.11)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (4.34.4)
-Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (9.2.0)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (0.11.0)
+Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from calmjs.parse-&gt;hls4ml[profiling]) (63.3.0)
 Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (2.8.2)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (1.4.4)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (3.0.9)
-Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (21.3)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (4.34.4)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (0.11.0)
+Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (9.2.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2017.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pandas-&gt;hls4ml[profiling]) (2022.1)
-Requirement already satisfied: scipy&gt;=1.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.7.3)
-Requirement already satisfied: tensorflow-model-optimization&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (0.7.3)
-Requirement already satisfied: networkx&gt;=2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (2.6.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (3.0.9)
+Requirement already satisfied: packaging&gt;=20.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (21.3)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib-&gt;hls4ml[profiling]) (1.4.4)
+Requirement already satisfied: pytz&gt;=2017.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pandas-&gt;hls4ml[profiling]) (2022.1)
 Requirement already satisfied: tqdm&gt;=4.48.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (4.64.0)
+Requirement already satisfied: tensorflow-model-optimization&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (0.7.3)
 Requirement already satisfied: pyparser in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.0)
 Requirement already satisfied: keras-tuner&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.1.3)
 Requirement already satisfied: scikit-learn&gt;=0.23.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.0.2)
+Requirement already satisfied: scipy&gt;=1.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (1.7.3)
+Requirement already satisfied: networkx&gt;=2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras-&gt;hls4ml[profiling]) (2.6.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tensorboard in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.9.1)
-Requirement already satisfied: ipython in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (7.34.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipython in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (7.34.0)
 Requirement already satisfied: kt-legacy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.0.4)
 Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.28.1)
+Requirement already satisfied: tensorboard in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.9.1)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.1.0)
 Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.1.0)
+Requirement already satisfied: dm-tree~=0.1.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorflow-model-optimization&gt;=0.2.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.1.7)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: dm-tree~=0.1.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorflow-model-optimization&gt;=0.2.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.1.7)
-Requirement already satisfied: parse==1.6.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyparser-&gt;qkeras-&gt;hls4ml[profiling]) (1.6.5)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parse==1.6.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyparser-&gt;qkeras-&gt;hls4ml[profiling]) (1.6.5)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: traitlets&gt;=4.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.3.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.0.30)
+Requirement already satisfied: traitlets&gt;=4.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.3.0)
+Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.1.1)
 Requirement already satisfied: jedi&gt;=0.16 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.18.1)
-Requirement already satisfied: matplotlib-inline in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.1.3)
-Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.0.30)
 Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.8.0)
 Requirement already satisfied: pickleshare in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.7.5)
 Requirement already satisfied: pygments in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.12.0)
-Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.1.1)
 Requirement already satisfied: backcall in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.2.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2022.6.15)
+Requirement already satisfied: matplotlib-inline in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.1.3)
+Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.1.0)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.26.11)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.3)
-Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.1.0)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2022.6.15)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: grpcio&gt;=1.24.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.48.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.8.1)
 Requirement already satisfied: absl-py&gt;=0.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.2.0)
-Requirement already satisfied: werkzeug&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.2.1)
-Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.8.1)
-Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.9.1)
+Requirement already satisfied: grpcio&gt;=1.24.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.48.0)
 Requirement already satisfied: wheel&gt;=0.26 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.37.1)
-Requirement already satisfied: markdown&gt;=2.6.8 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.4.1)
-Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.4.6)
 Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.6.1)
+Requirement already satisfied: werkzeug&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.2.1)
+Requirement already satisfied: markdown&gt;=2.6.8 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.4.1)
+Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (2.9.1)
+Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.4.6)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.9)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.2.8)
+Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.9)
 Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (5.2.0)
-Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.2.8)
-Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.3.1)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.8.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: importlib-metadata&gt;=4.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.12.0)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.7.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (1.3.1)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.8.3)
+Requirement already satisfied: importlib-metadata&gt;=4.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (4.12.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.7.0)
 Requirement already satisfied: wcwidth in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.2.5)
 </pre></div>
 </div>
@@ -649,70 +651,76 @@ Requirement already satisfied: wcwidth in /opt/hostedtoolcache/Python/3.7.13/x64
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from importlib-metadata&gt;=4.4-&gt;markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.8.1)
-Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.4.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (0.4.8)
 Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras-&gt;hls4ml[profiling]) (3.2.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: qkeras==0.9.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (0.9.0)
-Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.21.6)
+Requirement already satisfied: pyparser in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.0)
+Requirement already satisfied: keras-tuner&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.1.3)
 Requirement already satisfied: networkx&gt;=2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (2.6.3)
+Requirement already satisfied: tensorflow-model-optimization&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (0.7.3)
 Requirement already satisfied: tqdm&gt;=4.48.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (4.64.0)
 Requirement already satisfied: scikit-learn&gt;=0.23.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.0.2)
-Requirement already satisfied: keras-tuner&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.1.3)
-Requirement already satisfied: pyparser in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.0)
-Requirement already satisfied: setuptools&gt;=41.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (63.3.0)
+Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.21.6)
 Requirement already satisfied: scipy&gt;=1.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (1.7.3)
-Requirement already satisfied: tensorflow-model-optimization&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (0.7.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.28.1)
+Requirement already satisfied: setuptools&gt;=41.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from qkeras==0.9.0) (63.3.0)
 Requirement already satisfied: ipython in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (7.34.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tensorboard in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.9.1)
 Requirement already satisfied: kt-legacy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.0.4)
+Requirement already satisfied: requests in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.28.1)
 Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (21.3)
-Requirement already satisfied: tensorboard in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.9.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras==0.9.0) (3.1.0)
-Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras==0.9.0) (1.1.0)
-Requirement already satisfied: six~=1.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorflow-model-optimization&gt;=0.2.1-&gt;qkeras==0.9.0) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: joblib&gt;=0.11 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras==0.9.0) (1.1.0)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from scikit-learn&gt;=0.23.1-&gt;qkeras==0.9.0) (3.1.0)
 Requirement already satisfied: dm-tree~=0.1.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorflow-model-optimization&gt;=0.2.1-&gt;qkeras==0.9.0) (0.1.7)
-Requirement already satisfied: parse==1.6.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyparser-&gt;qkeras==0.9.0) (1.6.5)
+Requirement already satisfied: six~=1.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorflow-model-optimization&gt;=0.2.1-&gt;qkeras==0.9.0) (1.16.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pygments in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.12.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parse==1.6.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pyparser-&gt;qkeras==0.9.0) (1.6.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: traitlets&gt;=4.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.3.0)
+Requirement already satisfied: matplotlib-inline in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.1.3)
 Requirement already satisfied: jedi&gt;=0.16 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.18.1)
-Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.0.30)
+Requirement already satisfied: backcall in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.2.0)
+Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.8.0)
 Requirement already satisfied: decorator in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.1.1)
 Requirement already satisfied: pickleshare in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.7.5)
-Requirement already satisfied: backcall in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.2.0)
-Requirement already satisfied: matplotlib-inline in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.1.3)
-Requirement already satisfied: traitlets&gt;=4.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.3.0)
-Requirement already satisfied: pexpect&gt;4.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.8.0)
+Requirement already satisfied: pygments in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.12.0)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.0.30)
 Requirement already satisfied: pyparsing!=3.0.5,&gt;=2.0.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from packaging-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.0.9)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.3)
+Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.1.0)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2022.6.15)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.26.11)
-Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.1.0)
-Requirement already satisfied: werkzeug&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.2.1)
-Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.8.1)
-Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.6.1)
-Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.4.6)
-Requirement already satisfied: grpcio&gt;=1.24.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.48.0)
-Requirement already satisfied: wheel&gt;=0.26 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.37.1)
-Requirement already satisfied: protobuf&lt;3.20,&gt;=3.9.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.19.4)
-Requirement already satisfied: markdown&gt;=2.6.8 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.4.1)
-Requirement already satisfied: absl-py&gt;=0.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.2.0)
-Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.9.1)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from requests-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.2.0)
-Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.9)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: markdown&gt;=2.6.8 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.4.1)
+Requirement already satisfied: protobuf&lt;3.20,&gt;=3.9.2 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (3.19.4)
+Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.6.1)
+Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.9.1)
+Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.4.6)
+Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.8.1)
+Requirement already satisfied: wheel&gt;=0.26 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.37.1)
+Requirement already satisfied: absl-py&gt;=0.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.2.0)
+Requirement already satisfied: werkzeug&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (2.2.1)
+Requirement already satisfied: grpcio&gt;=1.24.3 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.48.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.9)
+Requirement already satisfied: cachetools&lt;6.0,&gt;=2.0.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (5.2.0)
 Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.2.8)
 Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (1.3.1)
 Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from jedi&gt;=0.16-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.8.3)
-Requirement already satisfied: importlib-metadata&gt;=4.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.12.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: importlib-metadata&gt;=4.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from markdown&gt;=2.6.8-&gt;tensorboard-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (4.12.0)
 Requirement already satisfied: ptyprocess&gt;=0.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from pexpect&gt;4.3-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.7.0)
 Requirement already satisfied: wcwidth in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython-&gt;keras-tuner&gt;=1.0.1-&gt;qkeras==0.9.0) (0.2.5)
 </pre></div>
@@ -766,13 +774,13 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:55:47.673280: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.13/x64/lib
-2022-08-01 01:55:47.673311: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 02:18:38.015155: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.13/x64/lib
+2022-08-01 02:18:38.015202: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5060</span><span class="o">/</span><span class="mf">2792942819.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5284</span><span class="o">/</span><span class="mf">2792942819.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="c1">#     but if you want to look into actually running on an FPGA then simply uncomment these lines</span>
 <span class="g g-Whitespace">     </span><span class="mi">16</span> 
 <span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">X_train_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;X_train_val.npy&quot;</span><span class="p">)</span>
@@ -817,100 +825,6 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /opt/hostedtoolcache/Python
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Interpreting Sequential
-Topology:
-Layer name: fc1_input, layer type: Input
-Layer name: fc1, layer type: Dense
-  -&gt; Activation (linear), layer name: fc1
-Layer name: relu1, layer type: Activation
-Layer name: fc2, layer type: Dense
-  -&gt; Activation (linear), layer name: fc2
-Layer name: relu2, layer type: Activation
-Layer name: fc3, layer type: Dense
-  -&gt; Activation (linear), layer name: fc3
-Layer name: relu3, layer type: Activation
-Layer name: output, layer type: Dense
-  -&gt; Activation (linear), layer name: output
-Layer name: softmax, layer type: Activation
------------------------------------
-Model
-  Precision:         ap_fixed&lt;10,4&gt;
-  ReuseFactor:       1
-  Strategy:          Latency
-LayerName
-  fc1_input
-    Precision
-      result:        ap_fixed&lt;10,4&gt;
-  fc1
-    Precision
-      weight:        ap_fixed&lt;10,4&gt;
-      bias:          ap_fixed&lt;10,4&gt;
-      result:        ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-  fc1_linear
-    Precision:       ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-    table_size:      1024
-    table_t:         ap_fixed&lt;18,8&gt;
-  relu1
-    Precision:       ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-    table_size:      1024
-    table_t:         ap_fixed&lt;18,8&gt;
-  fc2
-    Precision
-      weight:        ap_fixed&lt;10,4&gt;
-      bias:          ap_fixed&lt;10,4&gt;
-      result:        ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-  fc2_linear
-    Precision:       ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-    table_size:      1024
-    table_t:         ap_fixed&lt;18,8&gt;
-  relu2
-    Precision:       ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-    table_size:      1024
-    table_t:         ap_fixed&lt;18,8&gt;
-  fc3
-    Precision
-      weight:        ap_fixed&lt;10,4&gt;
-      bias:          ap_fixed&lt;10,4&gt;
-      result:        ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-  fc3_linear
-    Precision:       ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-    table_size:      1024
-    table_t:         ap_fixed&lt;18,8&gt;
-  relu3
-    Precision:       ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-    table_size:      1024
-    table_t:         ap_fixed&lt;18,8&gt;
-  output
-    Precision
-      weight:        ap_fixed&lt;10,4&gt;
-      bias:          ap_fixed&lt;10,4&gt;
-      result:        ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-  output_linear
-    Precision:       ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-    table_size:      1024
-    table_t:         ap_fixed&lt;18,8&gt;
-  softmax
-    Precision:       ap_fixed&lt;10,4&gt;
-    ReuseFactor:     1
-    table_size:      1024
-    exp_table_t:     ap_fixed&lt;18,8,AP_RND,AP_SAT&gt;
-    inv_table_t:     ap_fixed&lt;18,8,AP_RND,AP_SAT&gt;
------------------------------------
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="profiling">
@@ -932,67 +846,6 @@ LayerName
 <span class="n">hls4ml</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">profiling</span><span class="o">.</span><span class="n">numerical</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">hls_model</span><span class="o">=</span><span class="n">hls_model</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="n">X_test</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Interpreting Sequential
-Topology:
-Layer name: fc1_input, layer type: InputLayer, input shapes: [[None, 16]], output shape: [None, 16]
-Layer name: fc1, layer type: Dense, input shapes: [[None, 16]], output shape: [None, 64]
-Layer name: relu1, layer type: Activation, input shapes: [[None, 64]], output shape: [None, 64]
-Layer name: fc2, layer type: Dense, input shapes: [[None, 64]], output shape: [None, 32]
-Layer name: relu2, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: fc3, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: relu3, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: output, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 5]
-Layer name: softmax, layer type: Softmax, input shapes: [[None, 5]], output shape: [None, 5]
-Creating HLS model
-Interpreting Sequential
-Topology:
-Layer name: fc1_input, layer type: InputLayer, input shapes: [[None, 16]], output shape: [None, 16]
-Layer name: fc1, layer type: Dense, input shapes: [[None, 16]], output shape: [None, 64]
-Layer name: relu1, layer type: Activation, input shapes: [[None, 64]], output shape: [None, 64]
-Layer name: fc2, layer type: Dense, input shapes: [[None, 64]], output shape: [None, 32]
-Layer name: relu2, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: fc3, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: relu3, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: output, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 5]
-Layer name: softmax, layer type: Softmax, input shapes: [[None, 5]], output shape: [None, 5]
-Creating HLS model
-Profiling weights (before optimization)
-Profiling weights (final / after optimization)
-Profiling activations (before optimization)
-   fc1
-   relu1
-   fc2
-   relu2
-   fc3
-   relu3
-   output
-   softmax
-Profiling activations (final / after optimization)
-Recompiling myproject with tracing
-Writing HLS project
-Done
-   fc1
-   relu1
-   fc2
-   relu2
-   fc3
-   relu3
-   output
-   softmax
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 432x288 with 1 Axes&gt;,
- &lt;Figure size 432x288 with 1 Axes&gt;,
- &lt;Figure size 432x288 with 1 Axes&gt;,
- &lt;Figure size 432x288 with 1 Axes&gt;)
-</pre></div>
-</div>
-<img alt="_images/2.2_advanced_config_7_2.png" src="_images/2.2_advanced_config_7_2.png" />
-<img alt="_images/2.2_advanced_config_7_3.png" src="_images/2.2_advanced_config_7_3.png" />
-<img alt="_images/2.2_advanced_config_7_4.png" src="_images/2.2_advanced_config_7_4.png" />
-<img alt="_images/2.2_advanced_config_7_5.png" src="_images/2.2_advanced_config_7_5.png" />
 </div>
 </div>
 <p>We can see that in this case the default precision of <code class="docutils literal notranslate"><span class="pre">ap_fixed&lt;16,6&gt;</span></code> will fully cover the upper range of the outputs from each layer. This is fully consistent with what we saw earlier from the ROC curve where the fixed-point model was capable of reproducing the floating point result. However, we know that reducing the integer or fractional precision slightly will begin to result in degraded performance.</p>
@@ -1026,18 +879,6 @@ Done
 <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">leg</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing HLS project
-Done
-Keras  Accuracy: 0.7516927710843373
-hls4ml Accuracy: 0.5088132530120482
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ffb4152e7d0&gt;
-</pre></div>
-</div>
-<img alt="_images/2.2_advanced_config_9_2.png" src="_images/2.2_advanced_config_9_2.png" />
 </div>
 </div>
 <p>Not good at all! Let’s see if we can figure out how to create a model that will work at these lower precisions.</p>
@@ -1130,504 +971,6 @@ hls4ml Accuracy: 0.5088132530120482
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:tensorflow:`epsilon` argument is deprecated and will be removed, use `min_delta` instead.
-WARNING:tensorflow:`period` argument is deprecated. Please use `save_freq` to specify the frequency in number of batches seen.
-Epoch 1/30
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/keras/optimizer_v2/adam.py:105: UserWarning: The `lr` argument is deprecated, use `learning_rate` instead.
-  super(Adam, self).__init__(name, **kwargs)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>484/487 [============================&gt;.] - ETA: 0s - loss: 1.3590 - accuracy: 0.4871
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 1: val_loss improved from inf to 1.14819, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 1: val_loss improved from inf to 1.14819, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 1: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 1: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 3s 5ms/step - loss: 1.3580 - accuracy: 0.4876 - val_loss: 1.1482 - val_accuracy: 0.6150 - lr: 1.0000e-04
-Epoch 2/30
-486/487 [============================&gt;.] - ETA: 0s - loss: 1.0692 - accuracy: 0.6514
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 2: val_loss improved from 1.14819 to 1.01672, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 2: val_loss improved from 1.14819 to 1.01672, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 2: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 2: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 1.0691 - accuracy: 0.6514 - val_loss: 1.0167 - val_accuracy: 0.6746 - lr: 1.0000e-04
-Epoch 3/30
-477/487 [============================&gt;.] - ETA: 0s - loss: 0.9796 - accuracy: 0.6886
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 3: val_loss improved from 1.01672 to 0.95010, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 3: val_loss improved from 1.01672 to 0.95010, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 3: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 3: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.9790 - accuracy: 0.6888 - val_loss: 0.9501 - val_accuracy: 0.7046 - lr: 1.0000e-04
-Epoch 4/30
-484/487 [============================&gt;.] - ETA: 0s - loss: 0.9218 - accuracy: 0.7122
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 4: val_loss improved from 0.95010 to 0.90133, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 4: val_loss improved from 0.95010 to 0.90133, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 4: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 4: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.9218 - accuracy: 0.7122 - val_loss: 0.9013 - val_accuracy: 0.7197 - lr: 1.0000e-04
-Epoch 5/30
-476/487 [============================&gt;.] - ETA: 0s - loss: 0.8810 - accuracy: 0.7230
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 5: val_loss improved from 0.90133 to 0.86832, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 5: val_loss improved from 0.90133 to 0.86832, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 5: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 5: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.8808 - accuracy: 0.7231 - val_loss: 0.8683 - val_accuracy: 0.7267 - lr: 1.0000e-04
-Epoch 6/30
-478/487 [============================&gt;.] - ETA: 0s - loss: 0.8536 - accuracy: 0.7292
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 6: val_loss improved from 0.86832 to 0.84735, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 6: val_loss improved from 0.86832 to 0.84735, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 6: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 6: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.8537 - accuracy: 0.7292 - val_loss: 0.8473 - val_accuracy: 0.7306 - lr: 1.0000e-04
-Epoch 7/30
-479/487 [============================&gt;.] - ETA: 0s - loss: 0.8359 - accuracy: 0.7325
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 7: val_loss improved from 0.84735 to 0.83261, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 7: val_loss improved from 0.84735 to 0.83261, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 7: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 7: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.8358 - accuracy: 0.7326 - val_loss: 0.8326 - val_accuracy: 0.7340 - lr: 1.0000e-04
-Epoch 8/30
-479/487 [============================&gt;.] - ETA: 0s - loss: 0.8233 - accuracy: 0.7350
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 8: val_loss improved from 0.83261 to 0.82210, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 8: val_loss improved from 0.83261 to 0.82210, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 8: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 8: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.8230 - accuracy: 0.7352 - val_loss: 0.8221 - val_accuracy: 0.7353 - lr: 1.0000e-04
-Epoch 9/30
-477/487 [============================&gt;.] - ETA: 0s - loss: 0.8136 - accuracy: 0.7371
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 9: val_loss improved from 0.82210 to 0.81351, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 9: val_loss improved from 0.82210 to 0.81351, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 9: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 9: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.8132 - accuracy: 0.7372 - val_loss: 0.8135 - val_accuracy: 0.7370 - lr: 1.0000e-04
-Epoch 10/30
-482/487 [============================&gt;.] - ETA: 0s - loss: 0.8054 - accuracy: 0.7388
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 10: val_loss improved from 0.81351 to 0.80635, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 10: val_loss improved from 0.81351 to 0.80635, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 10: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 10: saving model to model_2/KERAS_check_model_last_weights.h5
-
-Epoch 10: saving model to model_2/KERAS_check_model_epoch10.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.8052 - accuracy: 0.7389 - val_loss: 0.8063 - val_accuracy: 0.7388 - lr: 1.0000e-04
-Epoch 11/30
-485/487 [============================&gt;.] - ETA: 0s - loss: 0.7987 - accuracy: 0.7402
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 11: val_loss improved from 0.80635 to 0.80068, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 11: val_loss improved from 0.80635 to 0.80068, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 11: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 11: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7987 - accuracy: 0.7402 - val_loss: 0.8007 - val_accuracy: 0.7397 - lr: 1.0000e-04
-Epoch 12/30
-485/487 [============================&gt;.] - ETA: 0s - loss: 0.7933 - accuracy: 0.7414
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 12: val_loss improved from 0.80068 to 0.79555, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 12: val_loss improved from 0.80068 to 0.79555, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 12: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 12: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7932 - accuracy: 0.7414 - val_loss: 0.7956 - val_accuracy: 0.7412 - lr: 1.0000e-04
-Epoch 13/30
-481/487 [============================&gt;.] - ETA: 0s - loss: 0.7884 - accuracy: 0.7427
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 13: val_loss improved from 0.79555 to 0.79106, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 13: val_loss improved from 0.79555 to 0.79106, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 13: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 13: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7884 - accuracy: 0.7427 - val_loss: 0.7911 - val_accuracy: 0.7421 - lr: 1.0000e-04
-Epoch 14/30
-486/487 [============================&gt;.] - ETA: 0s - loss: 0.7843 - accuracy: 0.7436
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 14: val_loss improved from 0.79106 to 0.78750, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 14: val_loss improved from 0.79106 to 0.78750, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 14: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 14: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7843 - accuracy: 0.7436 - val_loss: 0.7875 - val_accuracy: 0.7429 - lr: 1.0000e-04
-Epoch 15/30
-486/487 [============================&gt;.] - ETA: 0s - loss: 0.7807 - accuracy: 0.7447
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 15: val_loss improved from 0.78750 to 0.78418, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 15: val_loss improved from 0.78750 to 0.78418, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 15: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 15: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7807 - accuracy: 0.7447 - val_loss: 0.7842 - val_accuracy: 0.7444 - lr: 1.0000e-04
-Epoch 16/30
-483/487 [============================&gt;.] - ETA: 0s - loss: 0.7776 - accuracy: 0.7456
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 16: val_loss improved from 0.78418 to 0.78124, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 16: val_loss improved from 0.78418 to 0.78124, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 16: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 16: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7775 - accuracy: 0.7456 - val_loss: 0.7812 - val_accuracy: 0.7447 - lr: 1.0000e-04
-Epoch 17/30
-476/487 [============================&gt;.] - ETA: 0s - loss: 0.7745 - accuracy: 0.7465
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 17: val_loss improved from 0.78124 to 0.77858, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 17: val_loss improved from 0.78124 to 0.77858, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 17: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 17: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7747 - accuracy: 0.7464 - val_loss: 0.7786 - val_accuracy: 0.7460 - lr: 1.0000e-04
-Epoch 18/30
-484/487 [============================&gt;.] - ETA: 0s - loss: 0.7719 - accuracy: 0.7473
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 18: val_loss improved from 0.77858 to 0.77610, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 18: val_loss improved from 0.77858 to 0.77610, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 18: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 18: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 3s 6ms/step - loss: 0.7721 - accuracy: 0.7472 - val_loss: 0.7761 - val_accuracy: 0.7465 - lr: 1.0000e-04
-Epoch 19/30
-486/487 [============================&gt;.] - ETA: 0s - loss: 0.7697 - accuracy: 0.7480
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 19: val_loss improved from 0.77610 to 0.77391, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 19: val_loss improved from 0.77610 to 0.77391, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 19: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 19: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 3s 6ms/step - loss: 0.7697 - accuracy: 0.7480 - val_loss: 0.7739 - val_accuracy: 0.7472 - lr: 1.0000e-04
-Epoch 20/30
-479/487 [============================&gt;.] - ETA: 0s - loss: 0.7675 - accuracy: 0.7483
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 20: val_loss improved from 0.77391 to 0.77161, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 20: val_loss improved from 0.77391 to 0.77161, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 20: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 20: saving model to model_2/KERAS_check_model_last_weights.h5
-
-Epoch 20: saving model to model_2/KERAS_check_model_epoch20.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7674 - accuracy: 0.7484 - val_loss: 0.7716 - val_accuracy: 0.7479 - lr: 1.0000e-04
-Epoch 21/30
-487/487 [==============================] - ETA: 0s - loss: 0.7653 - accuracy: 0.7492
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 21: val_loss improved from 0.77161 to 0.76959, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 21: val_loss improved from 0.77161 to 0.76959, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 21: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 21: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 3s 6ms/step - loss: 0.7653 - accuracy: 0.7492 - val_loss: 0.7696 - val_accuracy: 0.7486 - lr: 1.0000e-04
-Epoch 22/30
-476/487 [============================&gt;.] - ETA: 0s - loss: 0.7635 - accuracy: 0.7496
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 22: val_loss improved from 0.76959 to 0.76783, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 22: val_loss improved from 0.76959 to 0.76783, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 22: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 22: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7633 - accuracy: 0.7496 - val_loss: 0.7678 - val_accuracy: 0.7491 - lr: 1.0000e-04
-Epoch 23/30
-487/487 [==============================] - ETA: 0s - loss: 0.7615 - accuracy: 0.7502
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 23: val_loss improved from 0.76783 to 0.76611, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 23: val_loss improved from 0.76783 to 0.76611, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 23: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 23: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7615 - accuracy: 0.7502 - val_loss: 0.7661 - val_accuracy: 0.7497 - lr: 1.0000e-04
-Epoch 24/30
-482/487 [============================&gt;.] - ETA: 0s - loss: 0.7598 - accuracy: 0.7508
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 24: val_loss improved from 0.76611 to 0.76443, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 24: val_loss improved from 0.76611 to 0.76443, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 24: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 24: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7599 - accuracy: 0.7507 - val_loss: 0.7644 - val_accuracy: 0.7502 - lr: 1.0000e-04
-Epoch 25/30
-485/487 [============================&gt;.] - ETA: 0s - loss: 0.7583 - accuracy: 0.7511
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 25: val_loss improved from 0.76443 to 0.76308, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 25: val_loss improved from 0.76443 to 0.76308, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 25: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 25: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 3s 6ms/step - loss: 0.7583 - accuracy: 0.7511 - val_loss: 0.7631 - val_accuracy: 0.7502 - lr: 1.0000e-04
-Epoch 26/30
-481/487 [============================&gt;.] - ETA: 0s - loss: 0.7567 - accuracy: 0.7516
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 26: val_loss improved from 0.76308 to 0.76187, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 26: val_loss improved from 0.76308 to 0.76187, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 26: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 26: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7568 - accuracy: 0.7515 - val_loss: 0.7619 - val_accuracy: 0.7511 - lr: 1.0000e-04
-Epoch 27/30
-484/487 [============================&gt;.] - ETA: 0s - loss: 0.7553 - accuracy: 0.7518
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 27: val_loss improved from 0.76187 to 0.76019, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 27: val_loss improved from 0.76187 to 0.76019, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 27: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 27: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 3s 6ms/step - loss: 0.7553 - accuracy: 0.7518 - val_loss: 0.7602 - val_accuracy: 0.7515 - lr: 1.0000e-04
-Epoch 28/30
-478/487 [============================&gt;.] - ETA: 0s - loss: 0.7539 - accuracy: 0.7525
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 28: val_loss improved from 0.76019 to 0.75926, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 28: val_loss improved from 0.76019 to 0.75926, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 28: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 28: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 3s 6ms/step - loss: 0.7540 - accuracy: 0.7524 - val_loss: 0.7593 - val_accuracy: 0.7513 - lr: 1.0000e-04
-Epoch 29/30
-476/487 [============================&gt;.] - ETA: 0s - loss: 0.7525 - accuracy: 0.7530
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 29: val_loss improved from 0.75926 to 0.75758, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 29: val_loss improved from 0.75926 to 0.75758, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 29: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 29: saving model to model_2/KERAS_check_model_last_weights.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7527 - accuracy: 0.7529 - val_loss: 0.7576 - val_accuracy: 0.7520 - lr: 1.0000e-04
-Epoch 30/30
-483/487 [============================&gt;.] - ETA: 0s - loss: 0.7515 - accuracy: 0.7530
-***callbacks***
-saving losses to model_2/losses.log
-
-Epoch 30: val_loss improved from 0.75758 to 0.75627, saving model to model_2/KERAS_check_best_model.h5
-
-Epoch 30: val_loss improved from 0.75758 to 0.75627, saving model to model_2/KERAS_check_best_model_weights.h5
-
-Epoch 30: saving model to model_2/KERAS_check_model_last.h5
-
-Epoch 30: saving model to model_2/KERAS_check_model_last_weights.h5
-
-Epoch 30: saving model to model_2/KERAS_check_model_epoch30.h5
-
-***callbacks end***
-
-487/487 [==============================] - 2s 5ms/step - loss: 0.7514 - accuracy: 0.7530 - val_loss: 0.7563 - val_accuracy: 0.7526 - lr: 1.0000e-04
-</pre></div>
-</div>
-</div>
 </div>
 <p>Again we will se the default precision to be <code class="docutils literal notranslate"><span class="pre">ap_fixed&lt;10,4&gt;</span></code>.</p>
 <div class="cell docutils container">
@@ -1644,67 +987,6 @@ Epoch 30: saving model to model_2/KERAS_check_model_epoch30.h5
 <span class="n">hls4ml</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">profiling</span><span class="o">.</span><span class="n">numerical</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">hls_model</span><span class="o">=</span><span class="n">hls_model</span><span class="p">,</span> <span class="n">X</span><span class="o">=</span><span class="n">X_test</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Interpreting Sequential
-Topology:
-Layer name: fc1_input, layer type: InputLayer, input shapes: [[None, 16]], output shape: [None, 16]
-Layer name: fc1, layer type: Dense, input shapes: [[None, 16]], output shape: [None, 64]
-Layer name: relu1, layer type: Activation, input shapes: [[None, 64]], output shape: [None, 64]
-Layer name: fc2, layer type: Dense, input shapes: [[None, 64]], output shape: [None, 32]
-Layer name: relu2, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: fc3, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: relu3, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: output, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 5]
-Layer name: softmax, layer type: Softmax, input shapes: [[None, 5]], output shape: [None, 5]
-Creating HLS model
-Interpreting Sequential
-Topology:
-Layer name: fc1_input, layer type: InputLayer, input shapes: [[None, 16]], output shape: [None, 16]
-Layer name: fc1, layer type: Dense, input shapes: [[None, 16]], output shape: [None, 64]
-Layer name: relu1, layer type: Activation, input shapes: [[None, 64]], output shape: [None, 64]
-Layer name: fc2, layer type: Dense, input shapes: [[None, 64]], output shape: [None, 32]
-Layer name: relu2, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: fc3, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: relu3, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: output, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 5]
-Layer name: softmax, layer type: Softmax, input shapes: [[None, 5]], output shape: [None, 5]
-Creating HLS model
-Profiling weights (before optimization)
-Profiling weights (final / after optimization)
-Profiling activations (before optimization)
-   fc1
-   relu1
-   fc2
-   relu2
-   fc3
-   relu3
-   output
-   softmax
-Profiling activations (final / after optimization)
-Recompiling myproject with tracing
-Writing HLS project
-Done
-   fc1
-   relu1
-   fc2
-   relu2
-   fc3
-   relu3
-   output
-   softmax
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;Figure size 432x288 with 1 Axes&gt;,
- &lt;Figure size 432x288 with 1 Axes&gt;,
- &lt;Figure size 432x288 with 1 Axes&gt;,
- &lt;Figure size 432x288 with 1 Axes&gt;)
-</pre></div>
-</div>
-<img alt="_images/2.2_advanced_config_15_2.png" src="_images/2.2_advanced_config_15_2.png" />
-<img alt="_images/2.2_advanced_config_15_3.png" src="_images/2.2_advanced_config_15_3.png" />
-<img alt="_images/2.2_advanced_config_15_4.png" src="_images/2.2_advanced_config_15_4.png" />
-<img alt="_images/2.2_advanced_config_15_5.png" src="_images/2.2_advanced_config_15_5.png" />
 </div>
 </div>
 <p>You can see the difference in the weight profile plots between this model and the previous one quite clearly. Whereas before the smallest weight in the first layer was approximately <span class="math notranslate nohighlight">\(10^{-14}\)</span>, now its almost <span class="math notranslate nohighlight">\(10^{-24}\)</span>! However, it hasn’t markedly improved the upper bound of the layers post-activation, so we will need to try something else.</p>
@@ -1724,22 +1006,6 @@ Done
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Interpreting Sequential
-Topology:
-Layer name: fc1_input, layer type: InputLayer, input shapes: [[None, 16]], output shape: [None, 16]
-Layer name: fc1, layer type: Dense, input shapes: [[None, 16]], output shape: [None, 64]
-Layer name: relu1, layer type: Activation, input shapes: [[None, 64]], output shape: [None, 64]
-Layer name: fc2, layer type: Dense, input shapes: [[None, 64]], output shape: [None, 32]
-Layer name: relu2, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: fc3, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: relu3, layer type: Activation, input shapes: [[None, 32]], output shape: [None, 32]
-Layer name: output, layer type: Dense, input shapes: [[None, 32]], output shape: [None, 5]
-Layer name: softmax, layer type: Softmax, input shapes: [[None, 5]], output shape: [None, 5]
-Creating HLS model
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now lets check how this model performs. We are also going to enable a functionality that will extract the intermediate network values from each layer, for botht the hls4ml model and the Keras model.</p>
 <div class="cell docutils container">
@@ -1748,24 +1014,6 @@ Creating HLS model
 <span class="n">hls4ml_pred</span><span class="p">,</span> <span class="n">hls4ml_trace</span> <span class="o">=</span> <span class="n">hls_model</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span>
 <span class="n">keras_trace</span> <span class="o">=</span> <span class="n">hls4ml</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">profiling</span><span class="o">.</span><span class="n">get_ymodel_keras</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span>
 <span class="n">y_hls</span> <span class="o">=</span> <span class="n">hls_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing HLS project
-Done
-Recompiling myproject with tracing
-Writing HLS project
-Done
-Processing fc1 in Keras model...
-Processing relu1 in Keras model...
-Processing fc2 in Keras model...
-Processing relu2 in Keras model...
-Processing fc3 in Keras model...
-Processing relu3 in Keras model...
-Processing output in Keras model...
-Processing softmax in Keras model...
-Done taking outputs for Keras model.
 </pre></div>
 </div>
 </div>
@@ -1785,30 +1033,6 @@ Done taking outputs for Keras model.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Keras layer &#39;fc3&#39;, first sample:
-[ 1.3313658  -0.21857885  1.4324812   0.74048215  0.09333943 -0.987783
- -2.0155785   1.0379704   0.1536662   1.9772413  -0.51191765 -0.5156611
-  1.2655327   1.3444705   1.3776336   0.25099745 -0.69778293  0.81166637
-  0.35837105 -0.02067845 -0.00292974  0.4528223   0.4000891   1.4518489
-  0.4011331  -0.12205557 -1.282028    1.3907194   0.85494524  0.12536691
- -1.873413    1.9575386 ]
-hls4ml layer &#39;fc3&#39;, first sample:
-[ 0.625    -0.421875  0.78125   0.21875  -0.15625  -0.984375 -1.5625
-  0.046875  0.078125  0.875    -0.640625 -0.46875   0.484375  0.4375
-  0.890625 -0.109375 -0.65625   0.0625   -0.078125 -0.078125 -0.171875
-  0.09375  -0.0625    0.46875   0.1875   -0.21875  -0.921875  0.359375
-  0.109375 -0.28125  -1.578125  0.71875 ]
-layer fc3 diff, first sample:
-[-0.70636582 -0.20329615 -0.65123117 -0.52173215 -0.24958943  0.00340801
-  0.45307851 -0.99109542 -0.0755412  -1.10224128 -0.12870735  0.04691112
- -0.78115773 -0.9069705  -0.48700857 -0.36037245  0.04153293 -0.74916637
- -0.43649605 -0.05744655 -0.16894526 -0.3590723  -0.46258909 -0.98309886
- -0.21363309 -0.09669443  0.36015296 -1.03134441 -0.74557024 -0.40661691
-  0.29528797 -1.2387886 ]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1822,9 +1046,6 @@ layer fc3 diff, first sample:
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/2.2_advanced_config_23_0.png" src="_images/2.2_advanced_config_23_0.png" />
 </div>
 </div>
 </section>
@@ -1858,16 +1079,6 @@ layer fc3 diff, first sample:
 <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">leg</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Keras  Accuracy: 0.7516927710843373
-hls4ml Accuracy: 0.6118072289156626
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ffb3f65a350&gt;
-</pre></div>
-</div>
-<img alt="_images/2.2_advanced_config_25_2.png" src="_images/2.2_advanced_config_25_2.png" />
 </div>
 </div>
 <section id="improving">
@@ -1908,7 +1119,7 @@ hls4ml Accuracy: 0.6118072289156626
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Getting started</p>
+            <p class="prev-next-title">Getting Started</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="2.3_compression.html" title="next page">
