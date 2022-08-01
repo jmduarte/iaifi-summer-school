@@ -519,6 +519,7 @@ title="Print to PDF"
 <span class="o">!</span>pip install uproot
 <span class="o">!</span>pip install awkward
 <span class="o">!</span>pip install mplhep
+<span class="o">!</span>pip install torch_scatter
 </pre></div>
 </div>
 </div>
@@ -543,50 +544,53 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9657 sha256=e2ee53a38d60569558c2f37a19a0f9bf60f5c9c4262eb3e1ca816ac0331e0802
+?25h  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9657 sha256=e7bb5feb21ad95f50b0d1ca3174f0c170132eea86b418ae8833b68468637fa23
   Stored in directory: /home/runner/.cache/pip/wheels/a1/b6/7c/0e63e34eb06634181c63adacca38b79ff8f35c37e3c13e3c02
 Successfully built wget
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: wget
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed wget-3.2
+Successfully installed wget-3.2
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: PyYAML in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (6.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: uproot in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (4.3.3)
-Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uproot) (63.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uproot) (63.3.0)
 Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uproot) (1.21.6)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: awkward in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (1.8.0)
-Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (63.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (63.3.0)
 Requirement already satisfied: numpy&gt;=1.13.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (1.21.6)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mplhep in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (0.3.26)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (21.3)
-Requirement already satisfied: matplotlib&gt;=3.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (3.5.2)
-Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (1.21.6)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (1.21.6)
 Requirement already satisfied: uhi&gt;=0.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.3.1)
+Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (21.3)
+Requirement already satisfied: matplotlib&gt;=3.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (3.5.2)
 Requirement already satisfied: mplhep-data in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.0.3)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (4.34.4)
 Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (9.2.0)
-Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (0.11.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (2.8.2)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (1.4.4)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (4.34.4)
 Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (3.0.9)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (1.4.4)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (2.8.2)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (0.11.0)
 Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uhi&gt;=0.2.0-&gt;mplhep) (4.3.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.4-&gt;mplhep) (1.16.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: torch_scatter in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (2.0.9)
 </pre></div>
 </div>
 </div>
@@ -642,7 +646,7 @@ Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache
 <span class="n">train_files</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ntuple_merged_90.root&quot;</span><span class="p">]</span>
 
 <span class="c1">##Locally with XRootD</span>
-<span class="c1"># train_files = [&#39;root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_11.root&#39;]</span>
+<span class="c1">#train_files = [&#39;root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_90.root&#39;]</span>
 <span class="c1"># test_files = [&#39;root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/test/ntuple_merged_1.root&#39;]</span>
 
 <span class="n">train_generator</span> <span class="o">=</span> <span class="n">DeepSetsDataset</span><span class="p">(</span>
@@ -672,7 +676,7 @@ Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4895</span><span class="o">/</span><span class="mf">2338030286.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4798</span><span class="o">/</span><span class="mf">2535918123.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;ntuple_merged_90.root&quot;</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">urlFILE</span> <span class="o">=</span> <span class="s2">&quot;http://opendata.cern.ch/eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_90.root&quot;</span>
 <span class="ne">---&gt; </span><span class="mi">16</span>     <span class="n">dataFILE</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlFILE</span><span class="p">)</span>
@@ -733,10 +737,7 @@ Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache
 <p>We will define a DeepSets model that will take as input up to 60 of the tracks (with 48 features) with zero-padding.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For Colab again</span>
-<span class="o">!</span>pip install torch_scatter
-
-<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 <span class="kn">from</span> <span class="nn">torch.nn</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">Sequential</span> <span class="k">as</span> <span class="n">Seq</span><span class="p">,</span>
@@ -926,10 +927,10 @@ Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9365
-7492
-1873
-3739
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9387
+7510
+1877
+3751
 </pre></div>
 </div>
 </div>
@@ -983,13 +984,13 @@ Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "cf93f0eab325447db40dcf8ae2f4ff45", "version_major": 2, "version_minor": 0}
+{"model_id": "bcab3e1a533049d09e55fbb827736ba5", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 00, Training Loss:   0.4550
-           Validation Loss: 0.4328
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 00, Training Loss:   0.4502
+           Validation Loss: 0.4461
 New best model saved to: deepsets_best.pth
 </pre></div>
 </div>
@@ -997,8 +998,17 @@ New best model saved to: deepsets_best.pth
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 01, Training Loss:   0.4439
-           Validation Loss: 0.4307
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 01, Training Loss:   0.4396
+           Validation Loss: 0.4470
+Stale epoch
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 02, Training Loss:   0.4404
+           Validation Loss: 0.4452
 New best model saved to: deepsets_best.pth
 </pre></div>
 </div>
@@ -1006,8 +1016,8 @@ New best model saved to: deepsets_best.pth
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 02, Training Loss:   0.4438
-           Validation Loss: 0.4328
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 03, Training Loss:   0.4397
+           Validation Loss: 0.4475
 Stale epoch
 </pre></div>
 </div>
@@ -1015,8 +1025,8 @@ Stale epoch
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 03, Training Loss:   0.4415
-           Validation Loss: 0.4328
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 04, Training Loss:   0.4396
+           Validation Loss: 0.4489
 Stale epoch
 </pre></div>
 </div>
@@ -1024,8 +1034,8 @@ Stale epoch
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 04, Training Loss:   0.4424
-           Validation Loss: 0.4328
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 05, Training Loss:   0.4397
+           Validation Loss: 0.4465
 Stale epoch
 </pre></div>
 </div>
@@ -1033,8 +1043,8 @@ Stale epoch
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 05, Training Loss:   0.4411
-           Validation Loss: 0.4328
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 06, Training Loss:   0.4392
+           Validation Loss: 0.4467
 Stale epoch
 </pre></div>
 </div>
@@ -1042,8 +1052,8 @@ Stale epoch
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 06, Training Loss:   0.4422
-           Validation Loss: 0.4316
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch: 07, Training Loss:   0.4392
+           Validation Loss: 0.4489
 Stale epoch
 Early stopping after 5 stale epochs
 </pre></div>
@@ -1056,7 +1066,14 @@ Early stopping after 5 stale epochs
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#In case you need to load the model from a pth file</span>
-<span class="c1">#model.load_state_dict(torch.load(&quot;deepsets_best.pth&quot;))</span>
+<span class="c1">#Trained on 4 vectors (as above in notebook)</span>
+<span class="c1">#urlPTH = &quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/deepsets_best_4vec.pth&quot;</span>
+<span class="c1">#pthFile = wget.download(urlPTH)</span>
+<span class="c1">#model.load_state_dict(torch.load(&quot;deepsets_best_4vec.pth&quot;))</span>
+<span class="c1">#Trained on all possible inputs (a different configuration)</span>
+<span class="c1">#urlPTH = &quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/deepsets_best_AllTraining.pth&quot;</span>
+<span class="c1">#pthFile = wget.download(urlPTH)</span>
+<span class="c1">#model.load_state_dict(torch.load(&quot;deepsets_best_AllTraining.pth&quot;))</span>
 
 <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">test_samples</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">)</span>
@@ -1078,7 +1095,7 @@ Early stopping after 5 stale epochs
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "cedee46c419f4f5d98ec95e138f01e5f", "version_major": 2, "version_minor": 0}
+{"model_id": "08ae3357d440459fb733b72cac7c5476", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">
@@ -1163,7 +1180,7 @@ Early stopping after 5 stale epochs
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "d55cb9b267954838a0d54b8d7b8574bb", "version_major": 2, "version_minor": 0}
+{"model_id": "95eb11fb11914c0fa6098a810971e71f", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="cell docutils container">

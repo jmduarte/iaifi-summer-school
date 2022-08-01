@@ -32,8 +32,12 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# If in colab', 'if not os.path.exists("LorentzGraphDataset.py"):', '    urlDSD = "https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/LorentzGraphDataset.py"', '    DSD = wget.download(urlDSD)', 'if not os.path.exists("utils.py"):']
-...
-['    stop_event=10001,', '    n_events_merge=1,', '    file_names=file_names,', ')', 'print(test_dataset.features)']
+import jetnet
+
+data_t = jetnet.datasets.JetNet(jet_type="t")
+data_t.download_and_convert_to_pt(data_dir="./", jet_type="t")
+
+data_q = jetnet.datasets.JetNet(jet_type="q")
+data_q.download_and_convert_to_pt(data_dir="./", jet_type="q")
 -------------------
 
