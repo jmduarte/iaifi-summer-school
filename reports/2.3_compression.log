@@ -23,33 +23,31 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 import numpy as np
 import matplotlib.pyplot as plt
-
 %matplotlib inline
 seed = 0
 np.random.seed(seed)
 import tensorflow as tf
-
 tf.random.set_seed(seed)
-# import os
-# os.environ['PATH'] = '/opt/Xilinx/Vivado/2019.2/bin:' + os.environ['PATH']
+#import os
+#os.environ['PATH'] = '/opt/Xilinx/Vivado/2019.2/bin:' + os.environ['PATH']
 # for this tutorial we wont be actually running Vivado, so I have commented these lines out
 #     but if you want to look into actually running on an FPGA then simply uncomment these lines
 
-X_train_val = np.load("X_train_val.npy")
-X_test = np.load("X_test.npy")
-y_train_val = np.load("y_train_val.npy")
-y_test = np.load("y_test.npy")
-classes = np.load("classes.npy", allow_pickle=True)
+X_train_val = np.load('X_train_val.npy')
+X_test = np.load('X_test.npy')
+y_train_val = np.load('y_train_val.npy')
+y_test = np.load('y_test.npy')
+classes = np.load('classes.npy', allow_pickle=True)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_5598/300696682.py[0m in [0;36m<module>[0;34m[0m
-[1;32m     17[0m [0;31m#     but if you want to look into actually running on an FPGA then simply uncomment these lines[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     18[0m [0;34m[0m[0m
-[0;32m---> 19[0;31m [0mX_train_val[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mload[0m[0;34m([0m[0;34m"X_train_val.npy"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     20[0m [0mX_test[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mload[0m[0;34m([0m[0;34m"X_test.npy"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     21[0m [0my_train_val[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mload[0m[0;34m([0m[0;34m"y_train_val.npy"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_5476/604236374.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     15[0m [0;31m#     but if you want to look into actually running on an FPGA then simply uncomment these lines[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     16[0m [0;34m[0m[0m
+[0;32m---> 17[0;31m [0mX_train_val[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mload[0m[0;34m([0m[0;34m'X_train_val.npy'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     18[0m [0mX_test[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mload[0m[0;34m([0m[0;34m'X_test.npy'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     19[0m [0my_train_val[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mload[0m[0;34m([0m[0;34m'y_train_val.npy'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/numpy/lib/npyio.py[0m in [0;36mload[0;34m(file, mmap_mode, allow_pickle, fix_imports, encoding)[0m
 [1;32m    415[0m             [0mown_fid[0m [0;34m=[0m [0;32mFalse[0m[0;34m[0m[0;34m[0m[0m
