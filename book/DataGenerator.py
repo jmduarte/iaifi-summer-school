@@ -6,12 +6,23 @@ from utils import to_np_array, get_file_handler
 
 
 class DataGenerator(tensorflow.keras.utils.Sequence):
-    'Generates data for Keras'
+    "Generates data for Keras"
 
-    def __init__(self, list_files, features, labels, spectators, batch_size=1024, n_dim=60,
-                 remove_mass_pt_window=False, remove_unlabeled=True, return_spectators=False,
-                 max_entry=20000, scale_mass_pt=[1, 1]):
-        'Initialization'
+    def __init__(
+        self,
+        list_files,
+        features,
+        labels,
+        spectators,
+        batch_size=1024,
+        n_dim=60,
+        remove_mass_pt_window=False,
+        remove_unlabeled=True,
+        return_spectators=False,
+        max_entry=20000,
+        scale_mass_pt=[1, 1],
+    ):
+        "Initialization"
         self.batch_size = batch_size
         self.labels = labels
         self.list_files = list_files
@@ -26,14 +37,16 @@ class DataGenerator(tensorflow.keras.utils.Sequence):
         self.local_IDs = []
         self.file_mapping = []
         self.max_entry = max_entry
-        self.open_files = [None]*len(self.list_files)
+        self.open_files = [None] * len(self.list_files)
         running_total = 0
         for i, file_name in enumerate(self.list_files):
             with uproot.open(file_name, **get_file_handler(file_name)) as root_file:
                 self.open_files.append(root_file)
-                tree = root_file['deepntuplizer/tree']
+                tree = root_file["deepntuplizer/tree"]
                 tree_length = min(tree.num_entries, max_entry)
-            self.global_IDs.append(np.arange(running_total, running_total+tree_length))
+            self.global_IDs.append(
+                np.arange(running_total, running_total + tree_length)
+            )
             self.local_IDs.append(np.arange(0, tree_length))
             self.file_mapping.append(np.repeat([i], tree_length))
             running_total += tree_length
@@ -43,14 +56,16 @@ class DataGenerator(tensorflow.keras.utils.Sequence):
         self.on_epoch_end()
 
     def __len__(self):
-        'Denotes the number of batches per epoch'
+        "Denotes the number of batches per epoch"
         return int(np.ceil(len(self.global_IDs) / self.batch_size))
 
     def __getitem__(self, index):
-        'Generate one batch of data'
+        "Generate one batch of data"
         # Generate indexes of the batch
-        indexes = self.indexes[index*self.batch_size:(index+1)*self.batch_size]
-        files = self.file_mapping[index*self.batch_size:(index+1)*self.batch_size]
+        indexes = self.indexes[index * self.batch_size : (index + 1) * self.batch_size]
+        files = self.file_mapping[
+            index * self.batch_size : (index + 1) * self.batch_size
+        ]
 
         unique_files = np.unique(files)
         starts = np.array([min(indexes[files == i]) for i in unique_files])
@@ -61,7 +76,9 @@ class DataGenerator(tensorflow.keras.utils.Sequence):
         for ifile, file_name in enumerate(self.list_files):
             if ifile in unique_files:
                 if self.open_files[ifile] is None:
-                    self.open_files[ifile] = uproot.open(file_name, **get_file_handler(file_name))
+                    self.open_files[ifile] = uproot.open(
+                        file_name, **get_file_handler(file_name)
+                    )
             else:
                 if self.open_files[ifile] is not None:
                     self.open_files[ifile].close()
@@ -71,11 +88,11 @@ class DataGenerator(tensorflow.keras.utils.Sequence):
         return self.__data_generation(unique_files, starts, stops)
 
     def on_epoch_end(self):
-        'Updates indexes after each epoch'
+        "Updates indexes after each epoch"
         self.indexes = self.local_IDs
 
     def __data_generation(self, unique_files, starts, stops):
-        'Generates data containing batch_size samples'
+        "Generates data containing batch_size samples"
         # X : (n_samples, n_dim, n_channels)
         # y : (n_samples, 2)
         Xs = []
@@ -105,42 +122,58 @@ class DataGenerator(tensorflow.keras.utils.Sequence):
         return X, y
 
     def __get_features_labels(self, ifile, entry_start, entry_stop):
-        'Loads data from one file'
+        "Loads data from one file"
 
         # Double check that file is open
         if self.open_files[ifile] is None:
-            root_file = uproot.open(self.list_file[ifile], **get_file_handler(self.list_file[ifile]))
+            root_file = uproot.open(
+                self.list_file[ifile], **get_file_handler(self.list_file[ifile])
+            )
         else:
             root_file = self.open_files[ifile]
 
-        tree = root_file['deepntuplizer/tree']
+        tree = root_file["deepntuplizer/tree"]
 
-        feature_array = tree.arrays(self.features,
-                                    entry_start=entry_start,
-                                    entry_stop=entry_stop+1,
-                                    library='ak')
+        feature_array = tree.arrays(
+            self.features,
+            entry_start=entry_start,
+            entry_stop=entry_stop + 1,
+            library="ak",
+        )
 
-        label_array_all = tree.arrays(self.labels,
-                                      entry_start=entry_start,
-                                      entry_stop=entry_stop+1,
-                                      library='np')
+        label_array_all = tree.arrays(
+            self.labels,
+            entry_start=entry_start,
+            entry_stop=entry_stop + 1,
+            library="np",
+        )
 
-        X = np.stack([to_np_array(feature_array[feat], max_n=self.n_dim, pad=0) for feat in self.features], axis=2)
+        X = np.stack(
+            [
+                to_np_array(feature_array[feat], max_n=self.n_dim, pad=0)
+                for feat in self.features
+            ],
+            axis=2,
+        )
         n_samples = X.shape[0]
 
         y = np.zeros((n_samples, 2))
-        y[:, 0] = label_array_all['sample_isQCD'] * (label_array_all['label_QCD_b'] +
-                                                     label_array_all['label_QCD_bb'] +
-                                                     label_array_all['label_QCD_c'] +
-                                                     label_array_all['label_QCD_cc'] +
-                                                     label_array_all['label_QCD_others'])
-        y[:, 1] = label_array_all['label_H_bb']
+        y[:, 0] = label_array_all["sample_isQCD"] * (
+            label_array_all["label_QCD_b"]
+            + label_array_all["label_QCD_bb"]
+            + label_array_all["label_QCD_c"]
+            + label_array_all["label_QCD_cc"]
+            + label_array_all["label_QCD_others"]
+        )
+        y[:, 1] = label_array_all["label_H_bb"]
 
         if self.remove_mass_pt_window or self.return_spectators:
-            spec_array = tree.arrays(self.spectators,
-                                     entry_start=entry_start,
-                                     entry_stop=entry_stop+1,
-                                     library='np')
+            spec_array = tree.arrays(
+                self.spectators,
+                entry_start=entry_start,
+                entry_stop=entry_stop + 1,
+                library="np",
+            )
             z = np.stack([spec_array[spec] for spec in self.spectators], axis=1)
 
         if self.remove_mass_pt_window:
@@ -157,6 +190,6 @@ class DataGenerator(tensorflow.keras.utils.Sequence):
             y = y[np.sum(y, axis=1) == 1]
 
         if self.return_spectators:
-            return X, [y, z/self.scale_mass_pt]
+            return X, [y, z / self.scale_mass_pt]
 
         return X, y
