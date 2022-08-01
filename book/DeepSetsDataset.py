@@ -15,7 +15,7 @@ from utils import get_file_handler
 
 class DeepSetsDataset():
     def __init__(self, features, labels, spectators,
-                 n_events=-1, file_names=None, npad = 0, remove_unlabeled=True):
+                 start_event=0, stop_event=1000, file_names=None, npad = 0, remove_unlabeled=True):
         """
         Initialize parameters of Deep Sets dataset
         Args:
@@ -28,7 +28,9 @@ class DeepSetsDataset():
         self.features = features
         self.labels = labels
         self.spectators = spectators
-        self.n_events = n_events
+        self.n_events = stop_event-start_event
+        self.start_event = start_event
+        self.stop_event = stop_event
         self.file_names = file_names
         self.npad = npad
         self.remove_unlabeled = remove_unlabeled
@@ -63,15 +65,18 @@ class DeepSetsDataset():
                 tree = root_file['deepntuplizer/tree']
 
                 feature_array = tree.arrays(self.features,
-                                            entry_stop=self.n_events,
+                                            entry_start=self.start_event,
+                                            entry_stop=self.stop_event,
                                             library='ak')
 
                 label_array_all = tree.arrays(self.labels,
-                                              entry_stop=self.n_events,
+                                              entry_start=self.start_event,
+                                              entry_stop=self.stop_event,
                                               library='np')
 
                 spec_array = tree.arrays(self.spectators,
-                                         entry_stop=self.n_events,
+                                         entry_start=self.start_event,
+                                         entry_stop=self.stop_event,
                                          library='np')
 
             n_samples = label_array_all[self.labels[0]].shape[0]
@@ -126,4 +131,4 @@ if __name__ == "__main__":
     labels = definitions['labels']
 
     dsdata = DeepSetsDataset(args.dataset, features, labels, spectators,
-                         n_events=args.n_events)
+                             start_event=args.start_events, stop_event=args.stop_event)
