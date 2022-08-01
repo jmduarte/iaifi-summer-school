@@ -11,6 +11,7 @@ Authors: Javier Duarte <a href="https://orcid.org/0000-0002-5076-7096"><img src=
 ![deploy-book](https://github.com/jmduarte/iaifi-summer-school/actions/workflows/deploy.yml/badge.svg)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jmduarte/iaifi-summer-school/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6946117.svg)](https://doi.org/10.5281/zenodo.6946117)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 These tutorials accompany a set of two lectures by Javier Duarte at the <a href="https://iaifi.org/phd-summer-school.html">2022 IAIFI Summer School</a> on <a href="https://www.icloud.com/keynote/015QipHxvdfCNjuCZg-txx20Q#IAIFI_RepsNetsSyms_1August2022">(1) Representations, networks, and symmetries for learning from particle physics data</a> and <a href="https://www.icloud.com/keynote/0aaITwSsDq0u8CUvH6sJSJ2zg#IAIFI_ModelCompFastML_2August2022">(2) Model compression and fast machine learning in particle physics</a>. The tutorials are split into two parts, each paired with a lecture.
 
