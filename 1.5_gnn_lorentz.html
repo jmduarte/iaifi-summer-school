@@ -560,14 +560,14 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "80da1a1ade824b6d955d57591e5e0ecc"}
+{"version_major": 2, "version_minor": 0, "model_id": "bc7c0b5fff6a4d3e85ba59c7a19c95ae"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py:121: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor(fourvec, dtype=torch.float).T
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5116</span><span class="o">/</span><span class="mf">588787648.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5142</span><span class="o">/</span><span class="mf">588787648.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> 
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">graph_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span><span class="s1">&#39;ldata_train&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
 <span class="ne">---&gt; </span><span class="mi">10</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">)</span>
@@ -596,32 +596,25 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 <span class="g g-Whitespace">    </span><span class="mi">172</span>         <span class="n">path</span> <span class="o">=</span> <span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="s1">&#39;pre_transform.pt&#39;</span><span class="p">)</span>
 
 <span class="nn">~/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py</span> in <span class="ni">process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span>                 <span class="k">if</span> <span class="n">n_particles</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>                     <span class="k">continue</span>
-<span class="ne">--&gt; </span><span class="mi">108</span>                 <span class="n">pt</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_pt&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>                 <span class="n">mass</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_mass&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>                 <span class="n">eta</span> <span class="o">=</span> <span class="n">feature_array</span><span class="p">[</span><span class="s1">&#39;track_etarel&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">+</span><span class="n">spec_array</span><span class="p">[</span><span class="s1">&#39;fj_eta&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>                 <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_events_merge</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_events_merge</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>                     <span class="n">datas</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">datas</span><span class="p">,</span> <span class="p">[])</span>
+<span class="ne">--&gt; </span><span class="mi">133</span>                     <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">datas</span><span class="p">,</span> <span class="n">osp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processed_dir</span><span class="p">,</span> <span class="s1">&#39;data_</span><span class="si">{}</span><span class="s1">.pt&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> 
+<span class="g g-Whitespace">    </span><span class="mi">135</span>     <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">to_numpy</span><span class="nt">(self, allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span>         <span class="n">Converts</span> <span class="n">this</span> <span class="n">Array</span> <span class="n">into</span> <span class="n">a</span> <span class="n">NumPy</span> <span class="n">array</span><span class="p">,</span> <span class="k">if</span> <span class="n">possible</span><span class="p">;</span> <span class="n">same</span> <span class="k">as</span> <span class="c1">#ak.to_numpy.</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">464</span><span class="s2">         return ak.operations.convert.to_numpy(self, allow_missing=allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="s2">     @property</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/serialization.py</span> in <span class="ni">save</span><span class="nt">(obj, f, pickle_module, pickle_protocol, _use_new_zipfile_serialization)</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span>         <span class="k">if</span> <span class="n">_use_new_zipfile_serialization</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>             <span class="k">with</span> <span class="n">_open_zipfile_writer</span><span class="p">(</span><span class="n">opened_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">opened_zipfile</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">379</span>                 <span class="n">_save</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">opened_zipfile</span><span class="p">,</span> <span class="n">pickle_module</span><span class="p">,</span> <span class="n">pickle_protocol</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>                 <span class="k">return</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span>         <span class="n">_legacy_save</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">opened_file</span><span class="p">,</span> <span class="n">pickle_module</span><span class="p">,</span> <span class="n">pickle_protocol</span><span class="p">)</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="s2">     elif isinstance(array, ak.highlevel.Array):</span>
-<span class="ne">--&gt; </span><span class="mi">196</span><span class="s2">         return to_numpy(array.layout, allow_missing=allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="s2">     elif isinstance(array, ak.highlevel.Record):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span><span class="s2">         return to_numpy(array.project(), allow_missing=allow_missing)</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">246</span><span class="s2">     elif isinstance(array, ak._util.uniontypes):</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span><span class="s2">         contents = [</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span><span class="s2">             to_numpy(array.project(i), allow_missing=allow_missing)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/torch/serialization.py</span> in <span class="ni">_save</span><span class="nt">(obj, zip_file, pickle_module, pickle_protocol)</span>
+<span class="g g-Whitespace">    </span><span class="mi">592</span> 
+<span class="g g-Whitespace">    </span><span class="mi">593</span>     <span class="c1"># Write each tensor to a file named tensor/the_tensor_key in the zip archive</span>
+<span class="ne">--&gt; </span><span class="mi">594</span>     <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">serialized_storages</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+<span class="g g-Whitespace">    </span><span class="mi">595</span>         <span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">596</span>         <span class="n">storage</span> <span class="o">=</span> <span class="n">serialized_storages</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
