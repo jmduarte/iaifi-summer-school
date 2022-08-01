@@ -128,6 +128,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="1.2_jet_images.html">
+   Week 5 Notebook: Deep Learning from Jet Images
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="1.3_deep_sets.html">
    Deep Sets
   </a>
@@ -491,7 +496,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="interaction-network">
 <h1>Interaction Network<a class="headerlink" href="#interaction-network" title="Permalink to this headline">#</a></h1>
-<p>Now we will look at graph neural networks using the PyTorch Geometric library: <a class="reference external" href="https://pytorch-geometric.readthedocs.io/">https://pytorch-geometric.readthedocs.io/</a>. See <span id="id1">[<a class="reference internal" href="zreferences.html#id22" title="Matthias Fey and Jan E. Lenssen. Fast graph representation learning with PyTorch Geometric. In ICLR Workshop on Representation Learning on Graphs and Manifolds. 2019. URL: https://pytorch-geometric.readthedocs.io/, arXiv:1903.02428.">1</a>]</span> for more details.</p>
+<p>Now we will look at graph neural networks using the PyTorch Geometric library: <a class="reference external" href="https://pytorch-geometric.readthedocs.io/">https://pytorch-geometric.readthedocs.io/</a>. See <span id="id1">[<a class="reference internal" href="zreferences.html#id22" title="Matthias Fey and Jan E. Lenssen. Fast graph representation learning with PyTorch Geometric. In ICLR Workshop on Representation Learning on Graphs and Manifolds. 2019. URL: https://pytorch-geometric.readthedocs.io/, arXiv:1903.02428.">2</a>]</span> for more details.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
@@ -560,14 +565,14 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "09a53b65312740fd86f51d623c87b787"}
+{"version_major": 2, "version_minor": 0, "model_id": "e2292c04ffe84097bbfeb59d006e36f1"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/LorentzGraphDataset.py:121: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor(fourvec, dtype=torch.float).T
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5210</span><span class="o">/</span><span class="mf">588787648.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4896</span><span class="o">/</span><span class="mf">588787648.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> 
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">graph_dataset</span> <span class="o">=</span> <span class="n">LorentzGraphDataset</span><span class="p">(</span><span class="s1">&#39;ldata_train&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
 <span class="ne">---&gt; </span><span class="mi">10</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">)</span>
@@ -605,13 +610,18 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 <span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">stack</span><span class="nt">(*args, **kwargs)</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/numpy/core/shape_base.py</span> in <span class="ni">stack</span><span class="nt">(arrays, axis, out)</span>
-<span class="g g-Whitespace">    </span><span class="mi">431</span>     <span class="n">sl</span> <span class="o">=</span> <span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),)</span> <span class="o">*</span> <span class="n">axis</span> <span class="o">+</span> <span class="p">(</span><span class="n">_nx</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,)</span>
-<span class="g g-Whitespace">    </span><span class="mi">432</span>     <span class="n">expanded_arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">sl</span><span class="p">]</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">433</span>     <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">expanded_arrays</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">434</span> 
-<span class="g g-Whitespace">    </span><span class="mi">435</span> 
+<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="n">_arrays_for_stack_dispatcher</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span> 
+<span class="ne">--&gt; </span><span class="mi">420</span>     <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">arrays</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;need at least one array to stack&#39;</span><span class="p">)</span>
 
-<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">concatenate</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/numpy/core/shape_base.py</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span>         <span class="n">_arrays_for_stack_dispatcher</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">419</span> 
+<span class="ne">--&gt; </span><span class="mi">420</span>     <span class="n">arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="k">for</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">arrays</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">421</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">arrays</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">422</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;need at least one array to stack&#39;</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -621,7 +631,7 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </section>
 <section id="graph-neural-network">
 <h2>Graph neural network<a class="headerlink" href="#graph-neural-network" title="Permalink to this headline">#</a></h2>
-<p>Here, we recapitulate the “graph network” (GN) formalism <span id="id2">[<a class="reference internal" href="zreferences.html#id25" title="Peter W. Battaglia, Jessica B. Hamrick, Victor Bapst, Alvaro Sanchez-Gonzalez, Vinicius Zambaldi, Mateusz Malinowski, Andrea Tacchetti, David Raposo, Adam Santoro, Ryan Faulkner, Caglar Gulcehre, Francis Song, Andrew Ballard, Justin Gilmer, George Dahl, Ashish Vaswani, Kelsey Allen, Charles Nash, Victoria Langston, Chris Dyer, Nicolas Heess, Daan Wierstra, Pushmeet Kohli, Matt Botvinick, Oriol Vinyals, Yujia Li, and Razvan Pascanu. Relational inductive biases, deep learning, and graph networks. Preprint, 2018. arXiv:1806.01261.">2</a>]</span>, which generalizes various GNNs and other similar methods.
+<p>Here, we recapitulate the “graph network” (GN) formalism <span id="id2">[<a class="reference internal" href="zreferences.html#id25" title="Peter W. Battaglia, Jessica B. Hamrick, Victor Bapst, Alvaro Sanchez-Gonzalez, Vinicius Zambaldi, Mateusz Malinowski, Andrea Tacchetti, David Raposo, Adam Santoro, Ryan Faulkner, Caglar Gulcehre, Francis Song, Andrew Ballard, Justin Gilmer, George Dahl, Ashish Vaswani, Kelsey Allen, Charles Nash, Victoria Langston, Chris Dyer, Nicolas Heess, Daan Wierstra, Pushmeet Kohli, Matt Botvinick, Oriol Vinyals, Yujia Li, and Razvan Pascanu. Relational inductive biases, deep learning, and graph networks. Preprint, 2018. arXiv:1806.01261.">3</a>]</span>, which generalizes various GNNs and other similar methods.
 GNs are graph-to-graph mappings, whose output graphs have the same node and edge structure as the input.
 Formally, a GN block contains three “update” functions, <span class="math notranslate nohighlight">\(\phi\)</span>, and three “aggregation” functions, <span class="math notranslate nohighlight">\(\rho\)</span>.
 The stages of processing in a single GN block are:</p>
@@ -637,7 +647,7 @@ The stages of processing in a single GN block are:</p>
 \)</span></p>
 <p>where <span class="math notranslate nohighlight">\(E'_i = \left\{\left(\mathbf{e}'_k, r_k, s_k \right)\right\}_{r_k=i,\; k=1:N^e}\)</span> contains the updated edge features for edges whose receiver node is the <span class="math notranslate nohighlight">\(i\)</span>th node, <span class="math notranslate nohighlight">\(E' = \bigcup_i E_i' = \left\{\left(\mathbf{e}'_k, r_k, s_k \right)\right\}_{k=1:N^e}\)</span> is the set of updated edges, and <span class="math notranslate nohighlight">\(V'=\left\{\mathbf{v}'_i\right\}_{i=1:N^v}\)</span> is the set of updated nodes.</p>
 <img src="https://github.com/jmduarte/capstone-particle-physics-domain/raw/master/weeks/GN-full-block.png" alt="GN full block" width="500">
-<p>We will define an interaction network model similar to Ref. <span id="id3">[<a class="reference internal" href="zreferences.html#id2" title="Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $H \rightarrow b\overline b$ decays. Phys. Rev. D, 102:012010, 2020. arXiv:1909.12285, doi:10.1103/PhysRevD.102.012010.">3</a>]</span>, but just modeling the particle-particle interactions. It will take as input all of the tracks (with 48 features) without truncating or zero-padding. Another modification is the use of batch normalization <span id="id4">[<a class="reference internal" href="zreferences.html#id26" title="Sergey Ioffe and Christian Szegedy. Batch normalization: accelerating deep network training by reducing internal covariate shift. In Francis Bach and David Blei, editors, 32nd International Conference on Machine Learning, volume 37, 448. Lille, France, 07 2015. PMLR. URL: http://proceedings.mlr.press/v37/ioffe15.html, arXiv:1502.03167.">4</a>]</span> layers to improve the stability of the training.</p>
+<p>We will define an interaction network model similar to Ref. <span id="id3">[<a class="reference internal" href="zreferences.html#id2" title="Eric A. Moreno, Thong Q. Nguyen, Jean-Roch Vlimant, Olmo Cerri, Harvey B. Newman, Avikar Periwal, Maria Spiropulu, Javier M. Duarte, and Maurizio Pierini. Interaction networks for the identification of boosted $H \rightarrow b\overline b$ decays. Phys. Rev. D, 102:012010, 2020. arXiv:1909.12285, doi:10.1103/PhysRevD.102.012010.">4</a>]</span>, but just modeling the particle-particle interactions. It will take as input all of the tracks (with 48 features) without truncating or zero-padding. Another modification is the use of batch normalization <span id="id4">[<a class="reference internal" href="zreferences.html#id26" title="Sergey Ioffe and Christian Szegedy. Batch normalization: accelerating deep network training by reducing internal covariate shift. In Francis Bach and David Blei, editors, 32nd International Conference on Machine Learning, volume 37, 448. Lille, France, 07 2015. PMLR. URL: http://proceedings.mlr.press/v37/ioffe15.html, arXiv:1502.03167.">5</a>]</span> layers to improve the stability of the training.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>

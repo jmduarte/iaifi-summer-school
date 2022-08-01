@@ -53,6 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://jduarte.physics.ucsd.edu/iaifi-summer-school/1.2_jet_images.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Deep Sets" href="1.3_deep_sets.html" />
+    <link rel="prev" title="Tabular Data using Energy Flow Polynomials" href="1.1_tabular_data_efps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,10 +119,15 @@ const thebe_selector_output = ".output, .cell_output"
   Representations, Networks, and Symmetries
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1.1_tabular_data_efps.html">
    Tabular Data using Energy Flow Polynomials
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Week 5 Notebook: Deep Learning from Jet Images
   </a>
  </li>
  <li class="toctree-l1">
@@ -460,8 +467,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:18:09.453128: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.13/x64/lib
-2022-08-01 01:18:09.453160: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:24:49.871904: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.13/x64/lib
+2022-08-01 01:24:49.871943: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
 </div>
@@ -488,7 +495,7 @@ title="Print to PDF"
 </div>
 <section id="jet-images">
 <h2>Jet Images<a class="headerlink" href="#jet-images" title="Permalink to this headline">#</a></h2>
-<p>Let’s construct jet images <span id="id1">[<a class="reference internal" href="zreferences.html#id12" title="Luke de Oliveira, Michael Kagan, Lester Mackey, Benjamin Nachman, and Ariel Schwartzman. Jet-images — deep learning edition. J. High Energy Phys., 07:069, 2016. arXiv:1511.05190, doi:10.1007/JHEP07(2016)069.">5</a>]</span>, which are 2D image-based representations of the spatial energy spread of jets. Each pixel’s intensity is given by the sum of the transverse momentum of the particles located in that pixel.</p>
+<p>Let’s construct jet images <span id="id1">[<a class="reference internal" href="zreferences.html#id12" title="Luke de Oliveira, Michael Kagan, Lester Mackey, Benjamin Nachman, and Ariel Schwartzman. Jet-images — deep learning edition. J. High Energy Phys., 07:069, 2016. arXiv:1511.05190, doi:10.1007/JHEP07(2016)069.">1</a>]</span>, which are 2D image-based representations of the spatial energy spread of jets. Each pixel’s intensity is given by the sum of the transverse momentum of the particles located in that pixel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_array</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">spec_array</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_features_labels</span><span class="p">(</span><span class="s1">&#39;root://eospublic.cern.ch//eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_10.root&#39;</span><span class="p">,</span> 
@@ -571,6 +578,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:25:44.576491: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.13/x64/lib
+2022-08-01 01:25:44.577426: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+2022-08-01 01:25:44.579107: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az377-45): /proc/driver/nvidia/version does not exist
+2022-08-01 01:25:44.588031: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;model&quot;
 </pre></div>
 </div>
@@ -712,13 +726,6 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:18:45.300070: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library &#39;libcuda.so.1&#39;; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.7.13/x64/lib
-2022-08-01 01:18:45.300525: W tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
-2022-08-01 01:18:45.301228: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (fv-az208-588): /proc/driver/nvidia/version does not exist
-2022-08-01 01:18:45.305182: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -743,24 +750,24 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:18:51.321584: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 1505280000 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:25:56.997316: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 1505280000 exceeds 10% of free system memory.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:18:55.179678: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 411041792 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:26:02.013202: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 411041792 exceeds 10% of free system memory.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:18:56.840940: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 411041792 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:26:04.566145: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 411041792 exceeds 10% of free system memory.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:18:58.333137: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 411041792 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:26:06.887166: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 411041792 exceeds 10% of free system memory.
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:18:59.864890: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 411041792 exceeds 10% of free system memory.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-08-01 01:26:09.213494: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 411041792 exceeds 10% of free system memory.
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5041</span><span class="o">/</span><span class="mf">1648752525.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4711</span><span class="o">/</span><span class="mf">1648752525.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">12</span>                                         <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">13</span>                                         <span class="n">callbacks</span> <span class="o">=</span> <span class="n">callbacks</span><span class="p">,</span>
 <span class="ne">---&gt; </span><span class="mi">14</span>                                         <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -913,6 +920,20 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="1.1_tabular_data_efps.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tabular Data using Energy Flow Polynomials</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="1.3_deep_sets.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Deep Sets</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
