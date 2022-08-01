@@ -516,6 +516,9 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">wget</span>
 
 <span class="o">!</span>pip install -U PyYAML
+<span class="o">!</span>pip install uproot
+<span class="o">!</span>pip install awkward
+<span class="o">!</span>pip install mplhep
 </pre></div>
 </div>
 </div>
@@ -540,7 +543,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9657 sha256=20d99f5ba8fcbf329ef6ceefb806e07e07c9f6a8e802f8a6e905470b2a649bd0
+?25h  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9657 sha256=e2ee53a38d60569558c2f37a19a0f9bf60f5c9c4262eb3e1ca816ac0331e0802
   Stored in directory: /home/runner/.cache/pip/wheels/a1/b6/7c/0e63e34eb06634181c63adacca38b79ff8f35c37e3c13e3c02
 Successfully built wget
 </pre></div>
@@ -554,18 +557,51 @@ Successfully built wget
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: PyYAML in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (6.0)
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: uproot in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (4.3.3)
+Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uproot) (63.3.0)
+Requirement already satisfied: numpy in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uproot) (1.21.6)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: awkward in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (1.8.0)
+Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (63.3.0)
+Requirement already satisfied: numpy&gt;=1.13.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (1.21.6)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mplhep in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (0.3.26)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (21.3)
+Requirement already satisfied: matplotlib&gt;=3.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (3.5.2)
+Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (1.21.6)
+Requirement already satisfied: uhi&gt;=0.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.3.1)
+Requirement already satisfied: mplhep-data in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.0.3)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (4.34.4)
+Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (9.2.0)
+Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (0.11.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (2.8.2)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (1.4.4)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (3.0.9)
+Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uhi&gt;=0.2.0-&gt;mplhep) (4.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.4-&gt;mplhep) (1.16.0)
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
 
 <span class="c1"># WGET for colab</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/definitions_lorentz.yml&quot;</span>
-<span class="n">definitionsFile</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;definitions_lorentz.yml&quot;</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/definitions_lorentz.yml&quot;</span>
+    <span class="n">definitionsFile</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
-<span class="c1"># with open(&#39;definitions_lorentz.yml&#39;) as file: #If you pulled locally</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">definitionsFile</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>  <span class="c1"># for colab</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;definitions_lorentz.yml&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="c1"># The FullLoader parameter handles the conversion from YAML</span>
     <span class="c1"># scalar values to Python the dictionary format</span>
     <span class="n">definitions</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">FullLoader</span><span class="p">)</span>
@@ -588,12 +624,12 @@ Successfully built wget
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If in colab</span>
-<span class="n">urlDSD</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/DeepSetsDataset.py&quot;</span>
-<span class="n">DSD</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlDSD</span><span class="p">)</span>
-<span class="n">urlUtils</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="s2">&quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/utils.py&quot;</span>
-<span class="p">)</span>
-<span class="n">utils</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlUtils</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;GraphDataset.py&quot;</span><span class="p">):</span>
+    <span class="n">urlDSD</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/DeepSetsDataset.py&quot;</span>
+    <span class="n">DSD</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlDSD</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;utils.py&quot;</span><span class="p">):</span>
+    <span class="n">urlUtils</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/utils.py&quot;</span>
+    <span class="n">utils</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlUtils</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">DeepSetsDataset</span> <span class="kn">import</span> <span class="n">DeepSetsDataset</span>
 
@@ -636,7 +672,7 @@ Successfully built wget
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4822</span><span class="o">/</span><span class="mf">2305371141.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4895</span><span class="o">/</span><span class="mf">2338030286.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;ntuple_merged_90.root&quot;</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">urlFILE</span> <span class="o">=</span> <span class="s2">&quot;http://opendata.cern.ch/eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_90.root&quot;</span>
 <span class="ne">---&gt; </span><span class="mi">16</span>     <span class="n">dataFILE</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlFILE</span><span class="p">)</span>
@@ -1019,7 +1055,10 @@ Early stopping after 5 stale epochs
 <h2>Evaluate on testing data<a class="headerlink" href="#evaluate-on-testing-data" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#In case you need to load the model from a pth file</span>
+<span class="c1">#model.load_state_dict(torch.load(&quot;deepsets_best.pth&quot;))</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">test_loader</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">test_samples</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">y_predict</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1045,7 +1084,7 @@ Early stopping after 5 stale epochs
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For Colab</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">_</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
     <span class="n">track_pt</span><span class="p">[</span><span class="n">y_test</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;sig&quot;</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s2">&quot;step&quot;</span>
@@ -1067,10 +1106,7 @@ Early stopping after 5 stale epochs
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install mplhep
-
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
 <span class="kn">import</span> <span class="nn">mplhep</span> <span class="k">as</span> <span class="nn">hep</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">hep</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">ROOT</span><span class="p">)</span>
