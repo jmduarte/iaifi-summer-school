@@ -538,7 +538,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9657 sha256=e1b7875496d2ed4fbab88438653cadf520c019a5cbbd055ca49702301d3c6800
+?25h  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9657 sha256=89c44206bafb7d7beed888d97abacd0512fd0ba9a0de1926c8f4281ed0db0e20
   Stored in directory: /home/runner/.cache/pip/wheels/a1/b6/7c/0e63e34eb06634181c63adacca38b79ff8f35c37e3c13e3c02
 Successfully built wget
 </pre></div>
@@ -591,9 +591,13 @@ Successfully built wget
 <span class="n">urlUtils</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/jmduarte/iaifi-summer-school/main/book/utils.py&quot;</span>
 <span class="n">utils</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlUtils</span><span class="p">)</span>
 
+<span class="kn">from</span> <span class="nn">DeepSetsDataset</span> <span class="kn">import</span> <span class="n">DeepSetsDataset</span>
+
 <span class="c1">#For colab</span>
-<span class="n">urlFILE</span><span class="o">=</span><span class="s2">&quot;http://opendata.cern.ch/eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_90.root&quot;</span>
-<span class="n">dataFILE</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlFILE</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;ntuple_merged_90.root&quot;</span><span class="p">)):</span>
+    <span class="n">urlFILE</span><span class="o">=</span><span class="s2">&quot;http://opendata.cern.ch/eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_90.root&quot;</span>
+    <span class="n">dataFILE</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlFILE</span><span class="p">)</span> 
 <span class="n">train_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ntuple_merged_90.root&#39;</span><span class="p">]</span>
 
 <span class="c1">##Locally with XRootD</span>
@@ -613,12 +617,12 @@ Successfully built wget
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4793</span><span class="o">/</span><span class="mf">2005322934.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1">#For colab</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">urlFILE</span><span class="o">=</span><span class="s2">&quot;http://opendata.cern.ch/eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_90.root&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">dataFILE</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlFILE</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">train_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ntuple_merged_90.root&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5113</span><span class="o">/</span><span class="mf">2797820053.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;ntuple_merged_90.root&quot;</span><span class="p">)):</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">urlFILE</span><span class="o">=</span><span class="s2">&quot;http://opendata.cern.ch/eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_90.root&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="n">dataFILE</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlFILE</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">train_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ntuple_merged_90.root&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> 
 
 <span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/wget.py</span> in <span class="ni">download</span><span class="nt">(url, out, bar)</span>
 <span class="g g-Whitespace">    </span><span class="mi">524</span>     <span class="k">else</span><span class="p">:</span>
@@ -674,7 +678,10 @@ Successfully built wget
 <p>We will define a DeepSets model that will take as input up to 60 of the tracks (with 48 features) with zero-padding.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#For Colab again</span>
+<span class="o">!</span>pip install torch_scatter
+
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 <span class="kn">from</span> <span class="nn">torch.nn</span> <span class="kn">import</span> <span class="n">Sequential</span> <span class="k">as</span> <span class="n">Seq</span><span class="p">,</span> <span class="n">Linear</span> <span class="k">as</span> <span class="n">Lin</span><span class="p">,</span> <span class="n">ReLU</span><span class="p">,</span> <span class="n">BatchNorm1d</span><span class="p">,</span> <span class="n">AvgPool1d</span><span class="p">,</span> <span class="n">Sigmoid</span><span class="p">,</span> <span class="n">Conv1d</span>
 <span class="kn">from</span> <span class="nn">torch_scatter</span> <span class="kn">import</span> <span class="n">scatter_mean</span>
@@ -987,7 +994,10 @@ Early stopping after 5 stale epochs
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span><span class="n">bins</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">track_pt</span><span class="p">[</span><span class="n">y_test</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;sig&#39;</span><span class="p">,</span><span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#For Colab</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">_</span><span class="p">,</span><span class="n">bins</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">track_pt</span><span class="p">[</span><span class="n">y_test</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;sig&#39;</span><span class="p">,</span><span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">)</span>
 <span class="n">_</span><span class="p">,</span><span class="n">bins</span><span class="p">,</span><span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">track_pt</span><span class="p">[</span><span class="n">y_test</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;bkg&#39;</span><span class="p">,</span><span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">()</span>
@@ -1003,7 +1013,9 @@ Early stopping after 5 stale epochs
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install mplhep
+
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">auc</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">mplhep</span> <span class="k">as</span> <span class="nn">hep</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="n">hep</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">ROOT</span><span class="p">)</span>

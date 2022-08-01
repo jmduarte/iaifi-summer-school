@@ -44,7 +44,7 @@ y_keras = model.predict(X_test)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_5072/1760316901.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_5388/1760316901.py[0m in [0;36m<module>[0;34m[0m
 [1;32m     13[0m [0;31m#     but if you want to look into actually running on an FPGA then simply uncomment these lines[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
 [1;32m     14[0m [0;34m[0m[0m
 [0;32m---> 15[0;31m [0mX_train_val[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0mload[0m[0;34m([0m[0;34m'X_train_val.npy'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

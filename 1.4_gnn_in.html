@@ -564,14 +564,14 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 </pre></div>
 </div>
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "fa2ff56a70f7412c841302c37480c771"}
+{"version_major": 2, "version_minor": 0, "model_id": "7daaad6bf2ca422688cf8ce0b8332ed7"}
 </script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/iaifi-summer-school/iaifi-summer-school/book/GraphDataset.py:111: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:204.)
   x = torch.tensor([feature_array[feat][i].to_numpy() for feat in self.features], dtype=torch.float).T
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4849</span><span class="o">/</span><span class="mf">4186816177.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_5171</span><span class="o">/</span><span class="mf">4186816177.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> 
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">graph_dataset</span> <span class="o">=</span> <span class="n">GraphDataset</span><span class="p">(</span><span class="s1">&#39;gdata_train&#39;</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">spectators</span><span class="p">,</span> <span class="n">n_events</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">n_events_merge</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
 <span class="ne">---&gt; </span><span class="mi">10</span>                              <span class="n">file_names</span><span class="o">=</span><span class="n">file_names</span><span class="p">)</span>
@@ -613,19 +613,33 @@ The receiver and sender index vectors are an alternative way of encoding the dir
 <span class="g g-Whitespace">    </span><span class="mi">112</span>                 <span class="n">u</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">113</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">Data</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">edge_index</span><span class="o">=</span><span class="n">edge_index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">))</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, where)</span>
-<span class="g g-Whitespace">    </span><span class="mi">988</span>         <span class="n">have</span> <span class="n">the</span> <span class="n">same</span> <span class="n">dimension</span> <span class="k">as</span> <span class="n">the</span> <span class="n">array</span> <span class="n">being</span> <span class="n">indexed</span><span class="o">.</span>
-<span class="g g-Whitespace">    </span><span class="mi">989</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">990</span><span class="sd">         if not hasattr(self, &quot;_tracers&quot;):</span>
-<span class="g g-Whitespace">    </span><span class="mi">991</span><span class="sd">             tmp = ak._util.wrap(self.layout[where], self._behavior)</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span><span class="sd">         else:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">to_numpy</span><span class="nt">(self, allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span>         <span class="n">Converts</span> <span class="n">this</span> <span class="n">Array</span> <span class="n">into</span> <span class="n">a</span> <span class="n">NumPy</span> <span class="n">array</span><span class="p">,</span> <span class="k">if</span> <span class="n">possible</span><span class="p">;</span> <span class="n">same</span> <span class="k">as</span> <span class="c1">#ak.to_numpy.</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="sd">&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">464</span><span class="sd">         return ak.operations.convert.to_numpy(self, allow_missing=allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="sd">     @property</span>
 
-<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/highlevel.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, where)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1108</span><span class="sd">         to add a field.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1109</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1110</span>         <span class="k">if</span> <span class="n">where</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1111</span>             <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="n">where</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1112</span>         <span class="k">else</span><span class="p">:</span>
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span><span class="sd">     elif isinstance(array, ak.highlevel.Array):</span>
+<span class="ne">--&gt; </span><span class="mi">196</span><span class="sd">         return to_numpy(array.layout, allow_missing=allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span><span class="sd">     elif isinstance(array, ak.highlevel.Record):</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages/awkward/operations/convert.py</span> in <span class="ni">to_numpy</span><span class="nt">(array, allow_missing)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span><span class="sd">     See also #ak.from_numpy and #ak.to_cupy.</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">189</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">,</span> <span class="n">numbers</span><span class="o">.</span><span class="n">Number</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span>         <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">array</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span> 
+
+<span class="nn">/opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/abc.py</span> in <span class="ni">__instancecheck__</span><span class="nt">(cls, instance)</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>             <span class="k">return</span> <span class="n">_abc_register</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">subclass</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span> 
+<span class="ne">--&gt; </span><span class="mi">137</span>         <span class="k">def</span> <span class="fm">__instancecheck__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>             <span class="sd">&quot;&quot;&quot;Override for isinstance(instance, cls).&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>             <span class="k">return</span> <span class="n">_abc_instancecheck</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
