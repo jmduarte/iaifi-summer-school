@@ -1,0 +1,15 @@
+Backend: Vivado
+ClockPeriod: 5
+HLSConfig:
+  Model:
+    Precision: ap_fixed<20,6>
+    ReuseFactor: 1
+    Strategy: Latency
+IOType: io_parallel
+InputData: null
+KerasModel: !keras_model 'model_1/hls4ml_prj/keras_model.h5'
+OutputDir: model_1/hls4ml_prj
+OutputPredictions: null
+Part: xcu250-figd2104-2L-e
+ProjectName: myproject
+Stamp: FFdfAD0A
