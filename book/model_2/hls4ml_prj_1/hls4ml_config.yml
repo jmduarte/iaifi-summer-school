@@ -1,0 +1,97 @@
+Backend: Vivado
+ClockPeriod: 5
+HLSConfig:
+  LayerName:
+    fc1:
+      Precision:
+        bias: ap_fixed<10,4>
+        result: ap_fixed<10,4>
+        weight: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+    fc1_input:
+      Precision:
+        result: ap_fixed<10,4>
+      Trace: true
+    fc1_linear:
+      Precision: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+      table_size: 1024
+      table_t: ap_fixed<18,8>
+    fc2:
+      Precision:
+        bias: ap_fixed<10,4>
+        result: ap_fixed<10,4>
+        weight: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+    fc2_linear:
+      Precision: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+      table_size: 1024
+      table_t: ap_fixed<18,8>
+    fc3:
+      Precision:
+        bias: ap_fixed<10,4>
+        result: ap_fixed<10,4>
+        weight: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+    fc3_linear:
+      Precision: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+      table_size: 1024
+      table_t: ap_fixed<18,8>
+    output:
+      Precision:
+        bias: ap_fixed<10,4>
+        result: ap_fixed<10,4>
+        weight: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+    output_linear:
+      Precision: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+      table_size: 1024
+      table_t: ap_fixed<18,8>
+    relu1:
+      Precision: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+      table_size: 1024
+      table_t: ap_fixed<18,8>
+    relu2:
+      Precision: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+      table_size: 1024
+      table_t: ap_fixed<18,8>
+    relu3:
+      Precision: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+      table_size: 1024
+      table_t: ap_fixed<18,8>
+    softmax:
+      Precision: ap_fixed<10,4>
+      ReuseFactor: 1
+      Trace: true
+      exp_table_t: ap_fixed<18,8,AP_RND,AP_SAT>
+      inv_table_t: ap_fixed<18,8,AP_RND,AP_SAT>
+      table_size: 1024
+  Model:
+    Precision: ap_fixed<10,4>
+    ReuseFactor: 1
+    Strategy: Latency
+IOType: io_parallel
+InputData: null
+KerasModel: !keras_model 'model_2/hls4ml_prj_1/keras_model.h5'
+OutputDir: model_2/hls4ml_prj_1
+OutputPredictions: null
+Part: xcu250-figd2104-2L-e
+ProjectName: myproject
+Stamp: Cd83031A
