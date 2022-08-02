@@ -530,7 +530,9 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting wget
-  Downloading wget-3.2.zip (10 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading wget-3.2.zip (10 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
@@ -547,7 +549,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9657 sha256=8c32665c85700cbd887995aa3fd371c5be85bd7821c2e215477f7b3074489913
+?25h  Created wheel for wget: filename=wget-3.2-py3-none-any.whl size=9657 sha256=3fd7fda491ab8d0d4ce2f4412e53c24d546e8836c85e5740028e53919c2460e6
   Stored in directory: /home/runner/.cache/pip/wheels/a1/b6/7c/0e63e34eb06634181c63adacca38b79ff8f35c37e3c13e3c02
 Successfully built wget
 </pre></div>
@@ -569,29 +571,25 @@ Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: awkward in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (1.8.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (63.3.0)
 Requirement already satisfied: numpy&gt;=1.13.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (1.21.6)
+Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from awkward) (63.3.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mplhep in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (0.3.26)
+Requirement already satisfied: uhi&gt;=0.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.3.1)
+Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (21.3)
+Requirement already satisfied: matplotlib&gt;=3.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (3.5.2)
+Requirement already satisfied: mplhep-data in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.0.3)
+Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (1.21.6)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.16.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (1.21.6)
-Requirement already satisfied: mplhep-data in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.0.3)
-Requirement already satisfied: packaging in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (21.3)
-Requirement already satisfied: uhi&gt;=0.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (0.3.1)
-Requirement already satisfied: matplotlib&gt;=3.4 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from mplhep) (3.5.2)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (1.4.4)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (4.34.4)
-Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (9.2.0)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (3.0.9)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyparsing&gt;=2.2.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (3.0.9)
 Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (2.8.2)
 Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (0.11.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uhi&gt;=0.2.0-&gt;mplhep) (4.3.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (1.4.4)
+Requirement already satisfied: pillow&gt;=6.2.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (9.2.0)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from matplotlib&gt;=3.4-&gt;mplhep) (4.34.4)
+Requirement already satisfied: typing-extensions&gt;=3.7 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from uhi&gt;=0.2.0-&gt;mplhep) (4.3.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /opt/hostedtoolcache/Python/3.7.13/x64/lib/python3.7/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.4-&gt;mplhep) (1.16.0)
@@ -683,7 +681,7 @@ Requirement already satisfied: cycler&gt;=0.10 in /opt/hostedtoolcache/Python/3.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4807</span><span class="o">/</span><span class="mf">2297903339.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4944</span><span class="o">/</span><span class="mf">2297903339.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s2">&quot;ntuple_merged_90.root&quot;</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="n">urlFILE</span> <span class="o">=</span> <span class="s2">&quot;http://opendata.cern.ch/eos/opendata/cms/datascience/HiggsToBBNtupleProducerTool/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/train/ntuple_merged_90.root&quot;</span>
 <span class="ne">---&gt; </span><span class="mi">16</span>     <span class="n">dataFILE</span> <span class="o">=</span> <span class="n">wget</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">urlFILE</span><span class="p">)</span>
