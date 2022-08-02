@@ -32,8 +32,12 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['train = True', 'if train:', '    adam = Adam(lr=0.0001)', '    model.compile(', '        optimizer=adam, loss=["categorical_crossentropy"], metrics=["accuracy"]']
-...
-['    )', 'else:', '    from tensorflow.keras.models import load_model', '', '    model = load_model("model_2/KERAS_check_best_model.h5")']
+import jetnet
+
+data_t = jetnet.datasets.JetNet(jet_type="t")
+data_t.download_and_convert_to_pt(data_dir="./", jet_type="t")
+
+data_q = jetnet.datasets.JetNet(jet_type="q")
+data_q.download_and_convert_to_pt(data_dir="./", jet_type="q")
 -------------------
 
